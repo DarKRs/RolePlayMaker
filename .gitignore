@@ -1,0 +1,9 @@
+*.ide
+*.ide-shm
+*.lock
+*.ide-wal
+*.exe
+*.pdb
+*.exe
+*.cache
+*.Cache
