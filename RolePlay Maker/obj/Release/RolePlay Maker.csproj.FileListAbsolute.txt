@@ -1,0 +1,18 @@
+C:\Projects\RolePlay Maker\RolePlay Maker\bin\Release\RolePlay Maker.exe.config
+C:\Projects\RolePlay Maker\RolePlay Maker\bin\Release\RolePlay Maker.exe
+C:\Projects\RolePlay Maker\RolePlay Maker\bin\Release\RolePlay Maker.pdb
+C:\Projects\RolePlay Maker\RolePlay Maker\obj\Release\RolePlay_Maker.Form2.resources
+C:\Projects\RolePlay Maker\RolePlay Maker\obj\Release\RolePlay_Maker.Properties.Resources.resources
+C:\Projects\RolePlay Maker\RolePlay Maker\obj\Release\RolePlay Maker.csproj.GenerateResource.Cache
+C:\Projects\RolePlay Maker\RolePlay Maker\obj\Release\RolePlay Maker.exe
+C:\Projects\RolePlay Maker\RolePlay Maker\obj\Release\RolePlay Maker.pdb
+C:\Projects\RolePlay Maker\RolePlay Maker\obj\Release\RolePlay Maker.csprojResolveAssemblyReference.cache
+C:\Projects\RolePlay Maker\RolePlay Maker\obj\Release\RolePlay_Maker.MainForm.resources
+C:\Projects\RolePlay Maker\RolePlay Maker\obj\Release\RolePlay_Maker.Author.resources
+C:\Projects\RolePlay Maker\RolePlay Maker\obj\Release\RolePlay_Maker.Profile.resources
+C:\Projects\RolePlay Maker\RolePlay Maker\obj\Release\RolePlay_Maker.Character.resources
+C:\Projects\RolePlay Maker\RolePlay Maker\obj\Release\RolePlay_Maker.Network.resources
+C:\Projects\RolePlay Maker\RolePlay Maker\obj\Release\RolePlay_Maker.CharacterNetwork.resources
+C:\Projects\RolePlay Maker\RolePlay Maker\obj\Release\RolePlay_Maker.ChatForm.resources
+C:\Projects\RolePlay Maker\RolePlay Maker\obj\Release\RolePlay_Maker.NetworkInfo.resources
+C:\Projects\RolePlay Maker\RolePlay Maker\obj\Release\RolePlay_Maker.Armor.resources
