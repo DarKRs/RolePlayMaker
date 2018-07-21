@@ -260,7 +260,7 @@ namespace RolePlay_Maker
         {
             ArmorForm f = new ArmorForm();
             f.Owner = this;
-            f.Show();
+            f.ShowDialog();
         }
 
         private void добавитьToolStripMenuItem_Click(object sender, EventArgs e)
@@ -274,7 +274,7 @@ namespace RolePlay_Maker
         {
             MobForm f = new MobForm();
             f.Owner = this;
-            f.Show();
+            f.ShowDialog();
         }
 
         private void добавитьСуществоToolStripMenuItem_Click(object sender, EventArgs e)
@@ -288,7 +288,7 @@ namespace RolePlay_Maker
         {
             WeaponInfo f = new WeaponInfo();
             f.Owner = this;
-            f.Show();
+            f.ShowDialog();
         }
 
         private void добавитьОружиеToolStripMenuItem_Click(object sender, EventArgs e)
@@ -302,14 +302,14 @@ namespace RolePlay_Maker
         {
             AbilityInfo f = new AbilityInfo();
             f.Owner = this;
-            f.Show();
+            f.ShowDialog();
         }
 
         private void Generator_Click(object sender, EventArgs e)
         {
             Generators f = new Generators();
             f.Owner = this;
-            f.Show();
+            f.ShowDialog();
         }
     }
 }
