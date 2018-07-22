@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -37,10 +36,8 @@
             this.PlayerCount = new System.Windows.Forms.NumericUpDown();
             this.Generate = new System.Windows.Forms.Button();
             this.GeneratedField = new System.Windows.Forms.Panel();
-            this.personBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.PlayerLevel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PlayerCount)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.personBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -107,20 +104,20 @@
             // 
             // GeneratedField
             // 
-            this.GeneratedField.Location = new System.Drawing.Point(2, 51);
+            this.GeneratedField.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.GeneratedField.AutoScroll = true;
+            this.GeneratedField.Location = new System.Drawing.Point(12, 56);
             this.GeneratedField.Name = "GeneratedField";
-            this.GeneratedField.Size = new System.Drawing.Size(530, 273);
+            this.GeneratedField.Size = new System.Drawing.Size(786, 273);
             this.GeneratedField.TabIndex = 8;
-            // 
-            // personBindingSource
-            // 
-            this.personBindingSource.DataSource = typeof(RolePlay_Maker.Person);
             // 
             // NPCGeneratorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(554, 337);
+            this.ClientSize = new System.Drawing.Size(810, 337);
             this.Controls.Add(this.GeneratedField);
             this.Controls.Add(this.Generate);
             this.Controls.Add(this.PlayerCount);
@@ -133,7 +130,6 @@
             this.Text = "NPCGenerator";
             ((System.ComponentModel.ISupportInitialize)(this.PlayerLevel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PlayerCount)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.personBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -147,7 +143,6 @@
         private System.Windows.Forms.ComboBox Faction;
         private System.Windows.Forms.NumericUpDown PlayerLevel;
         private System.Windows.Forms.NumericUpDown PlayerCount;
-        private System.Windows.Forms.BindingSource personBindingSource;
         private System.Windows.Forms.Button Generate;
         private System.Windows.Forms.Panel GeneratedField;
     }

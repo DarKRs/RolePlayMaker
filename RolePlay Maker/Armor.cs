@@ -13,6 +13,19 @@ namespace RolePlay_Maker
         public int KB;
         public string ClassType;
 
+        public Armor()
+        {
+            this.Type = "";
+            this.ClassType = "";
+            this.name = "";
+            this.KB = 0;
+            this.AP = 0;
+            this.Description = "";
+            this.Effects = "";
+            this.Price = 0;
+            this.Faction = "";
+        }
+
         public Armor(string ClassType, string Name, int AP, int Price, string Description)
         {
             this.Type = "Armor";

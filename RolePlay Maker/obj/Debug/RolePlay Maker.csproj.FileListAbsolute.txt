@@ -76,3 +76,47 @@ C:\Git\RolePlayMaker-master\RolePlayMaker-master\RolePlay Maker\bin\Debug\Google
 C:\Git\RolePlayMaker-master\RolePlayMaker-master\RolePlay Maker\bin\Debug\Google.Apis.Sheets.v4.pdb
 C:\Git\RolePlayMaker-master\RolePlayMaker-master\RolePlay Maker\bin\Debug\Google.Apis.Sheets.v4.xml
 C:\Git\RolePlayMaker-master\RolePlayMaker-master\RolePlay Maker\bin\Debug\Newtonsoft.Json.xml
+C:\Git\RolePlayMaker-master\RolePlayMaker-master\RolePlayMaker\RolePlay Maker\bin\Debug\RolePlay Maker.exe.config
+C:\Git\RolePlayMaker-master\RolePlayMaker-master\RolePlayMaker\RolePlay Maker\obj\Debug\RolePlay Maker.exe
+C:\Git\RolePlayMaker-master\RolePlayMaker-master\RolePlayMaker\RolePlay Maker\obj\Debug\RolePlay Maker.pdb
+C:\Git\RolePlayMaker-master\RolePlayMaker-master\RolePlayMaker\RolePlay Maker\bin\Debug\client_secret.json
+C:\Git\RolePlayMaker-master\RolePlayMaker-master\RolePlayMaker\RolePlay Maker\bin\Debug\RolePlay Maker.exe
+C:\Git\RolePlayMaker-master\RolePlayMaker-master\RolePlayMaker\RolePlay Maker\bin\Debug\RolePlay Maker.pdb
+C:\Git\RolePlayMaker-master\RolePlayMaker-master\RolePlayMaker\RolePlay Maker\bin\Debug\Google.Apis.Auth.dll
+C:\Git\RolePlayMaker-master\RolePlayMaker-master\RolePlayMaker\RolePlay Maker\bin\Debug\Google.Apis.Auth.PlatformServices.dll
+C:\Git\RolePlayMaker-master\RolePlayMaker-master\RolePlayMaker\RolePlay Maker\bin\Debug\Google.Apis.Core.dll
+C:\Git\RolePlayMaker-master\RolePlayMaker-master\RolePlayMaker\RolePlay Maker\bin\Debug\Google.Apis.dll
+C:\Git\RolePlayMaker-master\RolePlayMaker-master\RolePlayMaker\RolePlay Maker\bin\Debug\Google.Apis.PlatformServices.dll
+C:\Git\RolePlayMaker-master\RolePlayMaker-master\RolePlayMaker\RolePlay Maker\bin\Debug\Google.Apis.Sheets.v4.dll
+C:\Git\RolePlayMaker-master\RolePlayMaker-master\RolePlayMaker\RolePlay Maker\bin\Debug\Newtonsoft.Json.dll
+C:\Git\RolePlayMaker-master\RolePlayMaker-master\RolePlayMaker\RolePlay Maker\bin\Debug\Google.Apis.pdb
+C:\Git\RolePlayMaker-master\RolePlayMaker-master\RolePlayMaker\RolePlay Maker\bin\Debug\Google.Apis.xml
+C:\Git\RolePlayMaker-master\RolePlayMaker-master\RolePlayMaker\RolePlay Maker\bin\Debug\Google.Apis.Auth.pdb
+C:\Git\RolePlayMaker-master\RolePlayMaker-master\RolePlayMaker\RolePlay Maker\bin\Debug\Google.Apis.Auth.xml
+C:\Git\RolePlayMaker-master\RolePlayMaker-master\RolePlayMaker\RolePlay Maker\bin\Debug\Google.Apis.Core.pdb
+C:\Git\RolePlayMaker-master\RolePlayMaker-master\RolePlayMaker\RolePlay Maker\bin\Debug\Google.Apis.Core.xml
+C:\Git\RolePlayMaker-master\RolePlayMaker-master\RolePlayMaker\RolePlay Maker\bin\Debug\Google.Apis.Sheets.v4.pdb
+C:\Git\RolePlayMaker-master\RolePlayMaker-master\RolePlayMaker\RolePlay Maker\bin\Debug\Google.Apis.Sheets.v4.xml
+C:\Git\RolePlayMaker-master\RolePlayMaker-master\RolePlayMaker\RolePlay Maker\bin\Debug\Newtonsoft.Json.xml
+C:\Git\RolePlayMaker-master\RolePlayMaker-master\RolePlayMaker\RolePlay Maker\obj\Debug\RolePlay Maker.csprojResolveAssemblyReference.cache
+C:\Git\RolePlayMaker-master\RolePlayMaker-master\RolePlayMaker\RolePlay Maker\obj\Debug\RolePlay_Maker.AbilityInfo.resources
+C:\Git\RolePlayMaker-master\RolePlayMaker-master\RolePlayMaker\RolePlay Maker\obj\Debug\RolePlay_Maker.AddArmor.resources
+C:\Git\RolePlayMaker-master\RolePlayMaker-master\RolePlayMaker\RolePlay Maker\obj\Debug\RolePlay_Maker.AddMob.resources
+C:\Git\RolePlayMaker-master\RolePlayMaker-master\RolePlayMaker\RolePlay Maker\obj\Debug\RolePlay_Maker.AddWeapon.resources
+C:\Git\RolePlayMaker-master\RolePlayMaker-master\RolePlayMaker\RolePlay Maker\obj\Debug\RolePlay_Maker.ArmorForm.resources
+C:\Git\RolePlayMaker-master\RolePlayMaker-master\RolePlayMaker\RolePlay Maker\obj\Debug\RolePlay_Maker.Author.resources
+C:\Git\RolePlayMaker-master\RolePlayMaker-master\RolePlayMaker\RolePlay Maker\obj\Debug\RolePlay_Maker.Character.resources
+C:\Git\RolePlayMaker-master\RolePlayMaker-master\RolePlayMaker\RolePlay Maker\obj\Debug\RolePlay_Maker.CharacterNetwork.resources
+C:\Git\RolePlayMaker-master\RolePlayMaker-master\RolePlayMaker\RolePlay Maker\obj\Debug\RolePlay_Maker.ChatForm.resources
+C:\Git\RolePlayMaker-master\RolePlayMaker-master\RolePlayMaker\RolePlay Maker\obj\Debug\RolePlay_Maker.Form2.resources
+C:\Git\RolePlayMaker-master\RolePlayMaker-master\RolePlayMaker\RolePlay Maker\obj\Debug\RolePlay_Maker.Forms.Generators.resources
+C:\Git\RolePlayMaker-master\RolePlayMaker-master\RolePlayMaker\RolePlay Maker\obj\Debug\RolePlay_Maker.MainForm.resources
+C:\Git\RolePlayMaker-master\RolePlayMaker-master\RolePlayMaker\RolePlay Maker\obj\Debug\RolePlay_Maker.MobForm.resources
+C:\Git\RolePlayMaker-master\RolePlayMaker-master\RolePlayMaker\RolePlay Maker\obj\Debug\RolePlay_Maker.Network.resources
+C:\Git\RolePlayMaker-master\RolePlayMaker-master\RolePlayMaker\RolePlay Maker\obj\Debug\RolePlay_Maker.NetworkInfo.resources
+C:\Git\RolePlayMaker-master\RolePlayMaker-master\RolePlayMaker\RolePlay Maker\obj\Debug\RolePlay_Maker.Forms.NPCGeneratorForm.resources
+C:\Git\RolePlayMaker-master\RolePlayMaker-master\RolePlayMaker\RolePlay Maker\obj\Debug\RolePlay_Maker.Profile.resources
+C:\Git\RolePlayMaker-master\RolePlayMaker-master\RolePlayMaker\RolePlay Maker\obj\Debug\RolePlay_Maker.Forms.QuestGeneratorForm.resources
+C:\Git\RolePlayMaker-master\RolePlayMaker-master\RolePlayMaker\RolePlay Maker\obj\Debug\RolePlay_Maker.Properties.Resources.resources
+C:\Git\RolePlayMaker-master\RolePlayMaker-master\RolePlayMaker\RolePlay Maker\obj\Debug\RolePlay_Maker.WeaponInfo.resources
+C:\Git\RolePlayMaker-master\RolePlayMaker-master\RolePlayMaker\RolePlay Maker\obj\Debug\RolePlay Maker.csproj.GenerateResource.Cache
