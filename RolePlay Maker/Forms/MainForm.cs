@@ -9,6 +9,7 @@ using System.IO;
 using System.Threading;
 using System.Windows.Forms;
 using RolePlay_Maker.Forms;
+using System.Threading.Tasks;
 
 namespace RolePlay_Maker
 {
@@ -53,92 +54,122 @@ namespace RolePlay_Maker
         private void RefreshDatabase(SheetsService service, string Type)
         {
             String spreadsheetId;
-            String range;
+            //for storing the range and corresponding type
+            Dictionary<string, string> ranges = new Dictionary<string, string>();
+            spreadsheetId = "19CQvYbi6OwMoLpseI8AkQzL2jFbc9YP3b4Kpu61wsEw";
+
             switch (Type)
             {
                 case "All": //Вызывается при открытии RPMaker
-                 /////Armor///////
-                spreadsheetId = "19CQvYbi6OwMoLpseI8AkQzL2jFbc9YP3b4Kpu61wsEw"; range = "Одежда!A3:G"; RefreshingDB(service, spreadsheetId, range, "Одежда");
-                spreadsheetId = "19CQvYbi6OwMoLpseI8AkQzL2jFbc9YP3b4Kpu61wsEw"; range = "Легкая броня!A3:G"; RefreshingDB(service, spreadsheetId, range, "Легкая броня");
-                spreadsheetId = "19CQvYbi6OwMoLpseI8AkQzL2jFbc9YP3b4Kpu61wsEw"; range = "Средняя броня!A3:G"; RefreshingDB(service, spreadsheetId, range, "Средняя броня");
-                spreadsheetId = "19CQvYbi6OwMoLpseI8AkQzL2jFbc9YP3b4Kpu61wsEw"; range = "Тяжелая броня!A3:G"; RefreshingDB(service, spreadsheetId, range, "Тяжелая броня");
-                spreadsheetId = "19CQvYbi6OwMoLpseI8AkQzL2jFbc9YP3b4Kpu61wsEw"; range = "Силовая броня и подобное!A3:G"; RefreshingDB(service, spreadsheetId, range, "Силовая броня");
-                spreadsheetId = "19CQvYbi6OwMoLpseI8AkQzL2jFbc9YP3b4Kpu61wsEw"; range = "Шлемы/Головные уборы и другое!A3:G"; RefreshingDB(service, spreadsheetId, range, "Шлемы и головные уборы");
-                /////Weapon//////
-                spreadsheetId = "1_6ND5dw_DG-qgE6nkbrH3BVgj-D8_9LgHEpNlT-NFMA"; range = "Пистолеты!A3:E"; RefreshingDB(service, spreadsheetId, range, "Легкое оружие");
 
-                break;
+                    /////Armor///////
+                    ranges.Add("Одежда!A3:G", "Одежда");
+                    ranges.Add("Легкая броня!A3:G", "Легкая броня");
+                    ranges.Add("Средняя броня!A3:G", "Средняя броня");
+                    ranges.Add("Тяжелая броня!A3:G", "Тяжелая броня");
+                    ranges.Add("Силовая броня и подобное!A3:G", "Силовая броня");
+                    ranges.Add("Шлемы/Головные уборы и другое!A3:G", "Шлемы и головные уборы");
+                    /////Weapon//////
+                    //ranges.Add("Пистолеты!A3:E", "Оружие");
+                    //spreadsheetId = "1_6ND5dw_DG-qgE6nkbrH3BVgj-D8_9LgHEpNlT-NFMA"; range = ; RefreshingDBAsync(service, spreadsheetId, range, "Легкое оружие");
 
+                    break;
                 /////Armor///////
-                case "Одежда": spreadsheetId = "19CQvYbi6OwMoLpseI8AkQzL2jFbc9YP3b4Kpu61wsEw"; range = "Одежда!A3:G"; RefreshingDB(service, spreadsheetId, range, "Одежда"); break;
-                case "Легкая броня": spreadsheetId = "19CQvYbi6OwMoLpseI8AkQzL2jFbc9YP3b4Kpu61wsEw"; range = "Легкая броня!A3:G"; RefreshingDB(service, spreadsheetId, range, "Легкая броня"); break;
-                case "Средняя броня": spreadsheetId = "19CQvYbi6OwMoLpseI8AkQzL2jFbc9YP3b4Kpu61wsEw"; range = "Средняя броня!A3:G"; RefreshingDB(service, spreadsheetId, range, "Средняя броня"); break;
-                case "Тяжелая броня": spreadsheetId = "19CQvYbi6OwMoLpseI8AkQzL2jFbc9YP3b4Kpu61wsEw"; range = "Тяжелая броня!A3:G"; RefreshingDB(service, spreadsheetId, range, "Тяжелая броня"); break;
-                case "Силовая броня": spreadsheetId = "19CQvYbi6OwMoLpseI8AkQzL2jFbc9YP3b4Kpu61wsEw"; range = "Силовая броня и подобное!A3:G"; RefreshingDB(service, spreadsheetId, range, "Силовая броня"); break;
-                case "Шлемы и головные уборы": spreadsheetId = "19CQvYbi6OwMoLpseI8AkQzL2jFbc9YP3b4Kpu61wsEw"; range = "Шлемы/Головные уборы и другое!A3:G"; RefreshingDB(service, spreadsheetId, range, "Шлемы и головные уборы"); break;
+                case "Одежда":
+                    ranges.Add("Одежда!A3:G", "Одежда"); break;
+                case "Легкая броня":
+                    ranges.Add("Легкая броня!A3:G", "Легкая броня"); break;
+                case "Средняя броня":
+                    ranges.Add("Средняя броня!A3:G", "Средняя броня"); break;
+                case "Тяжелая броня":
+                    ranges.Add("Тяжелая броня!A3:G", "Тяжелая броня"); break;
+                case "Силовая броня":
+                    ranges.Add("Силовая броня и подобное!A3:G", "Силовая броня"); break;
+                case "Шлемы и головные уборы":
+                    ranges.Add("Шлемы/Головные уборы и другое!A3:G", "Шлемы и головные уборы"); break;
                 /////Weapon//////
-                case "Легкое оружие": spreadsheetId = "1_6ND5dw_DG-qgE6nkbrH3BVgj-D8_9LgHEpNlT-NFMA"; range = "Пистолеты!A3:E"; RefreshingDB(service, spreadsheetId, range, "Легкое оружие"); break;
+                case "Легкое оружие":
+                    spreadsheetId = "1_6ND5dw_DG-qgE6nkbrH3BVgj-D8_9LgHEpNlT-NFMA";
+                    ranges.Add("Пистолеты!A3:E", "Оружие");
+                    break;
                 default: break;
 
             }
+            RefreshingDBAsync(service, spreadsheetId, ranges);
         }
 
-        private void RefreshingDB(SheetsService service, String spreadsheetId, String range, string Type)
+        private async void RefreshingDBAsync(SheetsService service, String spreadsheetId, Dictionary<string, string> rangesAndTypes)
         {
             // Define request parameters.
-                 SpreadsheetsResource.ValuesResource.GetRequest request =
-                    service.Spreadsheets.Values.Get(spreadsheetId, range);
-            ValueRange response = request.Execute();
-            IList<IList<Object>> values = response.Values;
 
-            switch (Type)
+            Dictionary<Task<ValueRange>, string> tasks = new Dictionary<Task<ValueRange>, string>();
+            foreach (var entry in rangesAndTypes)
             {
-                //////////////////Armor//////////
-                case "Одежда": 
-                    for(int i= 0; i < values.Count; i++)
-                    {
-                        Armor arm = new Armor("Одежда", values[i]);
-                        Entity.Armor.Add(arm);
-                    }
-                    break;
-                case "Легкая броня":
-                    for (int i = 0; i < values.Count; i++)
-                    {
-                        Armor arm = new Armor("Легкая броня", values[i]);
-                        Entity.Armor.Add(arm);
-                    }
-                    break;
-                case "Средняя броня":
-                    for (int i = 0; i < values.Count; i++)
-                    {
-                        Armor arm = new Armor("Средняя броня", values[i]);
-                        Entity.Armor.Add(arm);
-                    }
-                    break;
-                case "Тяжелая броня":
-                    for (int i = 0; i < values.Count; i++)
-                    {
-                        Armor arm = new Armor("Тяжелая броня", values[i]);
-                        Entity.Armor.Add(arm);
-                    }
-                    break;
-                case "Силовая броня":
-                    for (int i = 0; i < values.Count; i++)
-                    {
-                        Armor arm = new Armor("Силовая броня", values[i]);
-                        Entity.Armor.Add(arm);
-                    }
-                    break;
-                case "Шлемы и головные уборы":
-                    for (int i = 0; i < values.Count; i++)
-                    {
-                        Armor arm = new Armor("Шлемы и головные уборы", values[i]);
-                        Entity.Armor.Add(arm);
-                    }
-                    break;
-                ////////////////////////////Weapon/////////////////////////
-                default: break;
+                var range = entry.Key;
+                var type = entry.Value;
+                SpreadsheetsResource.ValuesResource.GetRequest request =
+                    service.Spreadsheets.Values.Get(spreadsheetId, range);
+                tasks.Add(request.ExecuteAsync(), type);
+                ValueRange response = await request.ExecuteAsync();
             }
+            foreach (var entry in tasks)
+            {
+                var task = entry.Key;
+                string type = entry.Value;
+
+                ValueRange response = await task;
+                IList<IList<Object>> values = response.Values;
+                switch (type)
+                {
+                    //////////////////Armor//////////
+                    case "Одежда":
+                        for (int i = 0; i < values.Count; i++)
+                        {
+                            Armor arm = new Armor("Одежда", values[i]);
+                            Entity.Armor.Add(arm);
+                        }
+                        break;
+                    case "Легкая броня":
+                        for (int i = 0; i < values.Count; i++)
+                        {
+                            Armor arm = new Armor("Легкая броня", values[i]);
+                            Entity.Armor.Add(arm);
+                        }
+                        break;
+                    case "Средняя броня":
+                        for (int i = 0; i < values.Count; i++)
+                        {
+                            Armor arm = new Armor("Средняя броня", values[i]);
+                            Entity.Armor.Add(arm);
+                        }
+                        break;
+                    case "Тяжелая броня":
+                        for (int i = 0; i < values.Count; i++)
+                        {
+                            Armor arm = new Armor("Тяжелая броня", values[i]);
+                            Entity.Armor.Add(arm);
+                        }
+                        break;
+                    case "Силовая броня":
+                        for (int i = 0; i < values.Count; i++)
+                        {
+                            Armor arm = new Armor("Силовая броня", values[i]);
+                            Entity.Armor.Add(arm);
+                        }
+                        break;
+                    case "Шлемы и головные уборы":
+                        for (int i = 0; i < values.Count; i++)
+                        {
+                            Armor arm = new Armor("Шлемы и головные уборы", values[i]);
+                            Entity.Armor.Add(arm);
+                        }
+                        break;
+                    ////////////////////////////Weapon/////////////////////////
+                    default: break;
+                }
+            }
+            //for debug purposes
+            Console.WriteLine("Completed");
         }
 
         private void Close_Click(object sender, EventArgs e)
