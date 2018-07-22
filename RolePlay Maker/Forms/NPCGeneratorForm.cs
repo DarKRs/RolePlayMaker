@@ -47,12 +47,12 @@ namespace RolePlay_Maker.Forms
                 AvailableHats.Add("Нет");
                 for (int i = 0; i < lengarmor; i++)
                 {
-                    if(Entity.Armor[i].ClassType != "Силовая броня" && Entity.Armor[i].ClassType != "Шлемы и головные уборы" && (Entity.Armor[i].Faction == "Нет" || Entity.Armor[i].Faction == "Черти"))
+                    if(Entity.Armor[i].ClassType != "Силовая броня" && Entity.Armor[i].ClassType != "Шлемы и головные уборы" && (Entity.Armor[i].Fraction == "Нет" || Entity.Armor[i].Fraction == "Черти"))
                     {
                         AvailableArmor.Add(Entity.Armor[i].name);
                         ArmorObj.Add(Entity.Armor[i].name, Entity.Armor[i]);
                     }
-                    if (Entity.Armor[i].ClassType == "Шлемы и головные уборы" && (Entity.Armor[i].Faction == "Нет" || Entity.Armor[i].Faction == "Черт"))
+                    if (Entity.Armor[i].ClassType == "Шлемы и головные уборы" && (Entity.Armor[i].Fraction == "Нет" || Entity.Armor[i].Fraction == "Черт"))
                     {
                         AvailableHats.Add(Entity.Armor[i].name);
                         ArmorObj.Add(Entity.Armor[i].name, Entity.Armor[i]);

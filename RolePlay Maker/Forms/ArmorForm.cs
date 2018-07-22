@@ -80,7 +80,7 @@ namespace RolePlay_Maker
                 PUText.Text = Arm.AP.ToString();
                 KBtextbox.Text = Arm.KB.ToString();
                 DescriptionText.Text = Arm.Description + "\nЭффекты: \n" + Arm.Effects;
-                Faction.Text = Arm.Faction;
+                Faction.Text = Arm.Fraction;
             }
             
         }

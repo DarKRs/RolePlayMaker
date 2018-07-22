@@ -110,7 +110,7 @@
             this.GeneratedField.AutoScroll = true;
             this.GeneratedField.Location = new System.Drawing.Point(12, 56);
             this.GeneratedField.Name = "GeneratedField";
-            this.GeneratedField.Size = new System.Drawing.Size(786, 273);
+            this.GeneratedField.Size = new System.Drawing.Size(775, 273);
             this.GeneratedField.TabIndex = 8;
             // 
             // NPCGeneratorForm

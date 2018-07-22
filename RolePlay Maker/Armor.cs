@@ -23,7 +23,7 @@ namespace RolePlay_Maker
             this.Description = "";
             this.Effects = "";
             this.Price = 0;
-            this.Faction = "";
+            this.Fraction = "";
         }
 
         public Armor(string ClassType, string Name, int AP, int Price, string Description)
@@ -46,7 +46,7 @@ namespace RolePlay_Maker
             this.Description = values[3].ToString();
             this.Effects = values[4].ToString();
             this.Price = Int32.Parse(values[5].ToString());
-            this.Faction = values[6].ToString();
+            this.Fraction = values[6].ToString();
         }
 
     }

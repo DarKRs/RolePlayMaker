@@ -14,7 +14,7 @@ namespace RolePlay_Maker
         public string Type;
         public string Description;
         public string Effects;
-        public string Faction;
+        public string Fraction;
 
     }
 }
