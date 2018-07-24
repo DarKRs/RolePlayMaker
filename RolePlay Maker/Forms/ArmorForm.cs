@@ -13,7 +13,7 @@ namespace RolePlay_Maker
     public partial class ArmorForm : Form
     {
         MainForm main;
-        int leng = Entity.Armor.Count();
+        int leng = Entity.ArmorList.Count();
         public ArmorForm()
         {
             InitializeComponent();
@@ -32,28 +32,28 @@ namespace RolePlay_Maker
             TreeNode HatsNode = new TreeNode("Шлемы/Головные уборы и другое");
             for (int i = 0; i < leng; i++)
             {
-                Armor arm = Entity.Armor[i];
-                if (arm.ClassType == "Одежда")
+                Armor arm = Entity.ArmorList[i];
+                if (arm.Class == "Одежда")
                 {
                     ClothesNode.Nodes.Add(new TreeNode(arm.name));
                 }
-                if (arm.ClassType == "Легкая броня")
+                if (arm.Class == "Легкая броня")
                 {
                     LightArmorNode.Nodes.Add(new TreeNode(arm.name));
                 }
-                if (arm.ClassType == "Средняя броня")
+                if (arm.Class == "Средняя броня")
                 {
                     MediumArmorNode.Nodes.Add(new TreeNode(arm.name));
                 }
-                if (arm.ClassType == "Тяжелая броня")
+                if (arm.Class == "Тяжелая броня")
                 {
                     HeavyArmorNode.Nodes.Add(new TreeNode(arm.name));
                 }
-                if (arm.ClassType == "Силовая броня")
+                if (arm.Class == "Силовая броня")
                 {
                     PowerArmorNode.Nodes.Add(new TreeNode(arm.name));
                 }
-                if (arm.ClassType == "Шлемы и головные уборы")
+                if (arm.Class == "Шлемы и головные уборы")
                 {
                     HatsNode.Nodes.Add(new TreeNode(arm.name));
                 }
@@ -73,8 +73,8 @@ namespace RolePlay_Maker
 
             for(int i=0; i < leng; i++)
             {
-                if(ArmorTree.SelectedNode.Text != Entity.Armor[i].name) { continue; }
-                Armor Arm= Entity.Armor[i];
+                if(ArmorTree.SelectedNode.Text != Entity.ArmorList[i].name) { continue; }
+                Armor Arm= Entity.ArmorList[i];
                 NameText.Text = Arm.name;
                 PriceText.Text = Arm.Price.ToString();
                 PUText.Text = Arm.AP.ToString();

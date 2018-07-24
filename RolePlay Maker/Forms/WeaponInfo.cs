@@ -19,7 +19,6 @@ namespace RolePlay_Maker
         {
 
             TreeNode LightWeaponNode = new TreeNode("Легкое оружие");
-            // Добавляем новый дочерний узел к tovarNode
             TreeNode HeavyWeaponNode = new TreeNode("Тяжелое оружие");
             TreeNode ColdWeaponNode = new TreeNode("Холодное оружие");
             for (int i = 0; i < leng; i++)
@@ -53,8 +52,8 @@ namespace RolePlay_Maker
                 Weapon wp = ((Weapon)Entity.Entitys[i]);
                 NameText.Text = wp.name;
                 PriceText.Text = wp.Price.ToString();
-                DamageText.Text = wp.Damage.ToString();
-                AmmoText.Text = wp.Ammo;
+                DamageText.Text = wp.PermanentDamage.ToString();
+                AmmoText.Text = wp.AmmoType;
                 DescriptionText.Text = wp.Description;
             }
         }

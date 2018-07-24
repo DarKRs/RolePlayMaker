@@ -59,15 +59,9 @@
             this.броняToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.добавитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.одеждаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.легкаяБроняToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.авторToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Generator = new System.Windows.Forms.Button();
-            this.средняяБроняToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.тяжелаяБроняToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.силоваяБроняToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.шлемыИГоловныеУборыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -302,13 +296,7 @@
             // 
             this.броняToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.справкаToolStripMenuItem,
-            this.добавитьToolStripMenuItem,
-            this.одеждаToolStripMenuItem,
-            this.легкаяБроняToolStripMenuItem,
-            this.средняяБроняToolStripMenuItem,
-            this.тяжелаяБроняToolStripMenuItem,
-            this.силоваяБроняToolStripMenuItem,
-            this.шлемыИГоловныеУборыToolStripMenuItem});
+            this.добавитьToolStripMenuItem});
             this.броняToolStripMenuItem.Name = "броняToolStripMenuItem";
             this.броняToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.броняToolStripMenuItem.Text = "Броня";
@@ -317,28 +305,16 @@
             // справкаToolStripMenuItem
             // 
             this.справкаToolStripMenuItem.Name = "справкаToolStripMenuItem";
-            this.справкаToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
+            this.справкаToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.справкаToolStripMenuItem.Text = "Справка";
             this.справкаToolStripMenuItem.Click += new System.EventHandler(this.справкаToolStripMenuItem_Click);
             // 
             // добавитьToolStripMenuItem
             // 
             this.добавитьToolStripMenuItem.Name = "добавитьToolStripMenuItem";
-            this.добавитьToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
+            this.добавитьToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.добавитьToolStripMenuItem.Text = "Добавить броню";
             this.добавитьToolStripMenuItem.Click += new System.EventHandler(this.добавитьToolStripMenuItem_Click);
-            // 
-            // одеждаToolStripMenuItem
-            // 
-            this.одеждаToolStripMenuItem.Name = "одеждаToolStripMenuItem";
-            this.одеждаToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
-            this.одеждаToolStripMenuItem.Text = "Одежда";
-            // 
-            // легкаяБроняToolStripMenuItem
-            // 
-            this.легкаяБроняToolStripMenuItem.Name = "легкаяБроняToolStripMenuItem";
-            this.легкаяБроняToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
-            this.легкаяБроняToolStripMenuItem.Text = "Легкая броня";
             // 
             // оПрограммеToolStripMenuItem
             // 
@@ -364,30 +340,6 @@
             this.Generator.Text = "Генерация";
             this.Generator.UseVisualStyleBackColor = true;
             this.Generator.Click += new System.EventHandler(this.Generator_Click);
-            // 
-            // средняяБроняToolStripMenuItem
-            // 
-            this.средняяБроняToolStripMenuItem.Name = "средняяБроняToolStripMenuItem";
-            this.средняяБроняToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
-            this.средняяБроняToolStripMenuItem.Text = "Средняя броня";
-            // 
-            // тяжелаяБроняToolStripMenuItem
-            // 
-            this.тяжелаяБроняToolStripMenuItem.Name = "тяжелаяБроняToolStripMenuItem";
-            this.тяжелаяБроняToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
-            this.тяжелаяБроняToolStripMenuItem.Text = "Тяжелая броня";
-            // 
-            // силоваяБроняToolStripMenuItem
-            // 
-            this.силоваяБроняToolStripMenuItem.Name = "силоваяБроняToolStripMenuItem";
-            this.силоваяБроняToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
-            this.силоваяБроняToolStripMenuItem.Text = "Силовая броня";
-            // 
-            // шлемыИГоловныеУборыToolStripMenuItem
-            // 
-            this.шлемыИГоловныеУборыToolStripMenuItem.Name = "шлемыИГоловныеУборыToolStripMenuItem";
-            this.шлемыИГоловныеУборыToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
-            this.шлемыИГоловныеУборыToolStripMenuItem.Text = "Шлемы и головные уборы";
             // 
             // MainForm
             // 
@@ -449,11 +401,5 @@
         private System.Windows.Forms.ToolStripMenuItem энергетическоеОружиеToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem справкаToolStripMenuItem6;
         private System.Windows.Forms.ToolStripMenuItem добавитьОружиеToolStripMenuItem3;
-        private System.Windows.Forms.ToolStripMenuItem одеждаToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem легкаяБроняToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem средняяБроняToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem тяжелаяБроняToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem силоваяБроняToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem шлемыИГоловныеУборыToolStripMenuItem;
     }
 }

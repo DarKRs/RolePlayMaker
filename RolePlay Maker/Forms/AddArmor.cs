@@ -55,7 +55,6 @@ namespace RolePlay_Maker
                 writer.Close(); //закрываем поток. Не закрыв поток, в файл ничего не запишется 
             
             
-            main.RefreshData();
             MessageBox.Show("Информация записана",
                   "Все збс", MessageBoxButtons.OK, MessageBoxIcon.Information);
             NameText.Text = "";PUText.Text = "";PriceText.Text = "";DescriptionText.Text = "";

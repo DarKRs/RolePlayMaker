@@ -10,7 +10,8 @@ namespace RolePlay_Maker
     {
        public string name;
        public static List<Entity> Entitys = new List<Entity>();
-        public static List<Armor> Armor = new List<Armor>();
+        public static List<Armor> ArmorList = new List<Armor>();
+        public static List<Weapon> WeaponList = new List<Weapon>();
         public string Type;
         public string Description;
         public string Effects;

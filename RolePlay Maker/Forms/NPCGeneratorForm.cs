@@ -13,7 +13,7 @@ namespace RolePlay_Maker.Forms
 {
     public partial class NPCGeneratorForm : Form
     {
-        int lengarmor = Entity.Armor.Count();
+        int lengarmor = Entity.ArmorList.Count();
         public NPCGeneratorForm()
         {
             InitializeComponent();
@@ -47,15 +47,15 @@ namespace RolePlay_Maker.Forms
                 AvailableHats.Add("Нет");
                 for (int i = 0; i < lengarmor; i++)
                 {
-                    if(Entity.Armor[i].ClassType != "Силовая броня" && Entity.Armor[i].ClassType != "Шлемы и головные уборы" && (Entity.Armor[i].Fraction == "Нет" || Entity.Armor[i].Fraction == "Черти"))
+                    if(Entity.ArmorList[i].Class != "Силовая броня" && Entity.ArmorList[i].Class != "Шлемы и головные уборы" && (Entity.ArmorList[i].Fraction == "Нет" || Entity.ArmorList[i].Fraction == "Черти"))
                     {
-                        AvailableArmor.Add(Entity.Armor[i].name);
-                        ArmorObj.Add(Entity.Armor[i].name, Entity.Armor[i]);
+                        AvailableArmor.Add(Entity.ArmorList[i].name);
+                        ArmorObj.Add(Entity.ArmorList[i].name, Entity.ArmorList[i]);
                     }
-                    if (Entity.Armor[i].ClassType == "Шлемы и головные уборы" && (Entity.Armor[i].Fraction == "Нет" || Entity.Armor[i].Fraction == "Черт"))
+                    if (Entity.ArmorList[i].Class == "Шлемы и головные уборы" && (Entity.ArmorList[i].Fraction == "Нет" || Entity.ArmorList[i].Fraction == "Черт"))
                     {
-                        AvailableHats.Add(Entity.Armor[i].name);
-                        ArmorObj.Add(Entity.Armor[i].name, Entity.Armor[i]);
+                        AvailableHats.Add(Entity.ArmorList[i].name);
+                        ArmorObj.Add(Entity.ArmorList[i].name, Entity.ArmorList[i]);
                     }
                 }
 

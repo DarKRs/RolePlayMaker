@@ -169,6 +169,7 @@
     <Compile Include="Forms\QuestGenerator.Designer.cs">
       <DependentUpon>QuestGenerator.cs</DependentUpon>
     </Compile>
+    <Compile Include="Loader.cs" />
     <Compile Include="Mobs.cs" />
     <Compile Include="Forms\Network.cs">
       <SubType>Form</SubType>

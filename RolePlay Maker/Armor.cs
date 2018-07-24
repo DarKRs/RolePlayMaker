@@ -11,12 +11,12 @@ namespace RolePlay_Maker
         public int AP;
         public int Price;
         public int KB;
-        public string ClassType;
+        public string Class;
 
         public Armor()
         {
             this.Type = "";
-            this.ClassType = "";
+            this.Class = "";
             this.name = "";
             this.KB = 0;
             this.AP = 0;
@@ -29,7 +29,7 @@ namespace RolePlay_Maker
         public Armor(string ClassType, string Name, int AP, int Price, string Description)
         {
             this.Type = "Armor";
-            this.ClassType = ClassType;
+            this.Class = ClassType;
             this.name = Name;
             this.AP = AP;
             this.Price = Price;
@@ -39,7 +39,7 @@ namespace RolePlay_Maker
         public Armor(string ClassType, IList<object> values)
         {
             this.Type = "Armor";
-            this.ClassType = ClassType;
+            this.Class = ClassType;
             this.name = values[0].ToString();
             this.KB = Int32.Parse(values[1].ToString());
             this.AP = Int32.Parse(values[2].ToString());
