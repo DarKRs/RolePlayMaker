@@ -57,5 +57,23 @@ namespace RolePlay_Maker
             this.Price = Int32.Parse(values[5].ToString());
             this.Fraction = values[6].ToString();
         }
+
+        public Weapon(string ClassType, IList<object> values, string cold)
+        {
+            this.Type = "Weapon";
+            this.Class = ClassType;
+            this.name = values[0].ToString();
+            //
+            string[] Damage = values[1].ToString().Split('+');
+            this.PermanentDamage = Int32.Parse(Damage[1]);
+            this.RandomDamage = Damage[0];
+            //
+            this.Description = values[2].ToString();
+            this.AmmoType = "NaN";
+            this.Magazine = 0;
+            this.Price = Int32.Parse(values[3].ToString());
+            this.Fraction = values[4].ToString();
+        }
+
     }
 }

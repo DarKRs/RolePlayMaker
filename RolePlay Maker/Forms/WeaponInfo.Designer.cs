@@ -40,9 +40,9 @@
             this.AmmoText = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.magazine = new System.Windows.Forms.TextBox();
+            this.Magazine = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.Fraction = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label2
@@ -54,7 +54,6 @@
             this.label2.Size = new System.Drawing.Size(57, 13);
             this.label2.TabIndex = 18;
             this.label2.Text = "Описание";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label4
             // 
@@ -100,7 +99,6 @@
             this.label1.Size = new System.Drawing.Size(57, 13);
             this.label1.TabIndex = 12;
             this.label1.Text = "Название";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // DescriptionText
             // 
@@ -113,7 +111,6 @@
             this.DescriptionText.Size = new System.Drawing.Size(443, 217);
             this.DescriptionText.TabIndex = 11;
             this.DescriptionText.Text = "";
-            this.DescriptionText.TextChanged += new System.EventHandler(this.DescriptionText_TextChanged);
             // 
             // NameText
             // 
@@ -122,7 +119,6 @@
             this.NameText.ReadOnly = true;
             this.NameText.Size = new System.Drawing.Size(235, 20);
             this.NameText.TabIndex = 10;
-            this.NameText.TextChanged += new System.EventHandler(this.NameText_TextChanged);
             // 
             // label3
             // 
@@ -159,13 +155,13 @@
             this.label6.TabIndex = 22;
             this.label6.Text = "Размер обоймы";
             // 
-            // magazine
+            // Magazine
             // 
-            this.magazine.Location = new System.Drawing.Point(548, 42);
-            this.magazine.Name = "magazine";
-            this.magazine.ReadOnly = true;
-            this.magazine.Size = new System.Drawing.Size(100, 20);
-            this.magazine.TabIndex = 23;
+            this.Magazine.Location = new System.Drawing.Point(548, 42);
+            this.Magazine.Name = "Magazine";
+            this.Magazine.ReadOnly = true;
+            this.Magazine.Size = new System.Drawing.Size(100, 20);
+            this.Magazine.TabIndex = 23;
             // 
             // label7
             // 
@@ -176,22 +172,22 @@
             this.label7.TabIndex = 24;
             this.label7.Text = "Фракция";
             // 
-            // textBox1
+            // Fraction
             // 
-            this.textBox1.Location = new System.Drawing.Point(548, 68);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 25;
+            this.Fraction.Location = new System.Drawing.Point(548, 68);
+            this.Fraction.Name = "Fraction";
+            this.Fraction.ReadOnly = true;
+            this.Fraction.Size = new System.Drawing.Size(100, 20);
+            this.Fraction.TabIndex = 25;
             // 
             // WeaponInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(660, 336);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.Fraction);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.magazine);
+            this.Controls.Add(this.Magazine);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.AmmoText);
@@ -226,8 +222,8 @@
         private System.Windows.Forms.TextBox AmmoText;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox magazine;
+        private System.Windows.Forms.TextBox Magazine;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox Fraction;
     }
 }

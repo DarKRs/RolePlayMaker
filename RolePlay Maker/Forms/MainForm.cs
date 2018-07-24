@@ -70,20 +70,12 @@ namespace RolePlay_Maker
             f.ShowDialog();
         }
 
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
            
         }
 
-        private void броняToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-        }
 
         private void справкаToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -137,6 +129,13 @@ namespace RolePlay_Maker
         private void Generator_Click(object sender, EventArgs e)
         {
             Generators f = new Generators();
+            f.Owner = this;
+            f.ShowDialog();
+        }
+
+        private void справкаToolStripMenuItem2_Click_1(object sender, EventArgs e)
+        {
+            WeaponInfo f = new WeaponInfo();
             f.Owner = this;
             f.ShowDialog();
         }

@@ -29,35 +29,22 @@ namespace RolePlay_Maker
             TreeNode MediumArmorNode = new TreeNode("Средняя броня");
             TreeNode HeavyArmorNode = new TreeNode("Тяжелая броня");
             TreeNode PowerArmorNode = new TreeNode("Силовая броня");
-            TreeNode HatsNode = new TreeNode("Шлемы/Головные уборы и другое");
+            TreeNode HatsNode = new TreeNode("Шлемы/Головные уборы");
+            TreeNode OtherNode = new TreeNode("Акссесуары");
             for (int i = 0; i < leng; i++)
             {
                 Armor arm = Entity.ArmorList[i];
-                if (arm.Class == "Одежда")
+                switch (arm.Class)
                 {
-                    ClothesNode.Nodes.Add(new TreeNode(arm.name));
+                    case "Одежда": ClothesNode.Nodes.Add(new TreeNode(arm.name)); continue;
+                    case "Легкая броня": LightArmorNode.Nodes.Add(new TreeNode(arm.name)); continue;
+                    case "Средняя броня": MediumArmorNode.Nodes.Add(new TreeNode(arm.name)); continue;
+                    case "Тяжелая броня": HeavyArmorNode.Nodes.Add(new TreeNode(arm.name)); continue;
+                    case "Силовая броня": PowerArmorNode.Nodes.Add(new TreeNode(arm.name)); continue;
+                    case "Шлемы и головные уборы": HatsNode.Nodes.Add(new TreeNode(arm.name)); continue;
+                    case "Акссесуары": OtherNode.Nodes.Add(new TreeNode(arm.name)); continue;
+                    default: continue;
                 }
-                if (arm.Class == "Легкая броня")
-                {
-                    LightArmorNode.Nodes.Add(new TreeNode(arm.name));
-                }
-                if (arm.Class == "Средняя броня")
-                {
-                    MediumArmorNode.Nodes.Add(new TreeNode(arm.name));
-                }
-                if (arm.Class == "Тяжелая броня")
-                {
-                    HeavyArmorNode.Nodes.Add(new TreeNode(arm.name));
-                }
-                if (arm.Class == "Силовая броня")
-                {
-                    PowerArmorNode.Nodes.Add(new TreeNode(arm.name));
-                }
-                if (arm.Class == "Шлемы и головные уборы")
-                {
-                    HatsNode.Nodes.Add(new TreeNode(arm.name));
-                }
-
             }
             ArmorTree.Nodes.Add(ClothesNode);
             ArmorTree.Nodes.Add(LightArmorNode);
@@ -65,6 +52,7 @@ namespace RolePlay_Maker
             ArmorTree.Nodes.Add(HeavyArmorNode);
             ArmorTree.Nodes.Add(PowerArmorNode);
             ArmorTree.Nodes.Add(HatsNode);
+            ArmorTree.Nodes.Add(OtherNode);
 
         }
 

@@ -41,18 +41,6 @@
             this.справкаToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.добавитьСуществоToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оружиеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.холодноеИБезОружияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.справкаToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.добавитьОружиеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.легкоеОружиеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.справкаToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
-            this.добавитьОружиеToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.тяжелоеОружиеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.справкаToolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
-            this.добавитьОружиеToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.энергетическоеОружиеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.справкаToolStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
-            this.добавитьОружиеToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.способностиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.справкаToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.добавитьСпособностьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -62,6 +50,8 @@
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.авторToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Generator = new System.Windows.Forms.Button();
+            this.справкаToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.добавитьОружиеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -178,97 +168,11 @@
             // оружиеToolStripMenuItem
             // 
             this.оружиеToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.холодноеИБезОружияToolStripMenuItem,
-            this.легкоеОружиеToolStripMenuItem,
-            this.тяжелоеОружиеToolStripMenuItem,
-            this.энергетическоеОружиеToolStripMenuItem});
+            this.справкаToolStripMenuItem2,
+            this.добавитьОружиеToolStripMenuItem});
             this.оружиеToolStripMenuItem.Name = "оружиеToolStripMenuItem";
             this.оружиеToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.оружиеToolStripMenuItem.Text = "Оружие";
-            // 
-            // холодноеИБезОружияToolStripMenuItem
-            // 
-            this.холодноеИБезОружияToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.справкаToolStripMenuItem2,
-            this.добавитьОружиеToolStripMenuItem});
-            this.холодноеИБезОружияToolStripMenuItem.Name = "холодноеИБезОружияToolStripMenuItem";
-            this.холодноеИБезОружияToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
-            this.холодноеИБезОружияToolStripMenuItem.Text = "Холодное и без оружия";
-            // 
-            // справкаToolStripMenuItem2
-            // 
-            this.справкаToolStripMenuItem2.Name = "справкаToolStripMenuItem2";
-            this.справкаToolStripMenuItem2.Size = new System.Drawing.Size(171, 22);
-            this.справкаToolStripMenuItem2.Text = "Справка";
-            // 
-            // добавитьОружиеToolStripMenuItem
-            // 
-            this.добавитьОружиеToolStripMenuItem.Name = "добавитьОружиеToolStripMenuItem";
-            this.добавитьОружиеToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
-            this.добавитьОружиеToolStripMenuItem.Text = "Добавить оружие";
-            // 
-            // легкоеОружиеToolStripMenuItem
-            // 
-            this.легкоеОружиеToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.справкаToolStripMenuItem4,
-            this.добавитьОружиеToolStripMenuItem1});
-            this.легкоеОружиеToolStripMenuItem.Name = "легкоеОружиеToolStripMenuItem";
-            this.легкоеОружиеToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
-            this.легкоеОружиеToolStripMenuItem.Text = "Легкое оружие";
-            // 
-            // справкаToolStripMenuItem4
-            // 
-            this.справкаToolStripMenuItem4.Name = "справкаToolStripMenuItem4";
-            this.справкаToolStripMenuItem4.Size = new System.Drawing.Size(171, 22);
-            this.справкаToolStripMenuItem4.Text = "Справка";
-            // 
-            // добавитьОружиеToolStripMenuItem1
-            // 
-            this.добавитьОружиеToolStripMenuItem1.Name = "добавитьОружиеToolStripMenuItem1";
-            this.добавитьОружиеToolStripMenuItem1.Size = new System.Drawing.Size(171, 22);
-            this.добавитьОружиеToolStripMenuItem1.Text = "Добавить оружие";
-            // 
-            // тяжелоеОружиеToolStripMenuItem
-            // 
-            this.тяжелоеОружиеToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.справкаToolStripMenuItem5,
-            this.добавитьОружиеToolStripMenuItem2});
-            this.тяжелоеОружиеToolStripMenuItem.Name = "тяжелоеОружиеToolStripMenuItem";
-            this.тяжелоеОружиеToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
-            this.тяжелоеОружиеToolStripMenuItem.Text = "Тяжелое оружие";
-            // 
-            // справкаToolStripMenuItem5
-            // 
-            this.справкаToolStripMenuItem5.Name = "справкаToolStripMenuItem5";
-            this.справкаToolStripMenuItem5.Size = new System.Drawing.Size(171, 22);
-            this.справкаToolStripMenuItem5.Text = "Справка";
-            // 
-            // добавитьОружиеToolStripMenuItem2
-            // 
-            this.добавитьОружиеToolStripMenuItem2.Name = "добавитьОружиеToolStripMenuItem2";
-            this.добавитьОружиеToolStripMenuItem2.Size = new System.Drawing.Size(171, 22);
-            this.добавитьОружиеToolStripMenuItem2.Text = "Добавить оружие";
-            // 
-            // энергетическоеОружиеToolStripMenuItem
-            // 
-            this.энергетическоеОружиеToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.справкаToolStripMenuItem6,
-            this.добавитьОружиеToolStripMenuItem3});
-            this.энергетическоеОружиеToolStripMenuItem.Name = "энергетическоеОружиеToolStripMenuItem";
-            this.энергетическоеОружиеToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
-            this.энергетическоеОружиеToolStripMenuItem.Text = "Энергетическое оружие";
-            // 
-            // справкаToolStripMenuItem6
-            // 
-            this.справкаToolStripMenuItem6.Name = "справкаToolStripMenuItem6";
-            this.справкаToolStripMenuItem6.Size = new System.Drawing.Size(171, 22);
-            this.справкаToolStripMenuItem6.Text = "Справка";
-            // 
-            // добавитьОружиеToolStripMenuItem3
-            // 
-            this.добавитьОружиеToolStripMenuItem3.Name = "добавитьОружиеToolStripMenuItem3";
-            this.добавитьОружиеToolStripMenuItem3.Size = new System.Drawing.Size(171, 22);
-            this.добавитьОружиеToolStripMenuItem3.Text = "Добавить оружие";
             // 
             // способностиToolStripMenuItem
             // 
@@ -300,7 +204,6 @@
             this.броняToolStripMenuItem.Name = "броняToolStripMenuItem";
             this.броняToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.броняToolStripMenuItem.Text = "Броня";
-            this.броняToolStripMenuItem.Click += new System.EventHandler(this.броняToolStripMenuItem_Click);
             // 
             // справкаToolStripMenuItem
             // 
@@ -340,6 +243,19 @@
             this.Generator.Text = "Генерация";
             this.Generator.UseVisualStyleBackColor = true;
             this.Generator.Click += new System.EventHandler(this.Generator_Click);
+            // 
+            // справкаToolStripMenuItem2
+            // 
+            this.справкаToolStripMenuItem2.Name = "справкаToolStripMenuItem2";
+            this.справкаToolStripMenuItem2.Size = new System.Drawing.Size(171, 22);
+            this.справкаToolStripMenuItem2.Text = "Справка";
+            this.справкаToolStripMenuItem2.Click += new System.EventHandler(this.справкаToolStripMenuItem2_Click_1);
+            // 
+            // добавитьОружиеToolStripMenuItem
+            // 
+            this.добавитьОружиеToolStripMenuItem.Name = "добавитьОружиеToolStripMenuItem";
+            this.добавитьОружиеToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.добавитьОружиеToolStripMenuItem.Text = "Добавить оружие";
             // 
             // MainForm
             // 
@@ -389,17 +305,7 @@
         private System.Windows.Forms.ToolStripMenuItem справкаToolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem добавитьСпособностьToolStripMenuItem;
         private System.Windows.Forms.Button Generator;
-        private System.Windows.Forms.ToolStripMenuItem холодноеИБезОружияToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem справкаToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem добавитьОружиеToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem легкоеОружиеToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem справкаToolStripMenuItem4;
-        private System.Windows.Forms.ToolStripMenuItem добавитьОружиеToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem тяжелоеОружиеToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem справкаToolStripMenuItem5;
-        private System.Windows.Forms.ToolStripMenuItem добавитьОружиеToolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem энергетическоеОружиеToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem справкаToolStripMenuItem6;
-        private System.Windows.Forms.ToolStripMenuItem добавитьОружиеToolStripMenuItem3;
     }
 }
