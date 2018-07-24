@@ -10,3 +10,10 @@
 *.ini
 *.exe
 *.pdb
+.vs/RolePlay Maker/v14/.suo
+RolePlay Maker/bin/Debug/Info.ini
+RolePlay Maker/bin/Debug/RolePlay Maker.exe
+RolePlay Maker/bin/Debug/RolePlay Maker.pdb
+RolePlay Maker/obj/Debug/RolePlay Maker.csproj.GenerateResource.Cache
+RolePlay Maker/obj/Debug/RolePlay Maker.exe
+RolePlay Maker/obj/Debug/RolePlay Maker.pdb
