@@ -13,7 +13,7 @@ namespace RolePlay_Maker.Forms
 {
     public partial class NPCGeneratorForm : Form
     {
-        int lengarmor = Entity.ArmorList.Count();
+        int lengarmor = Item.ArmorList.Count();
         public NPCGeneratorForm()
         {
             InitializeComponent();
@@ -29,8 +29,11 @@ namespace RolePlay_Maker.Forms
             var KB = new Dictionary<int, Label>();
             var ArmorPU = new Dictionary<int, Label>();
             var HP = new Dictionary<int, NumericUpDown>();
-            var Weapon = new Dictionary<int, Label>();
-            var Attack = new Dictionary<int, Button>();
+            var Weapon = new Dictionary<int, ComboBox>();
+            var SecondaryWeapon = new Dictionary<int, ComboBox>();
+            var AttackMainWeapon = new Dictionary<int, Button>();
+            var AttackSecondaryWeapon = new Dictionary<int, Button>();
+            var Refresh = new Dictionary<int, Button>();
             /////Словари для хранения объектов по имени/////
             var ArmorObj = new Dictionary<string, Armor>();
             var WeaponObj = new Dictionary<string, Weapon>();
@@ -47,15 +50,15 @@ namespace RolePlay_Maker.Forms
                 AvailableHats.Add("Нет");
                 for (int i = 0; i < lengarmor; i++)
                 {
-                    if(Entity.ArmorList[i].Class != "Силовая броня" && Entity.ArmorList[i].Class != "Шлемы и головные уборы" && (Entity.ArmorList[i].Fraction == "Нет" || Entity.ArmorList[i].Fraction == "Черти"))
+                    if(Item.ArmorList[i].Class != "Силовая броня" && Item.ArmorList[i].Class != "Шлемы и головные уборы" && (Item.ArmorList[i].Fraction == "Нет" || Item.ArmorList[i].Fraction == "Черти"))
                     {
-                        AvailableArmor.Add(Entity.ArmorList[i].name);
-                        ArmorObj.Add(Entity.ArmorList[i].name, Entity.ArmorList[i]);
+                        AvailableArmor.Add(Item.ArmorList[i].Name);
+                        ArmorObj.Add(Item.ArmorList[i].Name, Item.ArmorList[i]);
                     }
-                    if (Entity.ArmorList[i].Class == "Шлемы и головные уборы" && (Entity.ArmorList[i].Fraction == "Нет" || Entity.ArmorList[i].Fraction == "Черт"))
+                    if (Item.ArmorList[i].Class == "Шлемы и головные уборы" && (Item.ArmorList[i].Fraction == "Нет" || Item.ArmorList[i].Fraction == "Черт"))
                     {
-                        AvailableHats.Add(Entity.ArmorList[i].name);
-                        ArmorObj.Add(Entity.ArmorList[i].name, Entity.ArmorList[i]);
+                        AvailableHats.Add(Item.ArmorList[i].Name);
+                        ArmorObj.Add(Item.ArmorList[i].Name, Item.ArmorList[i]);
                     }
                 }
 

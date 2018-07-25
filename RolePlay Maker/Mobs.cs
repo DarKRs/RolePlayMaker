@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RolePlay_Maker
 {
-    class Mob : Entity
+    class Mob : Item
     {
         public int HP;
         public int KB;
@@ -15,7 +15,7 @@ namespace RolePlay_Maker
         public Mob(string Name,int HP,int KB, int Damage, string Description)
         {
             this.Type = "Mob";
-            this.name = Name;
+            this.Name = Name;
             this.HP = HP;
             this.KB = KB;
             this.Damage = Damage;

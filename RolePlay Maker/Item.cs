@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace RolePlay_Maker
 {
-    class Entity
+    class Item
     {
-       public string name;
-       public static List<Entity> Entitys = new List<Entity>();
+        
+        public static List<Item> Entitys = new List<Item>();
         public static List<Armor> ArmorList = new List<Armor>();
         public static List<Weapon> WeaponList = new List<Weapon>();
+        public string Name;
         public string Type;
         public string Description;
-        public string Effects;
         public string Fraction;
 
     }

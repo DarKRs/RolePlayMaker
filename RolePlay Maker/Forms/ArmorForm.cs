@@ -13,7 +13,7 @@ namespace RolePlay_Maker
     public partial class ArmorForm : Form
     {
         MainForm main;
-        int leng = Entity.ArmorList.Count();
+        int leng = Item.ArmorList.Count();
         public ArmorForm()
         {
             InitializeComponent();
@@ -33,16 +33,16 @@ namespace RolePlay_Maker
             TreeNode OtherNode = new TreeNode("Акссесуары");
             for (int i = 0; i < leng; i++)
             {
-                Armor arm = Entity.ArmorList[i];
+                Armor arm = Item.ArmorList[i];
                 switch (arm.Class)
                 {
-                    case "Одежда": ClothesNode.Nodes.Add(new TreeNode(arm.name)); continue;
-                    case "Легкая броня": LightArmorNode.Nodes.Add(new TreeNode(arm.name)); continue;
-                    case "Средняя броня": MediumArmorNode.Nodes.Add(new TreeNode(arm.name)); continue;
-                    case "Тяжелая броня": HeavyArmorNode.Nodes.Add(new TreeNode(arm.name)); continue;
-                    case "Силовая броня": PowerArmorNode.Nodes.Add(new TreeNode(arm.name)); continue;
-                    case "Шлемы и головные уборы": HatsNode.Nodes.Add(new TreeNode(arm.name)); continue;
-                    case "Акссесуары": OtherNode.Nodes.Add(new TreeNode(arm.name)); continue;
+                    case "Одежда": ClothesNode.Nodes.Add(new TreeNode(arm.Name)); continue;
+                    case "Легкая броня": LightArmorNode.Nodes.Add(new TreeNode(arm.Name)); continue;
+                    case "Средняя броня": MediumArmorNode.Nodes.Add(new TreeNode(arm.Name)); continue;
+                    case "Тяжелая броня": HeavyArmorNode.Nodes.Add(new TreeNode(arm.Name)); continue;
+                    case "Силовая броня": PowerArmorNode.Nodes.Add(new TreeNode(arm.Name)); continue;
+                    case "Шлемы и головные уборы": HatsNode.Nodes.Add(new TreeNode(arm.Name)); continue;
+                    case "Акссесуары": OtherNode.Nodes.Add(new TreeNode(arm.Name)); continue;
                     default: continue;
                 }
             }
@@ -61,9 +61,9 @@ namespace RolePlay_Maker
 
             for(int i=0; i < leng; i++)
             {
-                if(ArmorTree.SelectedNode.Text != Entity.ArmorList[i].name) { continue; }
-                Armor Arm= Entity.ArmorList[i];
-                NameText.Text = Arm.name;
+                if(ArmorTree.SelectedNode.Text != Item.ArmorList[i].Name) { continue; }
+                Armor Arm= Item.ArmorList[i];
+                NameText.Text = Arm.Name;
                 PriceText.Text = Arm.Price.ToString();
                 PUText.Text = Arm.AP.ToString();
                 KBtextbox.Text = Arm.KB.ToString();

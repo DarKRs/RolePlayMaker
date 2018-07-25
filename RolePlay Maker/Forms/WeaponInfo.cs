@@ -7,7 +7,7 @@ namespace RolePlay_Maker
     public partial class WeaponInfo : Form
     {
         MainForm main;
-        int leng = Entity.WeaponList.Count();
+        int leng = Item.WeaponList.Count();
         public WeaponInfo()
         {
             InitializeComponent();
@@ -40,26 +40,26 @@ namespace RolePlay_Maker
             TreeNode PowerColdWeapon = new TreeNode("Силовое холодное оружие");
             for (int i = 0; i < leng; i++)
             {
-                Weapon wp = Entity.WeaponList[i];
+                Weapon wp = Item.WeaponList[i];
                 switch (wp.Class) {
-                    case "Дубины и молоты": Hammers.Nodes.Add(new TreeNode(wp.name)); continue;
-                    case "Кастеты и подобное": Knukles.Nodes.Add(new TreeNode(wp.name)); continue;
-                    case "Ножи": Knifes.Nodes.Add(new TreeNode(wp.name)); continue;
-                    case "Двуручное холодное оружие": Two_handed.Nodes.Add(new TreeNode(wp.name)); continue;
-                    case "Копья": Spears.Nodes.Add(new TreeNode(wp.name)); continue;
-                    case "Другое": Other.Nodes.Add(new TreeNode(wp.name)); continue;
+                    case "Дубины и молоты": Hammers.Nodes.Add(new TreeNode(wp.Name)); continue;
+                    case "Кастеты и подобное": Knukles.Nodes.Add(new TreeNode(wp.Name)); continue;
+                    case "Ножи": Knifes.Nodes.Add(new TreeNode(wp.Name)); continue;
+                    case "Двуручное холодное оружие": Two_handed.Nodes.Add(new TreeNode(wp.Name)); continue;
+                    case "Копья": Spears.Nodes.Add(new TreeNode(wp.Name)); continue;
+                    case "Другое": Other.Nodes.Add(new TreeNode(wp.Name)); continue;
                     //////////////////////////
-                    case "Пистолеты": Pistols.Nodes.Add(new TreeNode(wp.name)); continue;
-                    case "Винтовки и автоматы": Rife.Nodes.Add(new TreeNode(wp.name)); continue;
+                    case "Пистолеты": Pistols.Nodes.Add(new TreeNode(wp.Name)); continue;
+                    case "Винтовки и автоматы": Rife.Nodes.Add(new TreeNode(wp.Name)); continue;
 
-                    case "Пистолеты-Пулеметы": MachinePistol.Nodes.Add(new TreeNode(wp.name)); continue;
-                    case "Дробовики": Shotgun.Nodes.Add(new TreeNode(wp.name)); continue;
+                    case "Пистолеты-Пулеметы": MachinePistol.Nodes.Add(new TreeNode(wp.Name)); continue;
+                    case "Дробовики": Shotgun.Nodes.Add(new TreeNode(wp.Name)); continue;
                     /////////////////////////
-                    case "Тяжелое оружие": HeavyWeaponNode.Nodes.Add(new TreeNode(wp.name)); continue;
-                    case "Энергетические пистолеты": EnergyPistols.Nodes.Add(new TreeNode(wp.name)); continue;
-                    case "Энергетические ружья": EnergyRife.Nodes.Add(new TreeNode(wp.name)); continue;
-                    case "Тяжелое энергетическое оружие": HeavyEnergyWeapon.Nodes.Add(new TreeNode(wp.name)); continue;
-                    case "Силовое холодное оружие": PowerColdWeapon.Nodes.Add(new TreeNode(wp.name)); continue;
+                    case "Тяжелое оружие": HeavyWeaponNode.Nodes.Add(new TreeNode(wp.Name)); continue;
+                    case "Энергетические пистолеты": EnergyPistols.Nodes.Add(new TreeNode(wp.Name)); continue;
+                    case "Энергетические ружья": EnergyRife.Nodes.Add(new TreeNode(wp.Name)); continue;
+                    case "Тяжелое энергетическое оружие": HeavyEnergyWeapon.Nodes.Add(new TreeNode(wp.Name)); continue;
+                    case "Силовое холодное оружие": PowerColdWeapon.Nodes.Add(new TreeNode(wp.Name)); continue;
                     default: continue;
                 }
             }
@@ -90,9 +90,9 @@ namespace RolePlay_Maker
         {
              for (int i = 0; i < leng; i++)
             {
-                if (WeaponTree.SelectedNode.Text != Entity.WeaponList[i].name) { continue; }
-                Weapon wp = Entity.WeaponList[i];
-                NameText.Text = wp.name;
+                if (WeaponTree.SelectedNode.Text != Item.WeaponList[i].Name) { continue; }
+                Weapon wp = Item.WeaponList[i];
+                NameText.Text = wp.Name;
                 DamageText.Text = wp.RandomDamage + "+" + wp.PermanentDamage.ToString();
                 AmmoText.Text = wp.AmmoType;
                 Magazine.Text = wp.Magazine.ToString();

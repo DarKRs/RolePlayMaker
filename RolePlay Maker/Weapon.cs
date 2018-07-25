@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RolePlay_Maker
 {
-    class Weapon : Entity
+    class Weapon : Item
     {
         public string Class;
         public int PermanentDamage;
@@ -20,7 +20,7 @@ namespace RolePlay_Maker
         {
             this.Type = "";
             this.Class = "";
-            this.name = "";
+            this.Name = "";
             this.PermanentDamage = 0;
             this.RandomDamage = "D0";
             this.Description = "";
@@ -34,7 +34,7 @@ namespace RolePlay_Maker
         {
             this.Type = "Weapon";
             this.Class = Class.Trim();
-            this.name = Name;
+            this.Name = Name;
             this.Price = Price;
             this.AmmoType = Ammo;
             this.PermanentDamage = Damage;
@@ -45,7 +45,7 @@ namespace RolePlay_Maker
         {
             this.Type = "Weapon";
             this.Class = ClassType;
-            this.name = values[0].ToString();
+            this.Name = values[0].ToString();
             //
             string[] Damage = values[1].ToString().Split('+');
             this.PermanentDamage = Int32.Parse(Damage[1]);
@@ -58,11 +58,11 @@ namespace RolePlay_Maker
             this.Fraction = values[6].ToString();
         }
 
-        public Weapon(string ClassType, IList<object> values, string cold)
+        public Weapon(string ClassType, IList<object> values, bool isColdWeapon)
         {
             this.Type = "Weapon";
             this.Class = ClassType;
-            this.name = values[0].ToString();
+            this.Name = values[0].ToString();
             //
             string[] Damage = values[1].ToString().Split('+');
             this.PermanentDamage = Int32.Parse(Damage[1]);
