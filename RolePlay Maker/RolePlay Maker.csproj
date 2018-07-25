@@ -132,7 +132,7 @@
     <Compile Include="Forms\ChatForm.Designer.cs">
       <DependentUpon>ChatForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Entity.cs" />
+    <Compile Include="Item.cs" />
     <Compile Include="Forms\Form2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -183,6 +183,7 @@
     <Compile Include="Forms\NetworkInfo.Designer.cs">
       <DependentUpon>NetworkInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="NPCGenerator.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Forms\Profile.cs">
       <SubType>Form</SubType>

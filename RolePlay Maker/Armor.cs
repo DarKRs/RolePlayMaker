@@ -6,18 +6,19 @@ using System.Threading.Tasks;
 
 namespace RolePlay_Maker
 {
-    class Armor : Entity
+    class Armor : Item
     {
         public int AP;
         public int Price;
         public int KB;
         public string Class;
+        public string Effects;
 
         public Armor()
         {
             this.Type = "";
             this.Class = "";
-            this.name = "";
+            this.Name = "Нет";
             this.KB = 0;
             this.AP = 0;
             this.Description = "";
@@ -30,7 +31,7 @@ namespace RolePlay_Maker
         {
             this.Type = "Armor";
             this.Class = ClassType;
-            this.name = Name;
+            this.Name = Name;
             this.AP = AP;
             this.Price = Price;
             this.Description = Description;
@@ -40,7 +41,7 @@ namespace RolePlay_Maker
         {
             this.Type = "Armor";
             this.Class = ClassType;
-            this.name = values[0].ToString();
+            this.Name = values[0].ToString();
             this.KB = Int32.Parse(values[1].ToString());
             this.AP = Int32.Parse(values[2].ToString());
             this.Description = values[3].ToString();

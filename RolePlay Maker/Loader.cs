@@ -207,63 +207,63 @@ namespace RolePlay_Maker
                     case "Пистолеты":
                         for (int i = 0; i < values.Count; i++)
                         {
-                            Weapon wp = new Weapon("Пистолеты", values[i]);
+                            Weapon wp = new Weapon("Пистолеты", values[i], "LightWeapon");
                             Item.WeaponList.Add(wp);
                         }
                         break;
                     case "Винтовки и автоматы":
                         for (int i = 0; i < values.Count; i++)
                         {
-                            Weapon wp = new Weapon("Винтовки и автоматы", values[i]);
+                            Weapon wp = new Weapon("Винтовки и автоматы", values[i], "LightWeapon");
                             Item.WeaponList.Add(wp);
                         }
                         break;
                     case "Пистолеты-Пулеметы":
                         for (int i = 0; i < values.Count; i++)
                         {
-                            Weapon wp = new Weapon("Пистолеты-Пулеметы", values[i]);
+                            Weapon wp = new Weapon("Пистолеты-Пулеметы", values[i], "LightWeapon");
                             Item.WeaponList.Add(wp);
                         }
                         break;
                     case "Дробовики":
                         for (int i = 0; i < values.Count; i++)
                         {
-                            Weapon wp = new Weapon("Дробовики", values[i]);
+                            Weapon wp = new Weapon("Дробовики", values[i], "LightWeapon");
                             Item.WeaponList.Add(wp);
                         }
                         break;
                     case "Тяжелое оружие":
                         for (int i = 0; i < values.Count; i++)
                         {
-                            Weapon wp = new Weapon("Тяжелое оружие", values[i]);
+                            Weapon wp = new Weapon("Тяжелое оружие", values[i], "HeavyWeapon");
                             Item.WeaponList.Add(wp);
                         }
                         break;
                     case "Энергетические пистолеты":
                         for (int i = 0; i < values.Count; i++)
                         {
-                            Weapon wp = new Weapon("Энергетические пистолеты", values[i]);
+                            Weapon wp = new Weapon("Энергетические пистолеты", values[i], "EnergyWeapon");
                             Item.WeaponList.Add(wp);
                         }
                         break;
                     case "Энергетические ружья":
                         for (int i = 0; i < values.Count; i++)
                         {
-                            Weapon wp = new Weapon("Энергетические ружья", values[i]);
+                            Weapon wp = new Weapon("Энергетические ружья", values[i], "EnergyWeapon");
                             Item.WeaponList.Add(wp);
                         }
                         break;
                     case "Тяжелое энергетическое оружие":
                         for (int i = 0; i < values.Count; i++)
                         {
-                            Weapon wp = new Weapon("Тяжелое энергетическое оружие", values[i]);
+                            Weapon wp = new Weapon("Тяжелое энергетическое оружие", values[i], "EnergyWeapon");
                             Item.WeaponList.Add(wp);
                         }
                         break;
                     case "Силовое холодное оружие":
                         for (int i = 0; i < values.Count; i++)
                         {
-                            Weapon wp = new Weapon("Силовое холодное оружие", values[i]);
+                            Weapon wp = new Weapon("Силовое холодное оружие", values[i], "EnergyWeapon");
                             Item.WeaponList.Add(wp);
                         }
                         break;
@@ -271,42 +271,42 @@ namespace RolePlay_Maker
                     case "Дубины и молоты":
                         for (int i = 0; i < values.Count; i++)
                         {
-                            Weapon wp = new Weapon("Дубины и молоты", values[i], isColdWeapon: true);
+                            Weapon wp = new Weapon("Дубины и молоты", values[i], "ColdWeapon");
                             Item.WeaponList.Add(wp);
                         }
                         break;
                     case "Кастеты и подобное":
                         for (int i = 0; i < values.Count; i++)
                         {
-                            Weapon wp = new Weapon("Кастеты и подобное", values[i], isColdWeapon:true);
+                            Weapon wp = new Weapon("Кастеты и подобное", values[i], "ColdWeapon");
                             Item.WeaponList.Add(wp);
                         }
                         break;
                     case "Ножи":
                         for (int i = 0; i < values.Count; i++)
                         {
-                            Weapon wp = new Weapon("Ножи", values[i], true);
+                            Weapon wp = new Weapon("Ножи", values[i], "ColdWeapon");
                             Item.WeaponList.Add(wp);
                         }
                         break;
                     case "Двуручное холодное оружие":
                         for (int i = 0; i < values.Count; i++)
                         {
-                            Weapon wp = new Weapon("Двуручное холодное оружие", values[i], isColdWeapon: true);
+                            Weapon wp = new Weapon("Двуручное холодное оружие", values[i], "ColdWeapon");
                             Item.WeaponList.Add(wp);
                         }
                         break;
                     case "Копья":
                         for (int i = 0; i < values.Count; i++)
                         {
-                            Weapon wp = new Weapon("Копья", values[i], isColdWeapon: true);
+                            Weapon wp = new Weapon("Копья", values[i], "ColdWeapon");
                             Item.WeaponList.Add(wp);
                         }
                         break;
                     case "Другое":
                         for (int i = 0; i < values.Count; i++)
                         {
-                            Weapon wp = new Weapon("Другое", values[i], isColdWeapon: true);
+                            Weapon wp = new Weapon("Другое", values[i], "ColdWeapon");
                             Item.WeaponList.Add(wp);
                         }
                         break;

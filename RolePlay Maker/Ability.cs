@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace RolePlay_Maker
 {
-    class Ability : Entity
+    class Ability : Item
     {
         public string requirement; //Требования
         public int rangs; //Ранги
         public Ability(string Name, string requirement, int rang, string Description)
         {
             this.Type = "Ability";
-            this.name = Name;
+            this.Name = Name;
             this.rangs = rang;
             this.requirement = requirement;
             this.Description = Description;

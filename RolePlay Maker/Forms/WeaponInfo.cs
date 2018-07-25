@@ -41,7 +41,7 @@ namespace RolePlay_Maker
             for (int i = 0; i < leng; i++)
             {
                 Weapon wp = Item.WeaponList[i];
-                switch (wp.Class) {
+                switch (wp.Subclass) {
                     case "Дубины и молоты": Hammers.Nodes.Add(new TreeNode(wp.Name)); continue;
                     case "Кастеты и подобное": Knukles.Nodes.Add(new TreeNode(wp.Name)); continue;
                     case "Ножи": Knifes.Nodes.Add(new TreeNode(wp.Name)); continue;

@@ -14,6 +14,7 @@ namespace RolePlay_Maker.Forms
     public partial class NPCGeneratorForm : Form
     {
         int lengarmor = Item.ArmorList.Count();
+        
         public NPCGeneratorForm()
         {
             InitializeComponent();
@@ -22,99 +23,98 @@ namespace RolePlay_Maker.Forms
         private void Generate_Click(object sender, EventArgs e)
         {
             GeneratedField.Controls.Clear();
-            /////////Словари для объектов формы//////
-            var Names = new Dictionary<int, TextBox>(); 
-            var Armor = new Dictionary<int, ComboBox>();
-            var Hats = new Dictionary<int, ComboBox>();
-            var KB = new Dictionary<int, Label>();
-            var ArmorPU = new Dictionary<int, Label>();
-            var HP = new Dictionary<int, NumericUpDown>();
-            var Weapon = new Dictionary<int, ComboBox>();
-            var SecondaryWeapon = new Dictionary<int, ComboBox>();
-            var AttackMainWeapon = new Dictionary<int, Button>();
-            var AttackSecondaryWeapon = new Dictionary<int, Button>();
-            var Refresh = new Dictionary<int, Button>();
-            /////Словари для хранения объектов по имени/////
-            var ArmorObj = new Dictionary<string, Armor>();
-            var WeaponObj = new Dictionary<string, Weapon>();
-            ///
-            int Value = (int)PlayerCount.Value;
-            int rnd;
-            if (Faction.Text == "Черти")
-            {
-                List<string> AvailableArmor = new List<string>();
-                List<string> AvailableHats = new List<string>();
-                List<string> AvailableWeapon = new List<string>();
-                AvailableArmor.Add("Нет");
-                ArmorObj.Add("Нет", new Armor());
-                AvailableHats.Add("Нет");
-                for (int i = 0; i < lengarmor; i++)
-                {
-                    if(Item.ArmorList[i].Class != "Силовая броня" && Item.ArmorList[i].Class != "Шлемы и головные уборы" && (Item.ArmorList[i].Fraction == "Нет" || Item.ArmorList[i].Fraction == "Черти"))
-                    {
-                        AvailableArmor.Add(Item.ArmorList[i].Name);
-                        ArmorObj.Add(Item.ArmorList[i].Name, Item.ArmorList[i]);
-                    }
-                    if (Item.ArmorList[i].Class == "Шлемы и головные уборы" && (Item.ArmorList[i].Fraction == "Нет" || Item.ArmorList[i].Fraction == "Черт"))
-                    {
-                        AvailableHats.Add(Item.ArmorList[i].Name);
-                        ArmorObj.Add(Item.ArmorList[i].Name, Item.ArmorList[i]);
-                    }
-                }
-
-                    Value = Value * 2;
-                for (int i = 0; i < Value; i++)
-                {
-                    ////////Names///////////
-                    Names.Add(i, new TextBox());
-                    GeneratedField.Controls.Add(Names[i]);
-                    Names[i].Text = "Черт" + (i+1);
-                    if (i == 0)
-                    {
-                        Names[i].Location = new Point(GeneratedField.Location.X + 10, GeneratedField.Location.Y - 50);
-                    }
-                    else
-                    {
-                        Names[i].Location = new Point(Names[i - 1].Location.X, Names[i - 1].Location.Y + 30);
-                    }
-                    ////////////////////////Armor/////////
-                    Armor.Add(i, new ComboBox());
-                    Armor[i].Items.AddRange(AvailableArmor.ToArray());
-                    GeneratedField.Controls.Add(Armor[i]);
-                    rnd = new Random().Next(0, AvailableArmor.Count);
-                    Armor[i].Text = AvailableArmor[rnd];
-                    Armor[i].Location = new Point(Names[i].Location.X + 110, Names[i].Location.Y);
-                    ////////////////////////Hat/////////
-                    Hats.Add(i, new ComboBox());
-                    Hats[i].Items.AddRange(AvailableHats.ToArray());
-                    GeneratedField.Controls.Add(Hats[i]);
-                    rnd = new Random().Next(0, AvailableHats.Count);
-                    Hats[i].Text = AvailableHats[rnd];
-                    Hats[i].Location = new Point(Armor[i].Location.X + 130, Armor[i].Location.Y);
-                    //////////////////KB////////////////////
-                    KB.Add(i, new Label());
-                    GeneratedField.Controls.Add(KB[i]);
-                    KB[i].AutoSize = true;
-                    KB[i].Text = (ArmorObj[Armor[i].Text].KB + ArmorObj[Hats[i].Text].KB).ToString();
-                    KB[i].Location = new Point(Hats[i].Location.X + 130, Hats[i].Location.Y+5);
-                    ////////////////PU////////////////////////////
-                    ArmorPU.Add(i, new Label());
-                    GeneratedField.Controls.Add(ArmorPU[i]);
-                    ArmorPU[i].AutoSize = true;
-                    ArmorPU[i].Text = (ArmorObj[Armor[i].Text].AP + ArmorObj[Hats[i].Text].AP).ToString();
-                    ArmorPU[i].Location = new Point(KB[i].Location.X + 50, KB[i].Location.Y);
-                    /////////////////HP////////////////
-                    HP.Add(i, new NumericUpDown());
-                    GeneratedField.Controls.Add(HP[i]);
-                    HP[i].AutoSize = true;
-                    HP[i].Value = new Random().Next(30, 75);
-                    HP[i].Location = new Point(ArmorPU[i].Location.X + 50, ArmorPU[i].Location.Y);
-
-
-
-                }
-            }
+            CheckDataAndCallFunciton(Faction.Text, (int)PlayerLevel.Value, (int)PlayerCount.Value);  
         }
 
+        private void CheckDataAndCallFunciton(string Fraction, int PlayersLevel, int PlayersCount)
+        {
+            double rnd = new Random().NextDouble();
+
+            switch (Fraction)
+            {
+                case "Черти":
+                    List<Armor> AvailableArmor = new List<Armor>(); AvailableArmor.Add(new Armor());
+                    List<Armor> AvailableHats = new List<Armor>(); AvailableHats.Add(new Armor());
+                    List<Weapon> AvailableWeapon = new List<Weapon>(); AvailableWeapon.Add(new Weapon());
+                    List<Weapon> AvailableSecondaryWeapon = new List<Weapon>(); AvailableWeapon.Add(new Weapon());
+                    for (int i = 0; i < Item.ArmorList.Count; i++)
+                    {
+                        if (Item.ArmorList[i].Class != "Силовая броня" && Item.ArmorList[i].Class != "Шлемы и головные уборы" && (Item.ArmorList[i].Fraction == "Нет" || Item.ArmorList[i].Fraction == "Черт"))
+                        {
+                            AvailableArmor.Add(Item.ArmorList[i]);
+                        }
+                        if (Item.ArmorList[i].Class == "Шлемы и головные уборы" && (Item.ArmorList[i].Fraction == "Нет" || Item.ArmorList[i].Fraction == "Черт"))
+                        {
+                            AvailableHats.Add(Item.ArmorList[i]);
+                        }
+                    }
+                    for (int i = 0; i < Item.WeaponList.Count; i++)
+                    {
+                        if (Item.WeaponList[i].Class != "EnergyWeapon" && Item.WeaponList[i].Class != "ColdWeapon")
+                        {
+                            AvailableWeapon.Add(Item.WeaponList[i]);
+                        }
+                        if (Item.WeaponList[i].Class == "ColdWeapon")
+                        {
+                            AvailableSecondaryWeapon.Add(Item.WeaponList[i]);
+                        }
+                    }
+                    int EnimesCount = (int)(PlayersCount * PlayersLevel / 2);// * (rnd + 0.5));
+                    NPCGenerator GUI = new NPCGenerator();
+                    GUI.SetParams_Human(AvailableArmor, AvailableHats, AvailableWeapon,AvailableSecondaryWeapon, Fraction, EnimesCount);
+                    Draw(GUI,EnimesCount);
+                    break;
+                case "Рейдеры": //TODO
+                default: break;
+            }
+
+        }
+
+        private void Draw(NPCGenerator GUI, int count)
+        {
+            for(int i=0; i< count; i++)
+            {
+                GeneratedField.Controls.Add(GUI.Names[i]);
+                if (i == 0)
+                {
+                    GUI.Names[i].Location = new Point(GeneratedField.Location.X + 5, GeneratedField.Location.Y - 50);
+                }
+                else
+                {
+                    GUI.Names[i].Location = new Point(GUI.Names[i - 1].Location.X, GUI.Names[i - 1].Location.Y + 30);
+                }
+                //
+                GeneratedField.Controls.Add(GUI.Armor[i]);
+                GUI.Armor[i].Location = new Point(GUI.Names[i].Location.X + 110, GUI.Names[i].Location.Y);
+                //
+                GeneratedField.Controls.Add(GUI.Hats[i]);
+                GUI.Hats[i].Location = new Point(GUI.Armor[i].Location.X + 130, GUI.Armor[i].Location.Y);
+                //
+                GeneratedField.Controls.Add(GUI.KB[i]);
+                GUI.KB[i].Location = new Point(GUI.Hats[i].Location.X + 130, GUI.Hats[i].Location.Y + 5);
+                //
+                GeneratedField.Controls.Add(GUI.ArmorPU[i]);
+                GUI.ArmorPU[i].Location = new Point(GUI.KB[i].Location.X + 20, GUI.KB[i].Location.Y);
+                //
+                GeneratedField.Controls.Add(GUI.HP[i]);
+                GUI.HP[i].Location = new Point(GUI.ArmorPU[i].Location.X + 20, GUI.Hats[i].Location.Y); //Наследование позиции Y от Hats т.к. label чуть завышены.
+                //
+                GeneratedField.Controls.Add(GUI.Weapon[i]);
+                GUI.Weapon[i].Location = new Point(GUI.HP[i].Location.X + 70, GUI.HP[i].Location.Y);
+                //
+                GeneratedField.Controls.Add(GUI.SecondaryWeapon[i]);
+                GUI.SecondaryWeapon[i].Location = new Point(GUI.Weapon[i].Location.X + 140, GUI.Weapon[i].Location.Y);
+                //
+                GeneratedField.Controls.Add(GUI.AttackMainWeapon[i]);
+                GUI.AttackMainWeapon[i].Location = new Point(GUI.SecondaryWeapon[i].Location.X + 140, GUI.SecondaryWeapon[i].Location.Y);
+                //
+                GeneratedField.Controls.Add(GUI.AttackSecondaryWeapon[i]);
+                GUI.AttackSecondaryWeapon[i].Location = new Point(GUI.AttackMainWeapon[i].Location.X + 160, GUI.AttackMainWeapon[i].Location.Y);
+                //
+                GeneratedField.Controls.Add(GUI.Refresh[i]);
+                GUI.Refresh[i].Location = new Point(GUI.AttackSecondaryWeapon[i].Location.X + 180, GUI.AttackSecondaryWeapon[i].Location.Y);
+            }
+           
+        }
     }
 }

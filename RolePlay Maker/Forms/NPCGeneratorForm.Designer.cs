@@ -108,16 +108,16 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.GeneratedField.AutoScroll = true;
-            this.GeneratedField.Location = new System.Drawing.Point(12, 56);
+            this.GeneratedField.Location = new System.Drawing.Point(3, 56);
             this.GeneratedField.Name = "GeneratedField";
-            this.GeneratedField.Size = new System.Drawing.Size(775, 273);
+            this.GeneratedField.Size = new System.Drawing.Size(945, 273);
             this.GeneratedField.TabIndex = 8;
             // 
             // NPCGeneratorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(810, 337);
+            this.ClientSize = new System.Drawing.Size(960, 337);
             this.Controls.Add(this.GeneratedField);
             this.Controls.Add(this.Generate);
             this.Controls.Add(this.PlayerCount);
