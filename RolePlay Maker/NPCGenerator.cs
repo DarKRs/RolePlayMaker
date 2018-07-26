@@ -55,6 +55,7 @@ namespace RolePlay_Maker
                     Armor[i].Items.AddRange(AvailableArmor.Select(x => x.Name).ToArray());
                     rnd = new Random().Next(0, AvailableArmor.Count);
                     Armor[i].Text = AvailableArmor[rnd].Name;
+                    Armor[i].SelectionChangeCommitted += new EventHandler(Select_armor);
                     KBValue += AvailableArmor[rnd].KB;
                     PUValue += AvailableArmor[rnd].AP;
                     //            
@@ -87,10 +88,11 @@ namespace RolePlay_Maker
                     SecondaryWeapon[i].Items.AddRange(AvailableWeapon.Select(x => x.Name).ToArray());
                     rnd = new Random().Next(0, AvailableSecondaryWeapon.Count);
                     SecondaryWeapon[i].Text = AvailableSecondaryWeapon[rnd].Name;
-                    //TODO: Damage for Button Attack!
+                    //
                     AttackMainWeapon.Add(i, new Button());
                     AttackMainWeapon[i].Text = "Атака основным оружием";
                     AttackMainWeapon[i].AutoSize = true;
+                    AttackMainWeapon[i].Click += new EventHandler(AttackMainWeapon_Click);
                     //
                     AttackSecondaryWeapon.Add(i, new Button());
                     AttackSecondaryWeapon[i].Text = "Атака второспенным оружием";
@@ -101,6 +103,18 @@ namespace RolePlay_Maker
                     Refresh[i].AutoSize = true;
             }
         }
+
+        private void Select_armor(object sender, EventArgs e)
+        {
+            // ??!
+        }
+
+
+        private void AttackMainWeapon_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Knopka");
+        }
+
 
     }
 }

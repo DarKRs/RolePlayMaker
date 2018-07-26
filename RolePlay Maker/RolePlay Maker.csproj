@@ -101,7 +101,7 @@
     <Compile Include="Forms\AddWeapon.Designer.cs">
       <DependentUpon>AddWeapon.cs</DependentUpon>
     </Compile>
-    <Compile Include="Armor.cs" />
+    <Compile Include="Items\Armor.cs" />
     <Compile Include="Forms\ArmorForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,7 +132,7 @@
     <Compile Include="Forms\ChatForm.Designer.cs">
       <DependentUpon>ChatForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Item.cs" />
+    <Compile Include="Items\Item.cs" />
     <Compile Include="Forms\Form2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -169,7 +169,7 @@
     <Compile Include="Forms\QuestGenerator.Designer.cs">
       <DependentUpon>QuestGenerator.cs</DependentUpon>
     </Compile>
-    <Compile Include="Loader.cs" />
+    <Compile Include="Items\Loader.cs" />
     <Compile Include="Mobs.cs" />
     <Compile Include="Forms\Network.cs">
       <SubType>Form</SubType>
@@ -193,13 +193,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Weapon.cs" />
+    <Compile Include="Items\Weapon.cs" />
     <Compile Include="Forms\WeaponInfo.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\WeaponInfo.Designer.cs">
       <DependentUpon>WeaponInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Roll.cs" />
     <EmbeddedResource Include="Forms\AbilityInfo.resx">
       <DependentUpon>AbilityInfo.cs</DependentUpon>
     </EmbeddedResource>

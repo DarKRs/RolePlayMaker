@@ -11,7 +11,7 @@ namespace RolePlay_Maker
         public string Class;
         public string Subclass;
         public int PermanentDamage;
-        public string RandomDamage;
+        public DRoll RandomDamage;
         public string AmmoType;
         public int Magazine;
         public int Price;
@@ -23,7 +23,7 @@ namespace RolePlay_Maker
             this.Subclass = "";
             this.Name = "Нет";
             this.PermanentDamage = 0;
-            this.RandomDamage = "D0";
+            this.RandomDamage = null;
             this.Description = "";
             this.AmmoType = "";
             this.Magazine = 0;
@@ -41,7 +41,7 @@ namespace RolePlay_Maker
             {
                 string[] Damage = values[1].ToString().Split('+');
                 this.PermanentDamage = Int32.Parse(Damage[1]);
-                this.RandomDamage = Damage[0];
+                this.RandomDamage = new DRoll(Damage[0]);
                 //
                 this.Description = values[2].ToString();
                 this.AmmoType = values[3].ToString();
@@ -53,7 +53,7 @@ namespace RolePlay_Maker
             {
                 string[] Damage = values[1].ToString().Split('+');
                 this.PermanentDamage = Int32.Parse(Damage[1]);
-                this.RandomDamage = Damage[0];
+                this.RandomDamage = new DRoll(Damage[0]);
                 //
                 this.Description = values[2].ToString();
                 this.AmmoType = "NaN";
