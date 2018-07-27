@@ -53,17 +53,18 @@ namespace RolePlay_Maker
                 int rnd;
                 int KBValue;
                 int PUValue;
+                Random random = new Random();
                 for (int i = 0; i < count; i++)
                 {
                     KBValue = 0;
                     PUValue = 0;
                     //
                     Names.Add(i, new TextBox());
-                    Names[i].Text = Fraction + (i + 1);
+                    Names[i].Text = NameGenerator.Generate();
                     //
                     Armor.Add(i, new ComboBox());
                     Armor[i].Items.AddRange(AvailableArmor.Select(x => x.Name).ToArray());
-                    rnd = new Random().Next(0, AvailableArmor.Count);
+                    rnd = random.Next(0, AvailableArmor.Count);
                     Armor[i].Text = AvailableArmor[rnd].Name;
                     Armor[i].Name = Armor[i].Name + "Armor";
                     Armor[i].SelectedValueChanged += SelectedArmorChanged;
@@ -72,7 +73,7 @@ namespace RolePlay_Maker
                     //
                     Hats.Add(i, new ComboBox());
                     Hats[i].Items.AddRange(AvailableHats.Select(x => x.Name).ToArray());
-                    rnd = new Random().Next(0, AvailableHats.Count);
+                    rnd = random.Next(0, AvailableHats.Count);
                     Hats[i].Text = AvailableHats[rnd].Name;
                     Hats[i].Name = Hats[i].Name + "Hats";
                     Hats[i].SelectedValueChanged += SelectedArmorChanged;
@@ -93,13 +94,13 @@ namespace RolePlay_Maker
                     // 
                     Weapon.Add(i, new ComboBox());
                     Weapon[i].Items.AddRange(AvailableWeapon.Select(x => x.Name).ToArray());
-                    rnd = new Random().Next(0, AvailableWeapon.Count);
+                    rnd = random.Next(0, AvailableWeapon.Count);
                     Weapon[i].Text = AvailableWeapon[rnd].Name;
                     //TODO: Damage for Button Attack!
                     //
                     SecondaryWeapon.Add(i, new ComboBox());
                     SecondaryWeapon[i].Items.AddRange(AvailableWeapon.Select(x => x.Name).ToArray());
-                    rnd = new Random().Next(0, AvailableSecondaryWeapon.Count);
+                    rnd = random.Next(0, AvailableSecondaryWeapon.Count);
                     SecondaryWeapon[i].Text = AvailableSecondaryWeapon[rnd].Name;
                     //
                     AttackMainWeapon.Add(i, new Button());
@@ -110,10 +111,6 @@ namespace RolePlay_Maker
                     AttackSecondaryWeapon.Add(i, new Button());
                     AttackSecondaryWeapon[i].Text = "Атака второспенным оружием";
                     AttackSecondaryWeapon[i].AutoSize = true;
-                    //
-                    Refresh.Add(i, new Button());
-                    Refresh[i].Text = "Refresh"; //TODO Переназвать нормально кнопку
-                    Refresh[i].AutoSize = true;
             }
         }
 
