@@ -21,7 +21,7 @@ namespace RolePlay_Maker
 
         public int Roll()
         {
-            return new Random().Next(1, D);
+            return new Random().Next(1, D+1);
         } 
     }
 }

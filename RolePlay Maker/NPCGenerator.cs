@@ -65,7 +65,7 @@ namespace RolePlay_Maker
                     Armor[i].Items.AddRange(AvailableArmor.Select(x => x.Name).ToArray());
                     rnd = new Random().Next(0, AvailableArmor.Count);
                     Armor[i].Text = AvailableArmor[rnd].Name;
-                    Armor[i].SelectionChangeCommitted += new EventHandler(Select_armor);
+                    Armor[i].SelectedValueChanged += new EventHandler(Select_armor);
                     KBValue += AvailableArmor[rnd].KB;
                     PUValue += AvailableArmor[rnd].AP;
                     //            
@@ -124,14 +124,25 @@ namespace RolePlay_Maker
                 if(Armor[i] == sender)
                 {
                     key = i;
+                    
                     for(int j = 0; j < AvailableArmor.Count; j++)
                     {
-                        
+                        if(AvailableArmor[j].Name == ((ComboBox)sender).Text)
+                        {
+                            KBValue += AvailableArmor[j].KB;
+                            PUValue += AvailableArmor[j].AP;
+                            break;
+                        }
                     }
-                    KBValue += AvailableArmor[key].KB;
-                    PUValue += AvailableArmor[key].AP;
-                    KBValue += AvailableHats[key].KB;
-                    PUValue += AvailableHats[key].AP;
+                    for (int j = 0; j < AvailableHats.Count; j++)
+                    {
+                        if (AvailableHats[j].Name == Hats[key].Text)
+                        {
+                            KBValue += AvailableHats[j].KB;
+                            PUValue += AvailableHats[j].AP;
+                            break;
+                        }
+                    }
                     //
                     KB[key].Text = KBValue.ToString();
                     ArmorPU[key].Text = PUValue.ToString();
