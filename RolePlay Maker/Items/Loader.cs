@@ -12,15 +12,22 @@ using Google.Apis.Util.Store;
 using System.Threading;
 using System.Linq;
 using System.Collections;
+using System.Diagnostics;
 
 namespace RolePlay_Maker
 {
     class Loader
     {
+        public static readonly string ARMOR_SPREADSHEET = "19CQvYbi6OwMoLpseI8AkQzL2jFbc9YP3b4Kpu61wsEw";
+        public static readonly string WEAPON_SPREADSHEET = "1_6ND5dw_DG-qgE6nkbrH3BVgj-D8_9LgHEpNlT-NFMA";
+        public static readonly string COLD_WEAPON_SPREADSHEET = "1ghGqXURQNqpabSYt9QRH-4ubfYcTdIZmhOQR_WW9C7A";
+
         static string[] Scopes = { SheetsService.Scope.Spreadsheets };
         static string ApplicationName = "My Project";
-        private static Loader loader;
         SheetsService service;
+
+        private static Loader loader;
+        
         Loader()
         {
             UserCredential credential;
@@ -48,7 +55,6 @@ namespace RolePlay_Maker
                 ApplicationName = ApplicationName,
             });
 
-
         }
         public static Loader GetLoader()
         {
@@ -62,9 +68,10 @@ namespace RolePlay_Maker
             String spreadsheetId;
             //for storing the range and corresponding type
             Dictionary<string, string> ranges = new Dictionary<string, string>();
-
+            Dictionary<string, Dictionary<string, string>> spreadsheetIdAndRanges = new Dictionary<string, Dictionary<string, string>>();
             /////Armor///////
-            spreadsheetId = "19CQvYbi6OwMoLpseI8AkQzL2jFbc9YP3b4Kpu61wsEw";
+
+            spreadsheetId = ARMOR_SPREADSHEET;
             ranges.Add("Одежда!A3:G", "Одежда");
             ranges.Add("Легкая броня!A3:G", "Легкая броня");
             ranges.Add("Средняя броня!A3:G", "Средняя броня");
@@ -72,10 +79,10 @@ namespace RolePlay_Maker
             ranges.Add("Силовая броня и подобное!A3:G", "Силовая броня");
             ranges.Add("Шлемы/Головные уборы!A3:G", "Шлемы и головные уборы");
             ranges.Add("Акссесуары!A3:G", "Акссесуары");
-            RefreshingDBAsync(service, spreadsheetId, ranges);
+            spreadsheetIdAndRanges.Add(spreadsheetId, ranges);
             /////Weapon//////
-            ranges.Clear();
-            spreadsheetId = "1_6ND5dw_DG-qgE6nkbrH3BVgj-D8_9LgHEpNlT-NFMA";
+            ranges = new Dictionary<string, string>();
+            spreadsheetId = WEAPON_SPREADSHEET;
             ranges.Add("Пистолеты!A3:G", "Пистолеты");
             ranges.Add("Винтовки и автоматы!A3:G", "Винтовки и автоматы");
             ranges.Add("Пистолеты-Пулеметы!A3:G", "Пистолеты-Пулеметы");
@@ -85,17 +92,19 @@ namespace RolePlay_Maker
             ranges.Add("Энергетические ружья!A3:G", "Энергетические ружья");
             ranges.Add("Тяжелое энергетическое оружие !A3:G", "Тяжелое энергетическое оружие");
             ranges.Add("Силовое холодное оружие!A3:G", "Силовое холодное оружие");
-            RefreshingDBAsync(service, spreadsheetId, ranges);
+            spreadsheetIdAndRanges.Add(spreadsheetId, ranges);
             ///////////ColdWeapon/////////////////
-            ranges.Clear();
-            spreadsheetId = "1ghGqXURQNqpabSYt9QRH-4ubfYcTdIZmhOQR_WW9C7A";
-            ranges.Add("Дубины и молоты!A3:E", "Дубины и молоты");
+            ranges = new Dictionary<string, string>();
+            spreadsheetId = COLD_WEAPON_SPREADSHEET;
+            ranges.Add("Дубины и молоты!A3:E3", "Дубины и молоты");
             ranges.Add("Кастеты и подобное!A3:E", "Кастеты и подобное");
             ranges.Add("Ножи!A3:E", "Ножи");
             ranges.Add("Двуручное холодное оружие!A3:E", "Двуручное холодное оружие");
             ranges.Add("Копья!A3:E", "Копья");
             ranges.Add("Другое!A3:E", "Другое");
-            RefreshingDBAsync(service, spreadsheetId, ranges);
+            spreadsheetIdAndRanges.Add(COLD_WEAPON_SPREADSHEET, ranges);
+
+            RefreshingDBAsync(spreadsheetIdAndRanges);
         }
 
         public void RefreshDatabase(string SubClass, string Class)
@@ -103,55 +112,58 @@ namespace RolePlay_Maker
             String spreadsheetId;
             //for storing the range and corresponding type
             Dictionary<string, string> ranges = new Dictionary<string, string>();
-            if (Class == "Armor") {
-                spreadsheetId = "19CQvYbi6OwMoLpseI8AkQzL2jFbc9YP3b4Kpu61wsEw";
-                switch (SubClass)
-                {
-                    /////Armor///////
-                    case "Одежда":
-                        ranges.Add("Одежда!A3:G", "Одежда"); break;
-                    case "Легкая броня":
-                        ranges.Add("Легкая броня!A3:G", "Легкая броня"); break;
-                    case "Средняя броня":
-                        ranges.Add("Средняя броня!A3:G", "Средняя броня"); break;
-                    case "Тяжелая броня":
-                        ranges.Add("Тяжелая броня!A3:G", "Тяжелая броня"); break;
-                    case "Силовая броня":
-                        ranges.Add("Силовая броня и подобное!A3:G", "Силовая броня"); break;
-                    case "Шлемы и головные уборы":
-                        ranges.Add("Шлемы/Головные уборы и другое!A3:G", "Шлемы и головные уборы"); break;
-                }
-                RefreshingDBAsync(service, spreadsheetId, ranges);
-            } else if (Class == "Weapon") {
-                spreadsheetId = "1_6ND5dw_DG-qgE6nkbrH3BVgj-D8_9LgHEpNlT-NFMA";
+            Dictionary<string, Dictionary<string, string>> spreadsheetIdAndRanges = new Dictionary<string, Dictionary<string, string>>();
+            if (Class == "Armor")
+            {
+                spreadsheetId = ARMOR_SPREADSHEET;
+                //DarkRs, это для readable кода
+                string sheetID = SubClass;
+
+                /*It allows us to add a new columns to sheets
+                 * and change a range only in one place
+                */
+                string range = "!A3:G";
+                ranges.Add(sheetID + range, SubClass);
+
+                spreadsheetIdAndRanges.Add(spreadsheetId, ranges);
+            }
+            else if (Class == "Weapon")
+            {
+                spreadsheetId = WEAPON_SPREADSHEET;
+                string range = "!A3:E";
                 switch (SubClass)
                 {
                     /////Weapon//////
                     case "Легкое оружие":
-                        ranges.Add("Пистолеты!A3:E", "Пистолеты");
-                        ranges.Add("Винтовки и Автоматы!A3:E", "Винтовки и Автоматы");
-                        ranges.Add("Пистолеты-Пулеметы!A3:E", "Пистолеты-Пулеметы");
-                        ranges.Add("Дробовики!A3:E", "Дробовики");
+                        ranges.Add("Пистолеты" + range, "Пистолеты");
+                        ranges.Add("Винтовки и Автоматы" + range, "Винтовки и Автоматы");
+                        ranges.Add("Пистолеты-Пулеметы" + range, "Пистолеты-Пулеметы");
+                        ranges.Add("Дробовики" + range, "Дробовики");
                         break;
                 }
-                RefreshingDBAsync(service, spreadsheetId, ranges);
+                spreadsheetIdAndRanges.Add(spreadsheetId, ranges);
             }
-
+            RefreshingDBAsync(spreadsheetIdAndRanges);
         }
 
 
-        private async void RefreshingDBAsync(SheetsService service, String spreadsheetId, Dictionary<string, string> rangesAndTypes)
+        private async void RefreshingDBAsync(Dictionary<string, Dictionary<string, string>> spreadsheetIdAndRanges)
         {
-            // Define request parameters.
-
+            if (spreadsheetIdAndRanges.Count == 0)
+                return;
             Dictionary<Task<ValueRange>, string> tasks = new Dictionary<Task<ValueRange>, string>();
-            foreach (var entry in rangesAndTypes)
+            foreach (var entry in spreadsheetIdAndRanges)
             {
-                var range = entry.Key;
-                var type = entry.Value;
-                SpreadsheetsResource.ValuesResource.GetRequest request =
-                    service.Spreadsheets.Values.Get(spreadsheetId, range);
-                tasks.Add(request.ExecuteAsync(), type);
+                var spreadsheetId = entry.Key;
+                var rangesAndTypes = entry.Value;
+                foreach (var _entry in rangesAndTypes)
+                {
+                    var range = _entry.Key;
+                    var type = _entry.Value;
+                    SpreadsheetsResource.ValuesResource.GetRequest request =
+                        service.Spreadsheets.Values.Get(spreadsheetId, range);
+                    tasks.Add(request.ExecuteAsync(), type);
+                }
             }
             foreach (var entry in tasks)
             {
@@ -164,80 +176,26 @@ namespace RolePlay_Maker
                 {
                     //////////////////Armor//////////
                     case "Одежда":
-                        for (int i = 0; i < values.Count; i++)
-                        {
-                            Armor arm = new Armor("Одежда", values[i]);
-                            Item.ArmorList.Add(arm);
-                        }
-                        break;
                     case "Легкая броня":
-                        for (int i = 0; i < values.Count; i++)
-                        {
-                            Armor arm = new Armor("Легкая броня", values[i]);
-                            Item.ArmorList.Add(arm);
-                        }
-                        break;
                     case "Средняя броня":
-                        for (int i = 0; i < values.Count; i++)
-                        {
-                            Armor arm = new Armor("Средняя броня", values[i]);
-                            Item.ArmorList.Add(arm);
-                        }
-                        break;
                     case "Тяжелая броня":
-                        for (int i = 0; i < values.Count; i++)
-                        {
-                            Armor arm = new Armor("Тяжелая броня", values[i]);
-                            Item.ArmorList.Add(arm);
-                        }
-                        break;
                     case "Силовая броня":
-                        for (int i = 0; i < values.Count; i++)
-                        {
-                            Armor arm = new Armor("Силовая броня", values[i]);
-                            Item.ArmorList.Add(arm);
-                        }
-                        break;
                     case "Шлемы и головные уборы":
-                        for (int i = 0; i < values.Count; i++)
-                        {
-                            Armor arm = new Armor("Шлемы и головные уборы", values[i]);
-                            Item.ArmorList.Add(arm);
-                        }
-                        break;
                     case "Акссесуары":
                         for (int i = 0; i < values.Count; i++)
                         {
-                            Armor arm = new Armor("Акссесуары", values[i]);
+                            Armor arm = new Armor(type, values[i]);
                             Item.ArmorList.Add(arm);
                         }
                         break;
                     ////////////////////////////Weapon/////////////////////////
                     case "Пистолеты":
-                        for (int i = 0; i < values.Count; i++)
-                        {
-                            Weapon wp = new Weapon("Пистолеты", values[i], "LightWeapon");
-                            Item.WeaponList.Add(wp);
-                        }
-                        break;
                     case "Винтовки и автоматы":
-                        for (int i = 0; i < values.Count; i++)
-                        {
-                            Weapon wp = new Weapon("Винтовки и автоматы", values[i], "LightWeapon");
-                            Item.WeaponList.Add(wp);
-                        }
-                        break;
                     case "Пистолеты-Пулеметы":
-                        for (int i = 0; i < values.Count; i++)
-                        {
-                            Weapon wp = new Weapon("Пистолеты-Пулеметы", values[i], "LightWeapon");
-                            Item.WeaponList.Add(wp);
-                        }
-                        break;
                     case "Дробовики":
                         for (int i = 0; i < values.Count; i++)
                         {
-                            Weapon wp = new Weapon("Дробовики", values[i], "LightWeapon");
+                            Weapon wp = new Weapon(type, values[i], "LightWeapon");
                             Item.WeaponList.Add(wp);
                         }
                         break;
@@ -249,73 +207,25 @@ namespace RolePlay_Maker
                         }
                         break;
                     case "Энергетические пистолеты":
-                        for (int i = 0; i < values.Count; i++)
-                        {
-                            Weapon wp = new Weapon("Энергетические пистолеты", values[i], "EnergyWeapon");
-                            Item.WeaponList.Add(wp);
-                        }
-                        break;
                     case "Энергетические ружья":
-                        for (int i = 0; i < values.Count; i++)
-                        {
-                            Weapon wp = new Weapon("Энергетические ружья", values[i], "EnergyWeapon");
-                            Item.WeaponList.Add(wp);
-                        }
-                        break;
                     case "Тяжелое энергетическое оружие":
-                        for (int i = 0; i < values.Count; i++)
-                        {
-                            Weapon wp = new Weapon("Тяжелое энергетическое оружие", values[i], "EnergyWeapon");
-                            Item.WeaponList.Add(wp);
-                        }
-                        break;
                     case "Силовое холодное оружие":
                         for (int i = 0; i < values.Count; i++)
                         {
-                            Weapon wp = new Weapon("Силовое холодное оружие", values[i], "EnergyWeapon");
+                            Weapon wp = new Weapon(type, values[i], "EnergyWeapon");
                             Item.WeaponList.Add(wp);
                         }
                         break;
                     ///////////ColdWeapon/////////////////
                     case "Дубины и молоты":
-                        for (int i = 0; i < values.Count; i++)
-                        {
-                            Weapon wp = new Weapon("Дубины и молоты", values[i], "ColdWeapon");
-                            Item.WeaponList.Add(wp);
-                        }
-                        break;
                     case "Кастеты и подобное":
-                        for (int i = 0; i < values.Count; i++)
-                        {
-                            Weapon wp = new Weapon("Кастеты и подобное", values[i], "ColdWeapon");
-                            Item.WeaponList.Add(wp);
-                        }
-                        break;
                     case "Ножи":
-                        for (int i = 0; i < values.Count; i++)
-                        {
-                            Weapon wp = new Weapon("Ножи", values[i], "ColdWeapon");
-                            Item.WeaponList.Add(wp);
-                        }
-                        break;
                     case "Двуручное холодное оружие":
-                        for (int i = 0; i < values.Count; i++)
-                        {
-                            Weapon wp = new Weapon("Двуручное холодное оружие", values[i], "ColdWeapon");
-                            Item.WeaponList.Add(wp);
-                        }
-                        break;
                     case "Копья":
-                        for (int i = 0; i < values.Count; i++)
-                        {
-                            Weapon wp = new Weapon("Копья", values[i], "ColdWeapon");
-                            Item.WeaponList.Add(wp);
-                        }
-                        break;
                     case "Другое":
                         for (int i = 0; i < values.Count; i++)
                         {
-                            Weapon wp = new Weapon("Другое", values[i], "ColdWeapon");
+                            Weapon wp = new Weapon(type, values[i], "ColdWeapon");
                             Item.WeaponList.Add(wp);
                         }
                         break;
@@ -324,22 +234,14 @@ namespace RolePlay_Maker
             }
             //for debug purposes
             Console.WriteLine("Completed");
-        }
-
-
-
-
-        public void AddToDatabase(List<string> data, String spreadsheetId, string type,string Class)
-        {
             
-
-
+        }
+        public async void AddToDatabase(List<string> data, String spreadsheetId, string type, string Class)
+        {
             // The A1 notation of a range to search for a logical table of data.
             // Values will be appended after the last row of the table.
-            string range = type + "!A:G";  
-                
-            
-            // TODO: Assign values to desired properties of `requestBody`:
+            string range = type + "!A:G";
+
             IList<IList<object>> val = new List<IList<object>>();
             ValueRange requestBody = new ValueRange() { Values = val };
             requestBody.Values.Add(data.Select(x => (object)x).ToList());
@@ -351,9 +253,7 @@ namespace RolePlay_Maker
             request.ValueInputOption = valueInputOption;
             request.InsertDataOption = insertDataOption;
 
-            // To execute asynchronously in an async method, replace `request.Execute()` as shown:
-            AppendValuesResponse response = request.Execute();
-            // Data.AppendValuesResponse response = await request.ExecuteAsync();
+            AppendValuesResponse response = await request.ExecuteAsync();
             RefreshDatabase(type, Class);
         }
 

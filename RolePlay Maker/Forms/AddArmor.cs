@@ -48,7 +48,7 @@ namespace RolePlay_Maker
             StatusLabel.Text = "Записываем информацию...";
 
             Loader ld = Loader.GetLoader();
-            ld.AddToDatabase(data, "19CQvYbi6OwMoLpseI8AkQzL2jFbc9YP3b4Kpu61wsEw",Type, "Armor");
+            ld.AddToDatabase(data, Loader.ARMOR_SPREADSHEET ,Type, "Armor");
 
             StatusLabel.Text = "Информация записана!";
             //MessageBox.Show("Информация записана",
