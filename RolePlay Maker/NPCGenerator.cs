@@ -22,8 +22,13 @@ namespace RolePlay_Maker
             //
             public Dictionary<int, int> PermanentDamage;
             public Dictionary<int, int> RandomDamage;
+            //
+            private List<Armor> AvailableArmor;
+            private List<Armor> AvailableHats;
+            private List<Weapon> AvailableWeapon;
+            private List<Weapon> AvailableSecondaryWeapon;
 
-        public NPCGenerator()
+        public NPCGenerator(List<Armor> AvailableArmor, List<Armor> AvailableHats, List<Weapon> AvailableWeapon, List<Weapon> AvailableSecondaryWeapon)
             {
                 Names = new Dictionary<int, TextBox>();
                 Armor = new Dictionary<int, ComboBox>();
@@ -36,9 +41,14 @@ namespace RolePlay_Maker
                 AttackMainWeapon = new Dictionary<int, Button>();
                 AttackSecondaryWeapon = new Dictionary<int, Button>();
                 Refresh = new Dictionary<int, Button>();
+                //
+                this.AvailableArmor = AvailableArmor;
+                this.AvailableHats = AvailableHats;
+                this.AvailableWeapon = AvailableWeapon;
+                this.AvailableSecondaryWeapon = AvailableSecondaryWeapon;
             }
 
-            public void SetParams_Human(List<Armor> AvailableArmor, List<Armor> AvailableHats, List<Weapon> AvailableWeapon, List<Weapon> AvailableSecondaryWeapon, string Fraction, int count)
+            public void SetParams_Human(string Fraction, int count)
             {
                 int rnd;
                 int KBValue;
@@ -106,7 +116,31 @@ namespace RolePlay_Maker
 
         private void Select_armor(object sender, EventArgs e)
         {
-            // ??!
+            int key;
+            int KBValue=0;
+            int PUValue=0;
+            for(int i = 0; i < Armor.Count; i++)
+            {
+                if(Armor[i] == sender)
+                {
+                    key = i;
+                    for(int j = 0; j < AvailableArmor.Count; j++)
+                    {
+                        
+                    }
+                    KBValue += AvailableArmor[key].KB;
+                    PUValue += AvailableArmor[key].AP;
+                    KBValue += AvailableHats[key].KB;
+                    PUValue += AvailableHats[key].AP;
+                    //
+                    KB[key].Text = KBValue.ToString();
+                    ArmorPU[key].Text = PUValue.ToString();
+                    break;
+                }
+            }
+            
+
+
         }
 
 

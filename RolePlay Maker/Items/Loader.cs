@@ -1,22 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Google.Apis.Auth.OAuth2;
-using Google.Apis.Sheets.v4;
-using Google.Apis.Sheets.v4.Data;
 using Google.Apis.Services;
+using Google.Apis.Sheets.v4;
+using Google.Apis.Http;
+using Newtonsoft.Json;
+using Google.Apis.Sheets.v4.Data;
 using Google.Apis.Util.Store;
 using System.Threading;
+using System.Linq;
+using System.Collections;
 
 namespace RolePlay_Maker
 {
     class Loader
     {
-        static string[] Scopes = { SheetsService.Scope.SpreadsheetsReadonly };
-        static string ApplicationName = "Google Sheets API .NET Quickstart";
+        static string[] Scopes = { SheetsService.Scope.Spreadsheets };
+        static string ApplicationName = "My Project";
+        
         SheetsService service;
         public Loader()
         {
@@ -53,50 +56,50 @@ namespace RolePlay_Maker
             String spreadsheetId;
             //for storing the range and corresponding type
             Dictionary<string, string> ranges = new Dictionary<string, string>();
-            
-                    /////Armor///////
-                    spreadsheetId = "19CQvYbi6OwMoLpseI8AkQzL2jFbc9YP3b4Kpu61wsEw";
-                    ranges.Add("Одежда!A3:G", "Одежда");
-                    ranges.Add("Легкая броня!A3:G", "Легкая броня");
-                    ranges.Add("Средняя броня!A3:G", "Средняя броня");
-                    ranges.Add("Тяжелая броня!A3:G", "Тяжелая броня");
-                    ranges.Add("Силовая броня и подобное!A3:G", "Силовая броня");
-                    ranges.Add("Шлемы/Головные уборы!A3:G", "Шлемы и головные уборы");
-                    ranges.Add("Акссесуары!A3:G", "Акссесуары");
-                    RefreshingDBAsync(service, spreadsheetId, ranges);
-                    /////Weapon//////
-                    ranges.Clear();
-                    spreadsheetId = "1_6ND5dw_DG-qgE6nkbrH3BVgj-D8_9LgHEpNlT-NFMA";
-                    ranges.Add("Пистолеты!A3:G", "Пистолеты");
-                    ranges.Add("Винтовки и автоматы!A3:G", "Винтовки и автоматы");
-                    ranges.Add("Пистолеты-Пулеметы!A3:G", "Пистолеты-Пулеметы");
-                    ranges.Add("Дробовики!A3:G", "Дробовики");
-                    ranges.Add("Тяжелое оружие!A3:G", "Тяжелое оружие");
-                    ranges.Add("Энергетические пистолеты!A3:G", "Энергетические пистолеты");
-                    ranges.Add("Энергетические ружья!A3:G", "Энергетические ружья");
-                    ranges.Add("Тяжелое энергетическое оружие !A3:G", "Тяжелое энергетическое оружие");
-                    ranges.Add("Силовое холодное оружие!A3:G", "Силовое холодное оружие");
-                    RefreshingDBAsync(service, spreadsheetId, ranges);
-                    ///////////ColdWeapon/////////////////
-                    ranges.Clear(); 
-                    spreadsheetId = "1ghGqXURQNqpabSYt9QRH-4ubfYcTdIZmhOQR_WW9C7A";
-                    ranges.Add("Дубины и молоты!A3:E", "Дубины и молоты");
-                    ranges.Add("Кастеты и подобное!A3:E", "Кастеты и подобное");
-                    ranges.Add("Ножи!A3:E", "Ножи");
-                    ranges.Add("Двуручное холодное оружие!A3:E", "Двуручное холодное оружие");
-                    ranges.Add("Копья!A3:E", "Копья");
-                    ranges.Add("Другое!A3:E", "Другое");
-                    RefreshingDBAsync(service, spreadsheetId, ranges);
+
+            /////Armor///////
+            spreadsheetId = "19CQvYbi6OwMoLpseI8AkQzL2jFbc9YP3b4Kpu61wsEw";
+            ranges.Add("Одежда!A3:G", "Одежда");
+            ranges.Add("Легкая броня!A3:G", "Легкая броня");
+            ranges.Add("Средняя броня!A3:G", "Средняя броня");
+            ranges.Add("Тяжелая броня!A3:G", "Тяжелая броня");
+            ranges.Add("Силовая броня и подобное!A3:G", "Силовая броня");
+            ranges.Add("Шлемы/Головные уборы!A3:G", "Шлемы и головные уборы");
+            ranges.Add("Акссесуары!A3:G", "Акссесуары");
+            RefreshingDBAsync(service, spreadsheetId, ranges);
+            /////Weapon//////
+            ranges.Clear();
+            spreadsheetId = "1_6ND5dw_DG-qgE6nkbrH3BVgj-D8_9LgHEpNlT-NFMA";
+            ranges.Add("Пистолеты!A3:G", "Пистолеты");
+            ranges.Add("Винтовки и автоматы!A3:G", "Винтовки и автоматы");
+            ranges.Add("Пистолеты-Пулеметы!A3:G", "Пистолеты-Пулеметы");
+            ranges.Add("Дробовики!A3:G", "Дробовики");
+            ranges.Add("Тяжелое оружие!A3:G", "Тяжелое оружие");
+            ranges.Add("Энергетические пистолеты!A3:G", "Энергетические пистолеты");
+            ranges.Add("Энергетические ружья!A3:G", "Энергетические ружья");
+            ranges.Add("Тяжелое энергетическое оружие !A3:G", "Тяжелое энергетическое оружие");
+            ranges.Add("Силовое холодное оружие!A3:G", "Силовое холодное оружие");
+            RefreshingDBAsync(service, spreadsheetId, ranges);
+            ///////////ColdWeapon/////////////////
+            ranges.Clear();
+            spreadsheetId = "1ghGqXURQNqpabSYt9QRH-4ubfYcTdIZmhOQR_WW9C7A";
+            ranges.Add("Дубины и молоты!A3:E", "Дубины и молоты");
+            ranges.Add("Кастеты и подобное!A3:E", "Кастеты и подобное");
+            ranges.Add("Ножи!A3:E", "Ножи");
+            ranges.Add("Двуручное холодное оружие!A3:E", "Двуручное холодное оружие");
+            ranges.Add("Копья!A3:E", "Копья");
+            ranges.Add("Другое!A3:E", "Другое");
+            RefreshingDBAsync(service, spreadsheetId, ranges);
         }
 
-        public void RefreshDatabase(string Class, string Type)
+        public void RefreshDatabase(string SubClass, string Class)
         {
             String spreadsheetId;
             //for storing the range and corresponding type
             Dictionary<string, string> ranges = new Dictionary<string, string>();
-            if (Type == "Armor") {
+            if (Class == "Armor") {
                 spreadsheetId = "19CQvYbi6OwMoLpseI8AkQzL2jFbc9YP3b4Kpu61wsEw";
-                switch (Class)
+                switch (SubClass)
                 {
                     /////Armor///////
                     case "Одежда":
@@ -113,9 +116,9 @@ namespace RolePlay_Maker
                         ranges.Add("Шлемы/Головные уборы и другое!A3:G", "Шлемы и головные уборы"); break;
                 }
                 RefreshingDBAsync(service, spreadsheetId, ranges);
-            } else if (Type == "Weapon") {
+            } else if (Class == "Weapon") {
                 spreadsheetId = "1_6ND5dw_DG-qgE6nkbrH3BVgj-D8_9LgHEpNlT-NFMA";
-                switch (Class)
+                switch (SubClass)
                 {
                     /////Weapon//////
                     case "Легкое оружие":
@@ -127,7 +130,7 @@ namespace RolePlay_Maker
                 }
                 RefreshingDBAsync(service, spreadsheetId, ranges);
             }
-            
+
         }
 
 
@@ -317,6 +320,36 @@ namespace RolePlay_Maker
             Console.WriteLine("Completed");
         }
 
+
+
+
+        public void AddToDatabase(List<string> data, String spreadsheetId, string type,string Class)
+        {
+            
+
+
+            // The A1 notation of a range to search for a logical table of data.
+            // Values will be appended after the last row of the table.
+            string range = type + "!A:G";  
+                
+            
+            // TODO: Assign values to desired properties of `requestBody`:
+            IList<IList<object>> val = new List<IList<object>>();
+            ValueRange requestBody = new ValueRange() { Values = val };
+            requestBody.Values.Add(data.Select(x => (object)x).ToList());
+
+            SpreadsheetsResource.ValuesResource.AppendRequest.ValueInputOptionEnum valueInputOption = (SpreadsheetsResource.ValuesResource.AppendRequest.ValueInputOptionEnum)2;
+            SpreadsheetsResource.ValuesResource.AppendRequest.InsertDataOptionEnum insertDataOption = (SpreadsheetsResource.ValuesResource.AppendRequest.InsertDataOptionEnum)1;
+
+            SpreadsheetsResource.ValuesResource.AppendRequest request = service.Spreadsheets.Values.Append(requestBody, spreadsheetId, range);
+            request.ValueInputOption = valueInputOption;
+            request.InsertDataOption = insertDataOption;
+
+            // To execute asynchronously in an async method, replace `request.Execute()` as shown:
+            AppendValuesResponse response = request.Execute();
+            // Data.AppendValuesResponse response = await request.ExecuteAsync();
+            RefreshDatabase(type, Class);
+        }
 
     }
 }

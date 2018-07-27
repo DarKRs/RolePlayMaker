@@ -42,7 +42,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.EffectsText = new System.Windows.Forms.TextBox();
-            this.FactionText = new System.Windows.Forms.ComboBox();
+            this.FractionText = new System.Windows.Forms.ComboBox();
             this.TypeText = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -167,10 +167,10 @@
             this.EffectsText.Size = new System.Drawing.Size(229, 20);
             this.EffectsText.TabIndex = 23;
             // 
-            // FactionText
+            // FractionText
             // 
-            this.FactionText.FormattingEnabled = true;
-            this.FactionText.Items.AddRange(new object[] {
+            this.FractionText.FormattingEnabled = true;
+            this.FractionText.Items.AddRange(new object[] {
             "Нет",
             "Путник",
             "НКР",
@@ -186,10 +186,10 @@
             "Великие ханы",
             "Дикарь",
             "Выходец из Убежища"});
-            this.FactionText.Location = new System.Drawing.Point(270, 66);
-            this.FactionText.Name = "FactionText";
-            this.FactionText.Size = new System.Drawing.Size(94, 21);
-            this.FactionText.TabIndex = 24;
+            this.FractionText.Location = new System.Drawing.Point(270, 66);
+            this.FractionText.Name = "FractionText";
+            this.FractionText.Size = new System.Drawing.Size(94, 21);
+            this.FractionText.TabIndex = 24;
             // 
             // TypeText
             // 
@@ -223,7 +223,7 @@
             this.ClientSize = new System.Drawing.Size(376, 285);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.TypeText);
-            this.Controls.Add(this.FactionText);
+            this.Controls.Add(this.FractionText);
             this.Controls.Add(this.EffectsText);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -261,7 +261,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox EffectsText;
-        private System.Windows.Forms.ComboBox FactionText;
+        private System.Windows.Forms.ComboBox FractionText;
         private System.Windows.Forms.ComboBox TypeText;
         private System.Windows.Forms.Label label8;
     }

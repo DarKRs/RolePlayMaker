@@ -60,8 +60,8 @@ namespace RolePlay_Maker.Forms
                         }
                     }
                     int EnimesCount = (int)(PlayersCount * PlayersLevel / 2);// * (rnd + 0.5));
-                    NPCGenerator GUI = new NPCGenerator();
-                    GUI.SetParams_Human(AvailableArmor, AvailableHats, AvailableWeapon,AvailableSecondaryWeapon, Fraction, EnimesCount);
+                    NPCGenerator GUI = new NPCGenerator(AvailableArmor, AvailableHats, AvailableWeapon, AvailableSecondaryWeapon);
+                    GUI.SetParams_Human(Fraction, EnimesCount);
                     Draw(GUI,EnimesCount);
                     break;
                 case "Рейдеры": //TODO

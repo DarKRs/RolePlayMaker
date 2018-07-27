@@ -24,40 +24,37 @@ namespace RolePlay_Maker
         {
             main = this.Owner as MainForm;
             string Name = NameText.Text;
+            string KB = KBText.Text;
+            string Type = TypeText.Text;
+            string Fraction = FractionText.Text;
             string AP = PUText.Text;
             string Price = PriceText.Text;
             string Description = DescriptionText.Text;
-            if (Name == "" || AP =="" || Price =="" || Description =="")
+            string Effects = EffectsText.Text;
+            if (Name == "" || AP =="" || Price =="" || Description =="" || KB =="" || Type == "" || Fraction == "")
             {
                 MessageBox.Show("Введена не вся информация",
                      "Все пошло по пизде", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             int num;
-            if (!(int.TryParse(AP, out num)) || !(int.TryParse(Price, out num)))
+            if (!(int.TryParse(AP, out num)) || !(int.TryParse(Price, out num)) || !(int.TryParse(KB, out num)))
             {
                 MessageBox.Show("Только числовые значения в СУ и стоимости!",
                      "Не твори хуйню блять!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            if (Name.Contains("$") || Name.Contains("&") || AP.Contains("$") || AP.Contains("&") || Price.Contains("$") || Price.Contains("&") || Description.Contains("$") || Description.Contains("&"))
-            {
-                MessageBox.Show("Нельзя использовать знаки $ или & , уебок",
-                     "Не твори хуйню блять!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-            string all = "& \n" + Name + "$" + AP + "$" + Price + "$" + Description;
-            string path = System.IO.Directory.GetCurrentDirectory() + @"\" + "Armor.txt";
+
+            List<string> data = new List<string>() {Name,KB,AP,Description,Effects,Price,Fraction };
            
-                FileStream fs = new FileStream(path, FileMode.Append, FileAccess.Write);
-                StreamWriter writer = new StreamWriter(fs); //создаем «потоковый писатель» и связываем его с файловым потоком 
-                writer.Write(all); //записываем в файл
-                writer.Close(); //закрываем поток. Не закрыв поток, в файл ничего не запишется 
-            
-            
+
+            Loader ld = new Loader();
+
+            ld.AddToDatabase(data, "19CQvYbi6OwMoLpseI8AkQzL2jFbc9YP3b4Kpu61wsEw",Type, "Armor");
+
             MessageBox.Show("Информация записана",
                   "Все збс", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            NameText.Text = "";PUText.Text = "";PriceText.Text = "";DescriptionText.Text = "";
+            NameText.Text = "";PUText.Text = "";PriceText.Text = "";DescriptionText.Text = ""; EffectsText.Text = ""; KBText.Text = "";
         }
     }
 }
