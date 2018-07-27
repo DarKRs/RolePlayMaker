@@ -65,14 +65,17 @@ namespace RolePlay_Maker
                     Armor[i].Items.AddRange(AvailableArmor.Select(x => x.Name).ToArray());
                     rnd = new Random().Next(0, AvailableArmor.Count);
                     Armor[i].Text = AvailableArmor[rnd].Name;
-                    Armor[i].SelectedValueChanged += new EventHandler(Select_armor);
+                    Armor[i].Name = Armor[i].Name + "Armor";
+                    Armor[i].SelectedValueChanged += SelectedArmorChanged;
                     KBValue += AvailableArmor[rnd].KB;
                     PUValue += AvailableArmor[rnd].AP;
-                    //            
+                    //
                     Hats.Add(i, new ComboBox());
                     Hats[i].Items.AddRange(AvailableHats.Select(x => x.Name).ToArray());
                     rnd = new Random().Next(0, AvailableHats.Count);
                     Hats[i].Text = AvailableHats[rnd].Name;
+                    Hats[i].Name = Hats[i].Name + "Hats";
+                    Hats[i].SelectedValueChanged += SelectedArmorChanged;
                     KBValue += AvailableHats[rnd].KB;
                     PUValue += AvailableHats[rnd].AP;
                     //
@@ -114,44 +117,49 @@ namespace RolePlay_Maker
             }
         }
 
-        private void Select_armor(object sender, EventArgs e)
+        private void SelectedArmorChanged(object sender, EventArgs e)
         {
-            int key;
-            int KBValue=0;
-            int PUValue=0;
-            for(int i = 0; i < Armor.Count; i++)
+            Dictionary<int, ComboBox> container = new Dictionary<int, ComboBox>();
+            ComboBox selectedCombobox = (ComboBox)sender;
+            //determine which dictionary we should use for search a key
+            if (selectedCombobox.Name.Contains("Armor"))
+                container = Armor;
+            else if (selectedCombobox.Name.Contains("Hats"))
+                container = Hats;
+
+            int key = -1;
+            for (int i = 0; i < container.Count; i++)
             {
-                if(Armor[i] == sender)
+                if (container[i] == selectedCombobox)
                 {
                     key = i;
-                    
-                    for(int j = 0; j < AvailableArmor.Count; j++)
-                    {
-                        if(AvailableArmor[j].Name == ((ComboBox)sender).Text)
-                        {
-                            KBValue += AvailableArmor[j].KB;
-                            PUValue += AvailableArmor[j].AP;
-                            break;
-                        }
-                    }
-                    for (int j = 0; j < AvailableHats.Count; j++)
-                    {
-                        if (AvailableHats[j].Name == Hats[key].Text)
-                        {
-                            KBValue += AvailableHats[j].KB;
-                            PUValue += AvailableHats[j].AP;
-                            break;
-                        }
-                    }
-                    //
-                    KB[key].Text = KBValue.ToString();
-                    ArmorPU[key].Text = PUValue.ToString();
                     break;
                 }
             }
-            
 
+            int KBValue = 0;
+            int PUValue = 0;
+            for (int i = 0; i < AvailableArmor.Count; i++)
+            {
+                if(AvailableArmor[i].Name == Armor[key].Text)
+                {
+                    KBValue += AvailableArmor[i].KB;
+                    PUValue += AvailableArmor[i].AP;
+                    break;
+                }
+            }
+            for (int i = 0; i < AvailableHats.Count; i++)
+            {
+                if (AvailableHats[i].Name == Hats[key].Text)
+                {
+                    KBValue += AvailableHats[i].KB;
+                    PUValue += AvailableHats[i].AP;
+                    break;
+                }
+            }
 
+            KB[key].Text = KBValue.ToString();
+            ArmorPU[key].Text = PUValue.ToString();
         }
 
 
