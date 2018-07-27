@@ -28,15 +28,19 @@ namespace RolePlay_Maker.Forms
 
         private void CheckDataAndCallFunciton(string Fraction, int PlayersLevel, int PlayersCount)
         {
-            double rnd = new Random().NextDouble();
 
             switch (Fraction)
             {
                 case "Черти":
-                    List<Armor> AvailableArmor = new List<Armor>(); AvailableArmor.Add(new Armor());
-                    List<Armor> AvailableHats = new List<Armor>(); AvailableHats.Add(new Armor());
-                    List<Weapon> AvailableWeapon = new List<Weapon>(); AvailableWeapon.Add(new Weapon());
-                    List<Weapon> AvailableSecondaryWeapon = new List<Weapon>(); AvailableWeapon.Add(new Weapon());
+                    List<Armor> AvailableArmor = new List<Armor>();
+                    List<Armor> AvailableHats = new List<Armor>();
+                    AvailableArmor.Add(new Armor());
+                    AvailableHats.Add(new Armor());
+                    List<Weapon> AvailableWeapon = new List<Weapon>();
+                    List<Weapon> AvailableSecondaryWeapon = new List<Weapon>();
+                    AvailableWeapon.Add(new Weapon());
+                    AvailableSecondaryWeapon.Add(new Weapon());
+
                     for (int i = 0; i < Item.ArmorList.Count; i++)
                     {
                         if (Item.ArmorList[i].Class != "Силовая броня" && Item.ArmorList[i].Class != "Шлемы и головные уборы" && (Item.ArmorList[i].Fraction == "Нет" || Item.ArmorList[i].Fraction == "Черт"))
@@ -59,10 +63,10 @@ namespace RolePlay_Maker.Forms
                             AvailableSecondaryWeapon.Add(Item.WeaponList[i]);
                         }
                     }
-                    int EnimesCount = (int)(PlayersCount * PlayersLevel / 2);// * (rnd + 0.5));
+                    int EnimiesCount = PlayersCount * PlayersLevel / 2;// * (rnd + 0.5));
                     NPCGenerator GUI = new NPCGenerator(AvailableArmor, AvailableHats, AvailableWeapon, AvailableSecondaryWeapon);
-                    GUI.SetParams_Human(Fraction, EnimesCount);
-                    Draw(GUI,EnimesCount);
+                    GUI.SetParams_Human(Fraction, EnimiesCount);
+                    Draw(GUI,EnimiesCount);
                     break;
                 case "Рейдеры": //TODO
                 default: break;
