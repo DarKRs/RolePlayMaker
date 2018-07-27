@@ -17,7 +17,6 @@ namespace RolePlay_Maker
         public AddArmor()
         {
             InitializeComponent();
-           
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -37,8 +36,7 @@ namespace RolePlay_Maker
                      "Все пошло по пизде", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            int num;
-            if (!(int.TryParse(AP, out num)) || !(int.TryParse(Price, out num)) || !(int.TryParse(KB, out num)))
+            if (!(int.TryParse(AP, out int num)) || !(int.TryParse(Price, out num)) || !(int.TryParse(KB, out num)))
             {
                 MessageBox.Show("Только числовые значения в СУ и стоимости!",
                      "Не твори хуйню блять!", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -46,15 +44,21 @@ namespace RolePlay_Maker
             }
 
             List<string> data = new List<string>() {Name,KB,AP,Description,Effects,Price,Fraction };
-           
+
+            StatusLabel.Text = "Записываем информацию...";
 
             Loader ld = new Loader();
-
             ld.AddToDatabase(data, "19CQvYbi6OwMoLpseI8AkQzL2jFbc9YP3b4Kpu61wsEw",Type, "Armor");
 
-            MessageBox.Show("Информация записана",
-                  "Все збс", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            StatusLabel.Text = "Информация записана!";
+            //MessageBox.Show("Информация записана",
+              //    "Все збс", MessageBoxButtons.OK, MessageBoxIcon.Information);
             NameText.Text = "";PUText.Text = "";PriceText.Text = "";DescriptionText.Text = ""; EffectsText.Text = ""; KBText.Text = "";
+        }
+
+        private void AddArmor_Load(object sender, EventArgs e)
+        {
+            StatusLabel.Text = "";
         }
     }
 }

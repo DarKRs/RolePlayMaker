@@ -183,6 +183,7 @@
     <Compile Include="Forms\NetworkInfo.Designer.cs">
       <DependentUpon>NetworkInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="NameGenerator.cs" />
     <Compile Include="NPCGenerator.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Forms\Profile.cs">
