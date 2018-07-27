@@ -19,17 +19,17 @@ namespace RolePlay_Maker
     {
         static string[] Scopes = { SheetsService.Scope.Spreadsheets };
         static string ApplicationName = "My Project";
-        
+        private static Loader loader;
         SheetsService service;
-        public Loader()
+        Loader()
         {
             UserCredential credential;
 
             using (var stream =
                 new FileStream("client_secret.json", FileMode.Open, FileAccess.Read))
             {
-                string credPath = System.Environment.GetFolderPath(
-                    System.Environment.SpecialFolder.Personal);
+                string credPath = Environment.GetFolderPath(
+                    Environment.SpecialFolder.Personal);
                 credPath = Path.Combine(credPath, ".credentials/sheets.googleapis.com-dotnet-quickstart.json");
 
                 credential = GoogleWebAuthorizationBroker.AuthorizeAsync(
@@ -49,6 +49,12 @@ namespace RolePlay_Maker
             });
 
 
+        }
+        public static Loader GetLoader()
+        {
+            if (loader == null)
+                loader = new Loader();
+            return loader;
         }
 
         public void RefreshAllDatabase()

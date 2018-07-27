@@ -14,7 +14,7 @@ namespace RolePlay_Maker
         public MainForm()
         {
             InitializeComponent();
-            Loader load = new Loader();
+            Loader load = Loader.GetLoader();
             load.RefreshAllDatabase();
 
         }
