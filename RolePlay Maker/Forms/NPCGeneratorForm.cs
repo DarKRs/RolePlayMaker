@@ -28,7 +28,6 @@ namespace RolePlay_Maker.Forms
 
         private void CheckDataAndCallFunciton(string Fraction, int PlayersLevel, int PlayersCount)
         {
-
             switch (Fraction)
             {
                 case "Черти":
@@ -119,6 +118,13 @@ namespace RolePlay_Maker.Forms
                 GUI.Refresh[i].Location = new Point(GUI.AttackSecondaryWeapon[i].Location.X + 180, GUI.AttackSecondaryWeapon[i].Location.Y);
             }
            
+        }
+
+        private void Logs_Click(object sender, EventArgs e)
+        {
+            Logs f = new Logs();
+            f.Owner = this;
+            f.Show();
         }
     }
 }

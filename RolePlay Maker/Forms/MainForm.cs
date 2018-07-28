@@ -139,5 +139,12 @@ namespace RolePlay_Maker
             f.Owner = this;
             f.ShowDialog();
         }
+
+        private void добавитьОружиеToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            AddWeapon f = new AddWeapon();
+            f.Owner = this;
+            f.ShowDialog();
+        }
     }
 }

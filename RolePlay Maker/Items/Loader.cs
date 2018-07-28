@@ -113,36 +113,37 @@ namespace RolePlay_Maker
             //for storing the range and corresponding type
             Dictionary<string, string> ranges = new Dictionary<string, string>();
             Dictionary<string, Dictionary<string, string>> spreadsheetIdAndRanges = new Dictionary<string, Dictionary<string, string>>();
+            string sheetID = SubClass;
+            string range="";
             if (Class == "Armor")
             {
                 spreadsheetId = ARMOR_SPREADSHEET;
                 //DarkRs, это для readable кода
-                string sheetID = SubClass;
 
                 /*It allows us to add a new columns to sheets
                  * and change a range only in one place
                 */
-                string range = "!A3:G";
-                ranges.Add(sheetID + range, SubClass);
+                range = "!A3:G";
 
-                spreadsheetIdAndRanges.Add(spreadsheetId, ranges);
             }
             else if (Class == "Weapon")
             {
                 spreadsheetId = WEAPON_SPREADSHEET;
-                string range = "!A3:E";
-                switch (SubClass)
-                {
-                    /////Weapon//////
-                    case "Легкое оружие":
-                        ranges.Add("Пистолеты" + range, "Пистолеты");
-                        ranges.Add("Винтовки и Автоматы" + range, "Винтовки и Автоматы");
-                        ranges.Add("Пистолеты-Пулеметы" + range, "Пистолеты-Пулеметы");
-                        ranges.Add("Дробовики" + range, "Дробовики");
-                        break;
-                }
-                spreadsheetIdAndRanges.Add(spreadsheetId, ranges);
+                range = "!A3:G";
+
             }
+            else if(Class == "ColdWeapon")
+            {
+                spreadsheetId = COLD_WEAPON_SPREADSHEET;
+                range = "!A3:E";
+                
+            }
+            else
+            {
+                throw new Exception("Все пошло по пиздец. Смотри код");
+            }
+            ranges.Add(sheetID + range, SubClass);
+            spreadsheetIdAndRanges.Add(spreadsheetId, ranges);
             RefreshingDBAsync(spreadsheetIdAndRanges);
         }
 

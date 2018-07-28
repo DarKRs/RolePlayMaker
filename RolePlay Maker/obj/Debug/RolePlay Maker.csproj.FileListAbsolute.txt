@@ -120,3 +120,4 @@ C:\Git\RolePlayMaker-master\RolePlayMaker-master\RolePlayMaker\RolePlay Maker\ob
 C:\Git\RolePlayMaker-master\RolePlayMaker-master\RolePlayMaker\RolePlay Maker\obj\Debug\RolePlay_Maker.Properties.Resources.resources
 C:\Git\RolePlayMaker-master\RolePlayMaker-master\RolePlayMaker\RolePlay Maker\obj\Debug\RolePlay_Maker.WeaponInfo.resources
 C:\Git\RolePlayMaker-master\RolePlayMaker-master\RolePlayMaker\RolePlay Maker\obj\Debug\RolePlay Maker.csproj.GenerateResource.Cache
+C:\Git\RolePlayMaker-master\RolePlayMaker-master\RolePlayMaker\RolePlay Maker\obj\Debug\RolePlay_Maker.Logs.resources
