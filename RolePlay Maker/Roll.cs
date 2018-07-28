@@ -9,7 +9,8 @@ namespace RolePlay_Maker
 {
     class DRoll
     {
-        private int D;
+        public int D;
+        Random rnd = new Random();
         public DRoll(string D)
         {
             var re = new Regex("D");
@@ -19,9 +20,16 @@ namespace RolePlay_Maker
             this.D = Int32.Parse(D);
         }
 
+        public DRoll(int D)
+        {
+
+            this.D = D;
+        }
+
         public int Roll()
         {
-            return new Random().Next(1, D+1);
+            return rnd.Next(1, D+1);
         } 
+
     }
 }

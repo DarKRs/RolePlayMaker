@@ -36,7 +36,7 @@
             this.PlayerCount = new System.Windows.Forms.NumericUpDown();
             this.Generate = new System.Windows.Forms.Button();
             this.GeneratedField = new System.Windows.Forms.Panel();
-            this.Logs = new System.Windows.Forms.Button();
+            this.LogsButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PlayerLevel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PlayerCount)).BeginInit();
             this.SuspendLayout();
@@ -114,23 +114,24 @@
             this.GeneratedField.Size = new System.Drawing.Size(945, 273);
             this.GeneratedField.TabIndex = 8;
             // 
-            // Logs
+            // LogsButton
             // 
-            this.Logs.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Logs.Location = new System.Drawing.Point(823, 17);
-            this.Logs.Name = "Logs";
-            this.Logs.Size = new System.Drawing.Size(125, 33);
-            this.Logs.TabIndex = 9;
-            this.Logs.Text = "Открыть логи";
-            this.Logs.UseVisualStyleBackColor = true;
-            this.Logs.Click += new System.EventHandler(this.Logs_Click);
+            this.LogsButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.LogsButton.Enabled = false;
+            this.LogsButton.Location = new System.Drawing.Point(823, 17);
+            this.LogsButton.Name = "LogsButton";
+            this.LogsButton.Size = new System.Drawing.Size(125, 33);
+            this.LogsButton.TabIndex = 9;
+            this.LogsButton.Text = "Открыть логи";
+            this.LogsButton.UseVisualStyleBackColor = true;
+            this.LogsButton.Click += new System.EventHandler(this.Logs_Click);
             // 
             // NPCGeneratorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(960, 337);
-            this.Controls.Add(this.Logs);
+            this.Controls.Add(this.LogsButton);
             this.Controls.Add(this.GeneratedField);
             this.Controls.Add(this.Generate);
             this.Controls.Add(this.PlayerCount);
@@ -158,6 +159,6 @@
         private System.Windows.Forms.NumericUpDown PlayerCount;
         private System.Windows.Forms.Button Generate;
         private System.Windows.Forms.Panel GeneratedField;
-        private System.Windows.Forms.Button Logs;
+        private System.Windows.Forms.Button LogsButton;
     }
 }

@@ -21,5 +21,10 @@ namespace RolePlay_Maker
         {
 
         }
+
+        private void Clear_Click(object sender, EventArgs e)
+        {
+            LogText.Clear();
+        }
     }
 }

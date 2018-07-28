@@ -140,7 +140,7 @@ namespace RolePlay_Maker
             }
             else
             {
-                throw new Exception("Все пошло по пиздец. Смотри код");
+                throw new Exception("Все пошло по пизде. Смотри код");
             }
             ranges.Add(sheetID + range, SubClass);
             spreadsheetIdAndRanges.Add(spreadsheetId, ranges);

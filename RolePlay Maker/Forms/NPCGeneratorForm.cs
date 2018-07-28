@@ -14,7 +14,7 @@ namespace RolePlay_Maker.Forms
     public partial class NPCGeneratorForm : Form
     {
         int lengarmor = Item.ArmorList.Count();
-        
+        Logs LOG = new Logs();
         public NPCGeneratorForm()
         {
             InitializeComponent();
@@ -23,7 +23,9 @@ namespace RolePlay_Maker.Forms
         private void Generate_Click(object sender, EventArgs e)
         {
             GeneratedField.Controls.Clear();
-            CheckDataAndCallFunciton(Faction.Text, (int)PlayerLevel.Value, (int)PlayerCount.Value);  
+            CheckDataAndCallFunciton(Faction.Text, (int)PlayerLevel.Value, (int)PlayerCount.Value);
+            LOG.Owner = this;
+            LogsButton.Enabled = true;
         }
 
         private void CheckDataAndCallFunciton(string Fraction, int PlayersLevel, int PlayersCount)
@@ -63,7 +65,7 @@ namespace RolePlay_Maker.Forms
                         }
                     }
                     int EnimiesCount = PlayersCount * PlayersLevel / 2;// * (rnd + 0.5));
-                    NPCGenerator GUI = new NPCGenerator(AvailableArmor, AvailableHats, AvailableWeapon, AvailableSecondaryWeapon);
+                    NPCGenerator GUI = new NPCGenerator(AvailableArmor, AvailableHats, AvailableWeapon, AvailableSecondaryWeapon, LOG);
                     GUI.SetParams_Human(Fraction, EnimiesCount);
                     Draw(GUI,EnimiesCount);
                     break;
@@ -122,9 +124,8 @@ namespace RolePlay_Maker.Forms
 
         private void Logs_Click(object sender, EventArgs e)
         {
-            Logs f = new Logs();
-            f.Owner = this;
-            f.Show();
+
+            LOG.Show();
         }
     }
 }

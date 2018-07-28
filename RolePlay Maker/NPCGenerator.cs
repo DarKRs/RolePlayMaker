@@ -27,8 +27,11 @@ namespace RolePlay_Maker
             private List<Armor> AvailableHats;
             private List<Weapon> AvailableWeapon;
             private List<Weapon> AvailableSecondaryWeapon;
+            //
+            private Logs log;
+            Random random = new Random();
 
-        public NPCGenerator(List<Armor> AvailableArmor, List<Armor> AvailableHats, List<Weapon> AvailableWeapon, List<Weapon> AvailableSecondaryWeapon)
+        public NPCGenerator(List<Armor> AvailableArmor, List<Armor> AvailableHats, List<Weapon> AvailableWeapon, List<Weapon> AvailableSecondaryWeapon, Logs log)
             {
                 Names = new Dictionary<int, TextBox>();
                 Armor = new Dictionary<int, ComboBox>();
@@ -46,6 +49,8 @@ namespace RolePlay_Maker
                 this.AvailableHats = AvailableHats;
                 this.AvailableWeapon = AvailableWeapon;
                 this.AvailableSecondaryWeapon = AvailableSecondaryWeapon;
+                //
+                this.log = log;
             }
 
             public void SetParams_Human(string Fraction, int count)
@@ -53,7 +58,6 @@ namespace RolePlay_Maker
                 int rnd;
                 int KBValue;
                 int PUValue;
-                Random random = new Random();
                 for (int i = 0; i < count; i++)
                 {
                     KBValue = 0;
@@ -111,6 +115,7 @@ namespace RolePlay_Maker
                     AttackSecondaryWeapon.Add(i, new Button());
                     AttackSecondaryWeapon[i].Text = "Атака второспенным оружием";
                     AttackSecondaryWeapon[i].AutoSize = true;
+                    AttackSecondaryWeapon[i].Click += new EventHandler(AttackMainWeapon_Click);
                     //
                     Refresh.Add(i, new Button());
                     Refresh[i].Text = "Refresh"; //TODO Переназвать нормально кнопку
@@ -166,7 +171,59 @@ namespace RolePlay_Maker
 
         private void AttackMainWeapon_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Knopka");
+            int key=0;
+            List<Weapon> WeaponForLog = new List<Weapon>();
+            Button selectedButton = (Button)sender;
+            Dictionary<int, Button> container = new Dictionary<int, Button>();
+            if (selectedButton.Text == "Атака основным оружием")
+            {
+                container = AttackMainWeapon;
+                WeaponForLog = AvailableWeapon;
+            }
+            else if (selectedButton.Text == "Атака второспенным оружием")
+            {
+                container = AttackSecondaryWeapon;
+                WeaponForLog = AvailableSecondaryWeapon;
+            }
+            for (int i = 0; i < container.Count; i++)
+            {
+                if(container[i] == selectedButton)
+                {
+                    key = i;
+                    break;
+                }
+            }
+            
+            string time = DateTime.Now.ToString("[HH:mm:ss]");
+            string Name = Names[key].Text;
+            string WeaponText = "";
+            string D20 = random.Next(1, 21).ToString();
+            string Damage = "";
+
+            for(int i = 0; i < WeaponForLog.Count; i++)
+            {
+
+                if (selectedButton.Text == "Атака основным оружием")
+                {
+                    if (WeaponForLog[i].Name == Weapon[key].Text)
+                    {
+                        WeaponText = WeaponForLog[i].Name;
+                        Damage = (WeaponForLog[i].RandomDamage.Roll() + WeaponForLog[i].PermanentDamage).ToString()
+                            + "(d" + WeaponForLog[i].RandomDamage.D.ToString() + "+" + WeaponForLog[i].PermanentDamage.ToString() + ")";
+                    }
+                }
+                else if (selectedButton.Text == "Атака второспенным оружием")
+                {
+                    if (WeaponForLog[i].Name == SecondaryWeapon[key].Text)
+                    {
+                        WeaponText = WeaponForLog[i].Name;
+                        Damage = (WeaponForLog[i].RandomDamage.Roll() + WeaponForLog[i].PermanentDamage).ToString()
+                            + "(d" + WeaponForLog[i].RandomDamage.D.ToString() + "+" + WeaponForLog[i].PermanentDamage.ToString() + ")";
+                    }
+                }
+               
+            }
+            log.LogText.Text += time + " " + Name + " атакует оружием " + WeaponText + " (D20=" + D20 + ") и наносит урон = " + Damage + "\n";
         }
 
 

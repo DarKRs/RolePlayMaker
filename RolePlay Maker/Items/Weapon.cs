@@ -16,14 +16,14 @@ namespace RolePlay_Maker
         public int Magazine;
         public int Price;
 
-        public Weapon()
+        public Weapon()//Кулаки
         {
             this.Type = "";
             this.Class = "";
             this.Subclass = "";
             this.Name = "Нет";
-            this.PermanentDamage = 0;
-            this.RandomDamage = null;
+            this.PermanentDamage = 2;
+            this.RandomDamage = new DRoll(2);
             this.Description = "";
             this.AmmoType = "";
             this.Magazine = 0;

@@ -28,26 +28,40 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Log = new System.Windows.Forms.RichTextBox();
+            this.LogText = new System.Windows.Forms.RichTextBox();
+            this.Clear = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // Log
+            // LogText
             // 
-            this.Log.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.LogText.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Log.Location = new System.Drawing.Point(12, 12);
-            this.Log.Name = "Log";
-            this.Log.Size = new System.Drawing.Size(295, 193);
-            this.Log.TabIndex = 11;
-            this.Log.Text = "";
+            this.LogText.Location = new System.Drawing.Point(12, 12);
+            this.LogText.Name = "LogText";
+            this.LogText.ReadOnly = true;
+            this.LogText.Size = new System.Drawing.Size(505, 194);
+            this.LogText.TabIndex = 11;
+            this.LogText.Text = "";
+            // 
+            // Clear
+            // 
+            this.Clear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.Clear.Location = new System.Drawing.Point(114, 217);
+            this.Clear.Name = "Clear";
+            this.Clear.Size = new System.Drawing.Size(301, 23);
+            this.Clear.TabIndex = 12;
+            this.Clear.Text = "Clear";
+            this.Clear.UseVisualStyleBackColor = true;
+            this.Clear.Click += new System.EventHandler(this.Clear_Click);
             // 
             // Logs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(319, 217);
-            this.Controls.Add(this.Log);
+            this.ClientSize = new System.Drawing.Size(529, 252);
+            this.Controls.Add(this.Clear);
+            this.Controls.Add(this.LogText);
             this.Name = "Logs";
             this.Text = "Logs";
             this.Load += new System.EventHandler(this.Logs_Load);
@@ -57,6 +71,7 @@
 
         #endregion
 
-        private System.Windows.Forms.RichTextBox Log;
+        public System.Windows.Forms.RichTextBox LogText;
+        private System.Windows.Forms.Button Clear;
     }
 }
