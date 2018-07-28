@@ -82,7 +82,7 @@ namespace RolePlay_Maker.Forms
                 GeneratedField.Controls.Add(GUI.Names[i]);
                 if (i == 0)
                 {
-                    GUI.Names[i].Location = new Point(GeneratedField.Location.X + 5, GeneratedField.Location.Y - 50);
+                    GUI.Names[i].Location = new Point(GeneratedField.Location.X + 5, GeneratedField.Location.Y - 40);
                 }
                 else
                 {
@@ -119,7 +119,22 @@ namespace RolePlay_Maker.Forms
                 GeneratedField.Controls.Add(GUI.Refresh[i]);
                 GUI.Refresh[i].Location = new Point(GUI.AttackSecondaryWeapon[i].Location.X + 180, GUI.AttackSecondaryWeapon[i].Location.Y);
             }
-           
+            Label NameText = new Label(); NameText.Text = "Имя"; GeneratedField.Controls.Add(NameText); NameText.AutoSize = true;
+            Label ArmorText = new Label(); ArmorText.Text = "Броня"; GeneratedField.Controls.Add(ArmorText); ArmorText.AutoSize = true;
+            Label HatsText = new Label(); HatsText.Text = "Шлем"; GeneratedField.Controls.Add(HatsText); HatsText.AutoSize = true;
+            Label KBText = new Label(); KBText.Text = "КБ"; GeneratedField.Controls.Add(KBText); KBText.AutoSize = true;
+            Label PUText = new Label(); PUText.Text = "СУ"; GeneratedField.Controls.Add(PUText); PUText.AutoSize = true;
+            Label HPText = new Label(); HPText.Text = "ХП"; GeneratedField.Controls.Add(HPText); HPText.AutoSize = true;
+            Label WeaponText = new Label(); WeaponText.Text = "Основное оружие"; GeneratedField.Controls.Add(WeaponText); WeaponText.AutoSize = true;
+            Label SecondaryWeaponText = new Label(); SecondaryWeaponText.Text = "Вспомогательное оружие"; GeneratedField.Controls.Add(SecondaryWeaponText); SecondaryWeaponText.AutoSize = true;
+            NameText.Location = new Point(GUI.Names[0].Location.X, GUI.Names[0].Location.Y - 15);
+            ArmorText.Location = new Point(GUI.Armor[0].Location.X, GUI.Armor[0].Location.Y - 15);
+            HatsText.Location = new Point(GUI.Hats[0].Location.X, GUI.Hats[0].Location.Y - 15);
+            KBText.Location = new Point(GUI.KB[0].Location.X, GUI.KB[0].Location.Y - 20);
+            PUText.Location = new Point(GUI.ArmorPU[0].Location.X, GUI.ArmorPU[0].Location.Y - 20);
+            HPText.Location = new Point(GUI.HP[0].Location.X, GUI.HP[0].Location.Y - 15);
+            WeaponText.Location = new Point(GUI.Weapon[0].Location.X, GUI.Weapon[0].Location.Y - 15);
+            SecondaryWeaponText.Location = new Point(GUI.SecondaryWeapon[0].Location.X - 5, GUI.SecondaryWeapon[0].Location.Y - 15);
         }
 
         private void Logs_Click(object sender, EventArgs e)

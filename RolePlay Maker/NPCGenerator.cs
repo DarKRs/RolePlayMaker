@@ -110,16 +110,17 @@ namespace RolePlay_Maker
                     AttackMainWeapon.Add(i, new Button());
                     AttackMainWeapon[i].Text = "Атака основным оружием";
                     AttackMainWeapon[i].AutoSize = true;
-                    AttackMainWeapon[i].Click += new EventHandler(AttackMainWeapon_Click);
+                    AttackMainWeapon[i].Click += new EventHandler(AttackWeapon_Click);
                     //
                     AttackSecondaryWeapon.Add(i, new Button());
                     AttackSecondaryWeapon[i].Text = "Атака второспенным оружием";
                     AttackSecondaryWeapon[i].AutoSize = true;
-                    AttackSecondaryWeapon[i].Click += new EventHandler(AttackMainWeapon_Click);
+                    AttackSecondaryWeapon[i].Click += new EventHandler(AttackWeapon_Click);
                     //
                     Refresh.Add(i, new Button());
                     Refresh[i].Text = "Refresh"; //TODO Переназвать нормально кнопку
                     Refresh[i].AutoSize = true;
+                    Refresh[i].Click += new EventHandler(Refresh_NPC);
             }
         }
 
@@ -169,7 +170,7 @@ namespace RolePlay_Maker
         }
 
 
-        private void AttackMainWeapon_Click(object sender, EventArgs e)
+        private void AttackWeapon_Click(object sender, EventArgs e)
         {
             int key=0;
             List<Weapon> WeaponForLog = new List<Weapon>();
@@ -226,6 +227,43 @@ namespace RolePlay_Maker
             log.LogText.Text += time + " " + Name + " атакует оружием " + WeaponText + " (D20=" + D20 + ") и наносит урон = " + Damage + "\n";
         }
 
+        private void Refresh_NPC(object sender, EventArgs e)
+        {
+            int KBValue = 0;
+            int PUValue = 0;
+            Button selectedButton = (Button)sender;
+            int key = 0;
+            int rnd;
+            for (int i = 0; i < Refresh.Count; i++)
+            {
+                if (Refresh[i] == selectedButton)
+                {
+                    key = i;
+                    break;
+                }
+            }
+            Names[key].Text = NameGenerator.Generate();
+            rnd = random.Next(0, AvailableArmor.Count);
+            //
+            Armor[key].Text = AvailableArmor[rnd].Name;
+            KBValue += AvailableArmor[rnd].KB;
+            PUValue += AvailableArmor[rnd].AP;
+            //
+            rnd = random.Next(0, AvailableHats.Count);
+            Hats[key].Text = AvailableHats[rnd].Name;
+            KBValue += AvailableHats[rnd].KB;
+            PUValue += AvailableHats[rnd].AP;
+            //
+            KB[key].Text = KBValue.ToString();
+            ArmorPU[key].Text = PUValue.ToString();
+            HP[key].Value = random.Next(30, 75);
+            //
+            rnd = random.Next(0, AvailableWeapon.Count);
+            Weapon[key].Text = AvailableWeapon[rnd].Name;
+            //
+            rnd = random.Next(0, AvailableSecondaryWeapon.Count);
+            SecondaryWeapon[key].Text = AvailableSecondaryWeapon[rnd].Name;
+        }
 
     }
 }
