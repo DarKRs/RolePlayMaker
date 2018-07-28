@@ -30,13 +30,14 @@ namespace RolePlay_Maker
             string Price = PriceText.Text;
             string Description = DescriptionText.Text;
             string Effects = EffectsText.Text;
+            int num;
             if (Name == "" || AP =="" || Price =="" || Description =="" || KB =="" || Type == "" || Fraction == "")
             {
                 MessageBox.Show("Введена не вся информация",
                      "Все пошло по пизде", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            if (!(int.TryParse(AP, out int num)) || !(int.TryParse(Price, out num)) || !(int.TryParse(KB, out num)))
+            if (!(int.TryParse(AP, out num)) || !(int.TryParse(Price, out num)) || !(int.TryParse(KB, out num)))
             {
                 MessageBox.Show("Только числовые значения в СУ и стоимости!",
                      "Не твори хуйню блять!", MessageBoxButtons.OK, MessageBoxIcon.Information);

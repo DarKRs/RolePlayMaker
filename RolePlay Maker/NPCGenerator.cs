@@ -111,6 +111,10 @@ namespace RolePlay_Maker
                     AttackSecondaryWeapon.Add(i, new Button());
                     AttackSecondaryWeapon[i].Text = "Атака второспенным оружием";
                     AttackSecondaryWeapon[i].AutoSize = true;
+                    //
+                    Refresh.Add(i, new Button());
+                    Refresh[i].Text = "Refresh"; //TODO Переназвать нормально кнопку
+                    Refresh[i].AutoSize = true;
             }
         }
 
