@@ -23,6 +23,9 @@ namespace RolePlay_Maker
         public static readonly string COLD_WEAPON_SPREADSHEET = "1ghGqXURQNqpabSYt9QRH-4ubfYcTdIZmhOQR_WW9C7A";
         //
         public static readonly string MOB_SPREADSHEET = "1jHtZc8N16qjlF_mxI7L5a_VTK3QFNEHuneHQ9XosdNM";
+        //
+        public static readonly string TRAIT_SPREADSHEET = "115OG8KOMn8zmGYrZnl2duH6DAhjbO718fiivZQGNbTQ";
+        public static readonly string ABILITIES_SPREADSHEET = "1D4yMhlweV2k9oFKP6YohaVqbML3um4qdyzWkBFb_C84";
 
         static string[] Scopes = { SheetsService.Scope.Spreadsheets };
         static string ApplicationName = "My Project";
@@ -35,7 +38,7 @@ namespace RolePlay_Maker
             UserCredential credential;
 
             using (var stream =
-                new FileStream("client_secret.json", FileMode.Open, FileAccess.Read))
+                new FileStream("Resources/client_secret.json", FileMode.Open, FileAccess.Read))
             {
                 string credPath = Environment.GetFolderPath(
                     Environment.SpecialFolder.Personal);
@@ -104,12 +107,22 @@ namespace RolePlay_Maker
             ranges.Add("Двуручное холодное оружие!A3:E", "Двуручное холодное оружие");
             ranges.Add("Копья!A3:E", "Копья");
             ranges.Add("Другое!A3:E", "Другое");
-            spreadsheetIdAndRanges.Add(COLD_WEAPON_SPREADSHEET, ranges);
+            spreadsheetIdAndRanges.Add(spreadsheetId, ranges);
             /////////////////////////MOB///////////////////////
             ranges = new Dictionary<string, string>();
             spreadsheetId = MOB_SPREADSHEET;
             ranges.Add("Mob!A3:E", "Mob");
-            spreadsheetIdAndRanges.Add(MOB_SPREADSHEET, ranges);
+            spreadsheetIdAndRanges.Add(spreadsheetId, ranges);
+            //
+            ranges = new Dictionary<string, string>();
+            spreadsheetId = TRAIT_SPREADSHEET;
+            ranges.Add("Черты!A2:C", "Черты");
+            spreadsheetIdAndRanges.Add(spreadsheetId, ranges);
+            //
+            ranges = new Dictionary<string, string>();
+            spreadsheetId = ABILITIES_SPREADSHEET;
+            ranges.Add("Способности!A2:D", "Способности");
+            spreadsheetIdAndRanges.Add(spreadsheetId, ranges);
             //
             RefreshingDBAsync(spreadsheetIdAndRanges);
         }
@@ -149,6 +162,16 @@ namespace RolePlay_Maker
             {
                 spreadsheetId = MOB_SPREADSHEET;
                 range = "!A3:E";
+            }
+            else if(Class == "Trait")
+            {
+                spreadsheetId = TRAIT_SPREADSHEET;
+                range = "!A2:C";
+            }
+            else if(Class == "Ability")
+            {
+                spreadsheetId = ABILITIES_SPREADSHEET;
+                range = "!A2:D";
             }
             else
             {
@@ -247,6 +270,20 @@ namespace RolePlay_Maker
                         {
                             Mob mb = new Mob(values[i]);
                             Entity.MobList.Add(mb);
+                        }
+                        break;
+                    case "Черты":
+                        for(int i = 0; i < values.Count; i++)
+                        {
+                            Trait tr = new Trait(values[i]);
+                            TraitAbilityContainer.TraitList.Add(tr);
+                        }
+                        break;
+                    case "Способности":
+                        for(int i = 0; i < values.Count; i++)
+                        {
+                            Ability ab = new Ability(values[i]);
+                            TraitAbilityContainer.AbilityList.Add(ab);
                         }
                         break;
                     default: break;

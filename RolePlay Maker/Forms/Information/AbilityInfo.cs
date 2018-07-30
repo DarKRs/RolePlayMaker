@@ -12,7 +12,7 @@ namespace RolePlay_Maker
 {
     public partial class AbilityInfo : Form
     {
-        int leng = Item.Entitys.Count();
+        int leng = TraitAbilityContainer.AbilityList.Count();
         public AbilityInfo()
         {
             InitializeComponent();
@@ -22,8 +22,7 @@ namespace RolePlay_Maker
         {
             for (int i = 0; i < leng; i++)
             {
-                if (Item.Entitys[i].Type != "Ability") { continue; }
-                AbilityTree.Nodes.Add(Item.Entitys[i].Name);
+                AbilityTree.Nodes.Add(TraitAbilityContainer.AbilityList[i].Name);
             }
         }
 
@@ -31,12 +30,12 @@ namespace RolePlay_Maker
         {
             for (int i = 0; i < leng; i++)
             {
-                if (AbilityTree.SelectedNode.Text != Item.Entitys[i].Name) { continue; }
-                Ability Ab = ((Ability)Item.Entitys[i]);
+                if (AbilityTree.SelectedNode.Text != TraitAbilityContainer.AbilityList[i].Name) { continue; }
+                Ability Ab = TraitAbilityContainer.AbilityList[i];
                 NameText.Text = Ab.Name;
                 RangText.Text = Ab.rangs.ToString();
                 ReqText.Text = Ab.requirement;
-                DescriptionText.Text = Ab.Description;
+                DescriptionText.Text = Ab.Advantage;
             }
         }
     }

@@ -5,6 +5,7 @@ using System.Threading;
 using System.Windows.Forms;
 using RolePlay_Maker.Forms;
 using System.Threading.Tasks;
+using RolePlay_Maker.Forms.Information;
 
 namespace RolePlay_Maker
 {
@@ -143,6 +144,27 @@ namespace RolePlay_Maker
         private void добавитьОружиеToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             AddWeapon f = new AddWeapon();
+            f.Owner = this;
+            f.ShowDialog();
+        }
+
+        private void добавитьСпособностьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddAbility f = new AddAbility();
+            f.Owner = this;
+            f.ShowDialog();
+        }
+
+        private void справкаToolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+            TraitInfo f = new TraitInfo();
+            f.Owner = this;
+            f.ShowDialog();
+        }
+
+        private void добавитьЧертуToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddTrait f = new AddTrait();
             f.Owner = this;
             f.ShowDialog();
         }

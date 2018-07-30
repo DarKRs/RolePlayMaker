@@ -9,7 +9,7 @@ namespace RolePlay_Maker
     class Item
     {
         
-        public static List<Item> Entitys = new List<Item>();
+        public static List<Item> Entitys = new List<Item>(); //TODO DELETE
         public static List<Armor> ArmorList = new List<Armor>();
         public static List<Weapon> WeaponList = new List<Weapon>();
         public string Name;

@@ -30,7 +30,7 @@ namespace RolePlay_Maker
             int num;
             if ( !(int.TryParse(HP, out num)) || !(int.TryParse(KB, out num)))
             {
-                MessageBox.Show("Только числовые значения в уроне, хп и КБ!",
+                MessageBox.Show("Только числовые значения в хп и КБ!",
                      "Не твори хуйню блять!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
