@@ -21,6 +21,8 @@ namespace RolePlay_Maker
         public static readonly string ARMOR_SPREADSHEET = "19CQvYbi6OwMoLpseI8AkQzL2jFbc9YP3b4Kpu61wsEw";
         public static readonly string WEAPON_SPREADSHEET = "1_6ND5dw_DG-qgE6nkbrH3BVgj-D8_9LgHEpNlT-NFMA";
         public static readonly string COLD_WEAPON_SPREADSHEET = "1ghGqXURQNqpabSYt9QRH-4ubfYcTdIZmhOQR_WW9C7A";
+        //
+        public static readonly string MOB_SPREADSHEET = "1jHtZc8N16qjlF_mxI7L5a_VTK3QFNEHuneHQ9XosdNM";
 
         static string[] Scopes = { SheetsService.Scope.Spreadsheets };
         static string ApplicationName = "My Project";
@@ -103,7 +105,12 @@ namespace RolePlay_Maker
             ranges.Add("Копья!A3:E", "Копья");
             ranges.Add("Другое!A3:E", "Другое");
             spreadsheetIdAndRanges.Add(COLD_WEAPON_SPREADSHEET, ranges);
-
+            /////////////////////////MOB///////////////////////
+            ranges = new Dictionary<string, string>();
+            spreadsheetId = MOB_SPREADSHEET;
+            ranges.Add("Mob!A3:E", "Mob");
+            spreadsheetIdAndRanges.Add(MOB_SPREADSHEET, ranges);
+            //
             RefreshingDBAsync(spreadsheetIdAndRanges);
         }
 
@@ -137,6 +144,11 @@ namespace RolePlay_Maker
                 spreadsheetId = COLD_WEAPON_SPREADSHEET;
                 range = "!A3:E";
                 
+            }
+            else if(Class == "Mob")
+            {
+                spreadsheetId = MOB_SPREADSHEET;
+                range = "!A3:E";
             }
             else
             {
@@ -228,6 +240,13 @@ namespace RolePlay_Maker
                         {
                             Weapon wp = new Weapon(type, values[i], "ColdWeapon");
                             Item.WeaponList.Add(wp);
+                        }
+                        break;
+                    case "Mob":
+                        for(int i=0; i < values.Count; i++)
+                        {
+                            Mob mb = new Mob(values[i]);
+                            Entity.MobList.Add(mb);
                         }
                         break;
                     default: break;

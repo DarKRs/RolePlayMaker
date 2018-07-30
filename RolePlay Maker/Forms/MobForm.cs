@@ -12,7 +12,7 @@ namespace RolePlay_Maker
 {
     public partial class MobForm : Form
     {
-        int leng = Item.Entitys.Count();
+        int leng = Entity.MobList.Count();
         public MobForm()
         {
             InitializeComponent(); 
@@ -22,8 +22,8 @@ namespace RolePlay_Maker
         {
             for (int i = 0; i < leng; i++)
             {
-                if (MobTree.SelectedNode.Text != Item.Entitys[i].Name) { continue; }
-                Mob Mb = ((Mob)Item.Entitys[i]);
+                if (MobTree.SelectedNode.Text != Entity.MobList[i].Name) { continue; }
+                Mob Mb = Entity.MobList[i];
                 NameText.Text = Mb.Name;
                 HpText.Text = Mb.HP.ToString();
                 KBText.Text = Mb.KB.ToString();
@@ -37,8 +37,7 @@ namespace RolePlay_Maker
 
             for (int i = 0; i < leng; i++)
             {
-                if (Item.Entitys[i].Type != "Mob") { continue; }
-                MobTree.Nodes.Add(Item.Entitys[i].Name);
+                MobTree.Nodes.Add(Entity.MobList[i].Name);
             }
         }
     }

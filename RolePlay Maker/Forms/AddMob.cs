@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.IO;
+using System.Collections.Generic;
 
 namespace RolePlay_Maker
 {
@@ -27,29 +28,22 @@ namespace RolePlay_Maker
                 return;
             }
             int num;
-            if (!(int.TryParse(Damage, out num)) || !(int.TryParse(HP, out num)) || !(int.TryParse(KB, out num)))
+            if ( !(int.TryParse(HP, out num)) || !(int.TryParse(KB, out num)))
             {
                 MessageBox.Show("Только числовые значения в уроне, хп и КБ!",
                      "Не твори хуйню блять!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            if (Name.Contains("$") || Name.Contains("&") || HP.Contains("$") || HP.Contains("&") || Damage.Contains("$") || Damage.Contains("&") || KB.Contains("$") || KB.Contains("&") || Description.Contains("$") || Description.Contains("&"))
-            {
-                MessageBox.Show("Нельзя использовать знаки $ или & , уебок",
-                     "Не твори хуйню блять!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-            string all = "& \n" + Name + "$" + HP + "$" + KB + "$" + Damage + "$" + Description;
-            string path = System.IO.Directory.GetCurrentDirectory() + @"\" + "Mob.txt";
 
-            FileStream fs = new FileStream(path, FileMode.Append, FileAccess.Write);
-            StreamWriter writer = new StreamWriter(fs); //создаем «потоковый писатель» и связываем его с файловым потоком 
-            writer.Write(all); //записываем в файл
-            writer.Close(); //закрываем поток. Не закрыв поток, в файл ничего не запишется 
+            List<string> data = new List<string>() { Name, KB, HP, Description, Damage };
 
+            StatusLabel.Text = "Записываем информацию...";
 
-            MessageBox.Show("Информация записана",
-                  "Все збс", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Loader ld = Loader.GetLoader();
+            ld.AddToDatabase(data, Loader.MOB_SPREADSHEET, "Mob", "Mob");
+
+            StatusLabel.Text = "Информация записана!";
+
             NameText.Text = ""; HpText.Text = ""; KBText.Text = ""; DamageText.Text = ""; DescriptionText.Text = "";
         }
     }
