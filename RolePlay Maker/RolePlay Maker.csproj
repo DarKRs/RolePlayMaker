@@ -77,57 +77,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forms\Information\AddAbility.cs">
+    <Compile Include="Ability.cs" />
+    <Compile Include="Forms\AbilityInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Information\AddAbility.Designer.cs">
-      <DependentUpon>AddAbility.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Information\AddTrait.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Information\AddTrait.Designer.cs">
-      <DependentUpon>AddTrait.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Information\TraitInfo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Information\TraitInfo.Designer.cs">
-      <DependentUpon>TraitInfo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Trait\TraitAbilityContainer.cs" />
-    <Compile Include="Trait\Trait.cs" />
-    <Compile Include="Trait\Ability.cs" />
-    <Compile Include="Entity.cs" />
-    <Compile Include="Forms\Information\AbilityInfo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Information\AbilityInfo.Designer.cs">
+    <Compile Include="Forms\AbilityInfo.Designer.cs">
       <DependentUpon>AbilityInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Information\AddArmor.cs">
+    <Compile Include="Forms\AddArmor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Information\AddArmor.Designer.cs">
+    <Compile Include="Forms\AddArmor.Designer.cs">
       <DependentUpon>AddArmor.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Information\AddMob.cs">
+    <Compile Include="Forms\AddMob.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Information\AddMob.Designer.cs">
+    <Compile Include="Forms\AddMob.Designer.cs">
       <DependentUpon>AddMob.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Information\AddWeapon.cs">
+    <Compile Include="Forms\AddWeapon.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Information\AddWeapon.Designer.cs">
+    <Compile Include="Forms\AddWeapon.Designer.cs">
       <DependentUpon>AddWeapon.cs</DependentUpon>
     </Compile>
     <Compile Include="Items\Armor.cs" />
-    <Compile Include="Forms\Information\ArmorForm.cs">
+    <Compile Include="Forms\ArmorForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Information\ArmorForm.Designer.cs">
+    <Compile Include="Forms\ArmorForm.Designer.cs">
       <DependentUpon>ArmorForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Author.cs">
@@ -161,10 +140,10 @@
     <Compile Include="Forms\Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Generator\Generators.cs">
+    <Compile Include="Forms\Generators.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Generator\Generators.Designer.cs">
+    <Compile Include="Forms\Generators.Designer.cs">
       <DependentUpon>Generators.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\MainForm.cs">
@@ -173,34 +152,30 @@
     <Compile Include="Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Information\MobForm.cs">
+    <Compile Include="Forms\MobForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Information\MobForm.Designer.cs">
+    <Compile Include="Forms\MobForm.Designer.cs">
       <DependentUpon>MobForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Generator\NPCGeneratorForm.cs">
+    <Compile Include="Forms\NPCGeneratorForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Generator\NPCGeneratorForm.Designer.cs">
+    <Compile Include="Forms\NPCGeneratorForm.Designer.cs">
       <DependentUpon>NPCGeneratorForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Generator\QuestGenerator.cs">
+    <Compile Include="Forms\QuestGenerator.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Generator\QuestGenerator.Designer.cs">
+    <Compile Include="Forms\QuestGenerator.Designer.cs">
       <DependentUpon>QuestGenerator.cs</DependentUpon>
     </Compile>
     <Compile Include="Items\Loader.cs" />
-<<<<<<< HEAD
     <Compile Include="Items\Store.cs" />
     <Compile Include="Logs.cs">
-=======
-    <Compile Include="Forms\Logs.cs">
->>>>>>> 2a605b63a3e87d196fc737b6fe04d36f45a4c630
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Logs.Designer.cs">
+    <Compile Include="Logs.Designer.cs">
       <DependentUpon>Logs.cs</DependentUpon>
     </Compile>
     <Compile Include="Mobs.cs" />
@@ -228,32 +203,26 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Items\Weapon.cs" />
-    <Compile Include="Forms\Information\WeaponInfo.cs">
+    <Compile Include="Forms\WeaponInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Information\WeaponInfo.Designer.cs">
+    <Compile Include="Forms\WeaponInfo.Designer.cs">
       <DependentUpon>WeaponInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Roll.cs" />
-    <EmbeddedResource Include="Forms\Information\AbilityInfo.resx">
+    <EmbeddedResource Include="Forms\AbilityInfo.resx">
       <DependentUpon>AbilityInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Information\AddAbility.resx">
-      <DependentUpon>AddAbility.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Information\AddArmor.resx">
+    <EmbeddedResource Include="Forms\AddArmor.resx">
       <DependentUpon>AddArmor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Information\AddMob.resx">
+    <EmbeddedResource Include="Forms\AddMob.resx">
       <DependentUpon>AddMob.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Information\AddTrait.resx">
-      <DependentUpon>AddTrait.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Information\AddWeapon.resx">
+    <EmbeddedResource Include="Forms\AddWeapon.resx">
       <DependentUpon>AddWeapon.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Information\ArmorForm.resx">
+    <EmbeddedResource Include="Forms\ArmorForm.resx">
       <DependentUpon>ArmorForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Author.resx">
@@ -271,16 +240,13 @@
     <EmbeddedResource Include="Forms\Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Generator\Generators.resx">
+    <EmbeddedResource Include="Forms\Generators.resx">
       <DependentUpon>Generators.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Information\TraitInfo.resx">
-      <DependentUpon>TraitInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Information\MobForm.resx">
+    <EmbeddedResource Include="Forms\MobForm.resx">
       <DependentUpon>MobForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Network.resx">
@@ -289,16 +255,16 @@
     <EmbeddedResource Include="Forms\NetworkInfo.resx">
       <DependentUpon>NetworkInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Generator\NPCGeneratorForm.resx">
+    <EmbeddedResource Include="Forms\NPCGeneratorForm.resx">
       <DependentUpon>NPCGeneratorForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Profile.resx">
       <DependentUpon>Profile.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Generator\QuestGenerator.resx">
+    <EmbeddedResource Include="Forms\QuestGenerator.resx">
       <DependentUpon>QuestGenerator.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Logs.resx">
+    <EmbeddedResource Include="Logs.resx">
       <DependentUpon>Logs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -306,10 +272,10 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Information\WeaponInfo.resx">
+    <EmbeddedResource Include="Forms\WeaponInfo.resx">
       <DependentUpon>WeaponInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="Resources\client_secret.json">
+    <None Include="client_secret.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />
@@ -332,7 +298,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\App.config" />
+    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\qsRvmB6cOw4.jpg" />

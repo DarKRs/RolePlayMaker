@@ -43,7 +43,7 @@
             // 
             // NameText
             // 
-            this.NameText.Location = new System.Drawing.Point(186, 24);
+            this.NameText.Location = new System.Drawing.Point(151, 21);
             this.NameText.Name = "NameText";
             this.NameText.ReadOnly = true;
             this.NameText.Size = new System.Drawing.Size(100, 20);
@@ -52,7 +52,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(151, 28);
+            this.label1.Location = new System.Drawing.Point(148, 5);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(29, 13);
             this.label1.TabIndex = 1;
@@ -60,7 +60,7 @@
             // 
             // HpText
             // 
-            this.HpText.Location = new System.Drawing.Point(186, 62);
+            this.HpText.Location = new System.Drawing.Point(151, 62);
             this.HpText.Name = "HpText";
             this.HpText.ReadOnly = true;
             this.HpText.Size = new System.Drawing.Size(100, 20);
@@ -69,7 +69,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(151, 65);
+            this.label2.Location = new System.Drawing.Point(148, 46);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(22, 13);
             this.label2.TabIndex = 3;
@@ -77,7 +77,7 @@
             // 
             // KBText
             // 
-            this.KBText.Location = new System.Drawing.Point(345, 21);
+            this.KBText.Location = new System.Drawing.Point(266, 21);
             this.KBText.Name = "KBText";
             this.KBText.ReadOnly = true;
             this.KBText.Size = new System.Drawing.Size(100, 20);
@@ -86,7 +86,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(292, 24);
+            this.label3.Location = new System.Drawing.Point(266, 2);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(21, 13);
             this.label3.TabIndex = 5;
@@ -94,7 +94,7 @@
             // 
             // DamageText
             // 
-            this.DamageText.Location = new System.Drawing.Point(345, 62);
+            this.DamageText.Location = new System.Drawing.Point(266, 62);
             this.DamageText.Name = "DamageText";
             this.DamageText.ReadOnly = true;
             this.DamageText.Size = new System.Drawing.Size(100, 20);
@@ -103,7 +103,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(292, 65);
+            this.label4.Location = new System.Drawing.Point(266, 45);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(47, 13);
             this.label4.TabIndex = 7;
@@ -111,10 +111,8 @@
             // 
             // label5
             // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(388, 85);
+            this.label5.Location = new System.Drawing.Point(309, 85);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(57, 13);
             this.label5.TabIndex = 11;
@@ -122,23 +120,19 @@
             // 
             // DescriptionText
             // 
-            this.DescriptionText.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.DescriptionText.Location = new System.Drawing.Point(148, 101);
             this.DescriptionText.Name = "DescriptionText";
             this.DescriptionText.ReadOnly = true;
-            this.DescriptionText.Size = new System.Drawing.Size(297, 152);
+            this.DescriptionText.Size = new System.Drawing.Size(215, 146);
             this.DescriptionText.TabIndex = 10;
             this.DescriptionText.Text = "";
             // 
             // MobTree
             // 
-            this.MobTree.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
             this.MobTree.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.MobTree.Location = new System.Drawing.Point(11, 21);
             this.MobTree.Name = "MobTree";
-            this.MobTree.Size = new System.Drawing.Size(131, 232);
+            this.MobTree.Size = new System.Drawing.Size(131, 226);
             this.MobTree.TabIndex = 12;
             this.MobTree.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.MobTree_AfterSelect);
             // 
@@ -146,7 +140,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(457, 265);
+            this.ClientSize = new System.Drawing.Size(378, 259);
             this.Controls.Add(this.MobTree);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.DescriptionText);

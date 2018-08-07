@@ -79,6 +79,7 @@ C:\Git\RolePlayMaker-master\RolePlayMaker-master\RolePlay Maker\bin\Debug\Newton
 C:\Git\RolePlayMaker-master\RolePlayMaker-master\RolePlayMaker\RolePlay Maker\bin\Debug\RolePlay Maker.exe.config
 C:\Git\RolePlayMaker-master\RolePlayMaker-master\RolePlayMaker\RolePlay Maker\obj\Debug\RolePlay Maker.exe
 C:\Git\RolePlayMaker-master\RolePlayMaker-master\RolePlayMaker\RolePlay Maker\obj\Debug\RolePlay Maker.pdb
+C:\Git\RolePlayMaker-master\RolePlayMaker-master\RolePlayMaker\RolePlay Maker\bin\Debug\client_secret.json
 C:\Git\RolePlayMaker-master\RolePlayMaker-master\RolePlayMaker\RolePlay Maker\bin\Debug\RolePlay Maker.exe
 C:\Git\RolePlayMaker-master\RolePlayMaker-master\RolePlayMaker\RolePlay Maker\bin\Debug\RolePlay Maker.pdb
 C:\Git\RolePlayMaker-master\RolePlayMaker-master\RolePlayMaker\RolePlay Maker\bin\Debug\Google.Apis.Auth.dll
@@ -120,7 +121,6 @@ C:\Git\RolePlayMaker-master\RolePlayMaker-master\RolePlayMaker\RolePlay Maker\ob
 C:\Git\RolePlayMaker-master\RolePlayMaker-master\RolePlayMaker\RolePlay Maker\obj\Debug\RolePlay_Maker.WeaponInfo.resources
 C:\Git\RolePlayMaker-master\RolePlayMaker-master\RolePlayMaker\RolePlay Maker\obj\Debug\RolePlay Maker.csproj.GenerateResource.Cache
 C:\Git\RolePlayMaker-master\RolePlayMaker-master\RolePlayMaker\RolePlay Maker\obj\Debug\RolePlay_Maker.Logs.resources
-<<<<<<< HEAD
 C:\Users\stalk\Documents\GitHub\RolePlayMaker\RolePlay Maker\bin\Debug\client_secret.json
 C:\Users\stalk\Documents\GitHub\RolePlayMaker\RolePlay Maker\bin\Debug\RolePlay Maker.exe.config
 C:\Users\stalk\Documents\GitHub\RolePlayMaker\RolePlay Maker\bin\Debug\RolePlay Maker.exe
@@ -168,9 +168,3 @@ C:\Users\stalk\Documents\GitHub\RolePlayMaker\RolePlay Maker\obj\Debug\RolePlay 
 C:\Users\stalk\Documents\GitHub\RolePlayMaker\RolePlay Maker\obj\Debug\RolePlay Maker.csproj.CopyComplete
 C:\Users\stalk\Documents\GitHub\RolePlayMaker\RolePlay Maker\obj\Debug\RolePlay Maker.exe
 C:\Users\stalk\Documents\GitHub\RolePlayMaker\RolePlay Maker\obj\Debug\RolePlay Maker.pdb
-=======
-C:\Git\RolePlayMaker-master\RolePlayMaker-master\RolePlayMaker\RolePlay Maker\obj\Debug\RolePlay_Maker.Forms.AddAbility.resources
-C:\Git\RolePlayMaker-master\RolePlayMaker-master\RolePlayMaker\RolePlay Maker\bin\Debug\Resources\client_secret.json
-C:\Git\RolePlayMaker-master\RolePlayMaker-master\RolePlayMaker\RolePlay Maker\obj\Debug\RolePlay_Maker.Forms.Information.AddTrait.resources
-C:\Git\RolePlayMaker-master\RolePlayMaker-master\RolePlayMaker\RolePlay Maker\obj\Debug\RolePlay_Maker.Forms.Information.TraitInfo.resources
->>>>>>> 2a605b63a3e87d196fc737b6fe04d36f45a4c630

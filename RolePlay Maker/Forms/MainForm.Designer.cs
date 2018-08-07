@@ -49,9 +49,6 @@
             this.броняToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.добавитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.чертыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.справкаToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
-            this.добавитьЧертуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.авторToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Generator = new System.Windows.Forms.Button();
@@ -146,8 +143,7 @@
             this.существаToolStripMenuItem,
             this.оружиеToolStripMenuItem,
             this.способностиToolStripMenuItem,
-            this.броняToolStripMenuItem,
-            this.чертыToolStripMenuItem});
+            this.броняToolStripMenuItem});
             this.справочникToolStripMenuItem.Name = "справочникToolStripMenuItem";
             this.справочникToolStripMenuItem.Size = new System.Drawing.Size(106, 24);
             this.справочникToolStripMenuItem.Text = "Справочник";
@@ -220,7 +216,6 @@
             this.добавитьСпособностьToolStripMenuItem.Name = "добавитьСпособностьToolStripMenuItem";
             this.добавитьСпособностьToolStripMenuItem.Size = new System.Drawing.Size(244, 26);
             this.добавитьСпособностьToolStripMenuItem.Text = "Добавить способность";
-            this.добавитьСпособностьToolStripMenuItem.Click += new System.EventHandler(this.добавитьСпособностьToolStripMenuItem_Click);
             // 
             // броняToolStripMenuItem
             // 
@@ -244,29 +239,6 @@
             this.добавитьToolStripMenuItem.Size = new System.Drawing.Size(203, 26);
             this.добавитьToolStripMenuItem.Text = "Добавить броню";
             this.добавитьToolStripMenuItem.Click += new System.EventHandler(this.добавитьToolStripMenuItem_Click);
-            // 
-            // чертыToolStripMenuItem
-            // 
-            this.чертыToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.справкаToolStripMenuItem4,
-            this.добавитьЧертуToolStripMenuItem});
-            this.чертыToolStripMenuItem.Name = "чертыToolStripMenuItem";
-            this.чертыToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.чертыToolStripMenuItem.Text = "Черты";
-            // 
-            // справкаToolStripMenuItem4
-            // 
-            this.справкаToolStripMenuItem4.Name = "справкаToolStripMenuItem4";
-            this.справкаToolStripMenuItem4.Size = new System.Drawing.Size(160, 22);
-            this.справкаToolStripMenuItem4.Text = "Справка";
-            this.справкаToolStripMenuItem4.Click += new System.EventHandler(this.справкаToolStripMenuItem4_Click);
-            // 
-            // добавитьЧертуToolStripMenuItem
-            // 
-            this.добавитьЧертуToolStripMenuItem.Name = "добавитьЧертуToolStripMenuItem";
-            this.добавитьЧертуToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
-            this.добавитьЧертуToolStripMenuItem.Text = "Добавить черту";
-            this.добавитьЧертуToolStripMenuItem.Click += new System.EventHandler(this.добавитьЧертуToolStripMenuItem_Click);
             // 
             // оПрограммеToolStripMenuItem
             // 
@@ -343,25 +315,19 @@
         private System.Windows.Forms.ToolStripMenuItem оПрограммеToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem авторToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem справочникToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem существаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem оружиеToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem способностиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem броняToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem справкаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem добавитьToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem справкаToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem добавитьСуществоToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem справкаToolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem добавитьСпособностьToolStripMenuItem;
         private System.Windows.Forms.Button Generator;
         private System.Windows.Forms.ToolStripMenuItem справкаToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem добавитьОружиеToolStripMenuItem;
-<<<<<<< HEAD
         private System.Windows.Forms.Button button1;
-=======
-        private System.Windows.Forms.ToolStripMenuItem существаToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem справкаToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem добавитьСуществоToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem чертыToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem справкаToolStripMenuItem4;
-        private System.Windows.Forms.ToolStripMenuItem добавитьЧертуToolStripMenuItem;
->>>>>>> 2a605b63a3e87d196fc737b6fe04d36f45a4c630
     }
 }

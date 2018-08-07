@@ -20,6 +20,9 @@ namespace RolePlay_Maker
             public Dictionary<int, Button> AttackSecondaryWeapon;
             public Dictionary<int, Button> Refresh;
             //
+            public Dictionary<int, int> PermanentDamage;
+            public Dictionary<int, int> RandomDamage;
+            //
             private List<Armor> AvailableArmor;
             private List<Armor> AvailableHats;
             private List<Weapon> AvailableWeapon;
