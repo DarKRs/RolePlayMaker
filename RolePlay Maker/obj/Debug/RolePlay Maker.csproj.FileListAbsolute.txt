@@ -121,3 +121,50 @@ C:\Git\RolePlayMaker-master\RolePlayMaker-master\RolePlayMaker\RolePlay Maker\ob
 C:\Git\RolePlayMaker-master\RolePlayMaker-master\RolePlayMaker\RolePlay Maker\obj\Debug\RolePlay_Maker.WeaponInfo.resources
 C:\Git\RolePlayMaker-master\RolePlayMaker-master\RolePlayMaker\RolePlay Maker\obj\Debug\RolePlay Maker.csproj.GenerateResource.Cache
 C:\Git\RolePlayMaker-master\RolePlayMaker-master\RolePlayMaker\RolePlay Maker\obj\Debug\RolePlay_Maker.Logs.resources
+C:\Users\stalk\Documents\GitHub\RolePlayMaker\RolePlay Maker\bin\Debug\client_secret.json
+C:\Users\stalk\Documents\GitHub\RolePlayMaker\RolePlay Maker\bin\Debug\RolePlay Maker.exe.config
+C:\Users\stalk\Documents\GitHub\RolePlayMaker\RolePlay Maker\bin\Debug\RolePlay Maker.exe
+C:\Users\stalk\Documents\GitHub\RolePlayMaker\RolePlay Maker\bin\Debug\RolePlay Maker.pdb
+C:\Users\stalk\Documents\GitHub\RolePlayMaker\RolePlay Maker\bin\Debug\Google.Apis.Auth.dll
+C:\Users\stalk\Documents\GitHub\RolePlayMaker\RolePlay Maker\bin\Debug\Google.Apis.Auth.PlatformServices.dll
+C:\Users\stalk\Documents\GitHub\RolePlayMaker\RolePlay Maker\bin\Debug\Google.Apis.Core.dll
+C:\Users\stalk\Documents\GitHub\RolePlayMaker\RolePlay Maker\bin\Debug\Google.Apis.dll
+C:\Users\stalk\Documents\GitHub\RolePlayMaker\RolePlay Maker\bin\Debug\Google.Apis.PlatformServices.dll
+C:\Users\stalk\Documents\GitHub\RolePlayMaker\RolePlay Maker\bin\Debug\Google.Apis.Sheets.v4.dll
+C:\Users\stalk\Documents\GitHub\RolePlayMaker\RolePlay Maker\bin\Debug\Newtonsoft.Json.dll
+C:\Users\stalk\Documents\GitHub\RolePlayMaker\RolePlay Maker\bin\Debug\Google.Apis.pdb
+C:\Users\stalk\Documents\GitHub\RolePlayMaker\RolePlay Maker\bin\Debug\Google.Apis.xml
+C:\Users\stalk\Documents\GitHub\RolePlayMaker\RolePlay Maker\bin\Debug\Google.Apis.Auth.pdb
+C:\Users\stalk\Documents\GitHub\RolePlayMaker\RolePlay Maker\bin\Debug\Google.Apis.Auth.xml
+C:\Users\stalk\Documents\GitHub\RolePlayMaker\RolePlay Maker\bin\Debug\Google.Apis.Core.pdb
+C:\Users\stalk\Documents\GitHub\RolePlayMaker\RolePlay Maker\bin\Debug\Google.Apis.Core.xml
+C:\Users\stalk\Documents\GitHub\RolePlayMaker\RolePlay Maker\bin\Debug\Google.Apis.Sheets.v4.pdb
+C:\Users\stalk\Documents\GitHub\RolePlayMaker\RolePlay Maker\bin\Debug\Google.Apis.Sheets.v4.xml
+C:\Users\stalk\Documents\GitHub\RolePlayMaker\RolePlay Maker\bin\Debug\Newtonsoft.Json.xml
+C:\Users\stalk\Documents\GitHub\RolePlayMaker\RolePlay Maker\obj\Debug\RolePlay Maker.csprojAssemblyReference.cache
+C:\Users\stalk\Documents\GitHub\RolePlayMaker\RolePlay Maker\obj\Debug\RolePlay_Maker.AbilityInfo.resources
+C:\Users\stalk\Documents\GitHub\RolePlayMaker\RolePlay Maker\obj\Debug\RolePlay_Maker.AddArmor.resources
+C:\Users\stalk\Documents\GitHub\RolePlayMaker\RolePlay Maker\obj\Debug\RolePlay_Maker.AddMob.resources
+C:\Users\stalk\Documents\GitHub\RolePlayMaker\RolePlay Maker\obj\Debug\RolePlay_Maker.AddWeapon.resources
+C:\Users\stalk\Documents\GitHub\RolePlayMaker\RolePlay Maker\obj\Debug\RolePlay_Maker.ArmorForm.resources
+C:\Users\stalk\Documents\GitHub\RolePlayMaker\RolePlay Maker\obj\Debug\RolePlay_Maker.Author.resources
+C:\Users\stalk\Documents\GitHub\RolePlayMaker\RolePlay Maker\obj\Debug\RolePlay_Maker.Character.resources
+C:\Users\stalk\Documents\GitHub\RolePlayMaker\RolePlay Maker\obj\Debug\RolePlay_Maker.CharacterNetwork.resources
+C:\Users\stalk\Documents\GitHub\RolePlayMaker\RolePlay Maker\obj\Debug\RolePlay_Maker.ChatForm.resources
+C:\Users\stalk\Documents\GitHub\RolePlayMaker\RolePlay Maker\obj\Debug\RolePlay_Maker.Form2.resources
+C:\Users\stalk\Documents\GitHub\RolePlayMaker\RolePlay Maker\obj\Debug\RolePlay_Maker.Forms.Generators.resources
+C:\Users\stalk\Documents\GitHub\RolePlayMaker\RolePlay Maker\obj\Debug\RolePlay_Maker.MainForm.resources
+C:\Users\stalk\Documents\GitHub\RolePlayMaker\RolePlay Maker\obj\Debug\RolePlay_Maker.MobForm.resources
+C:\Users\stalk\Documents\GitHub\RolePlayMaker\RolePlay Maker\obj\Debug\RolePlay_Maker.Network.resources
+C:\Users\stalk\Documents\GitHub\RolePlayMaker\RolePlay Maker\obj\Debug\RolePlay_Maker.NetworkInfo.resources
+C:\Users\stalk\Documents\GitHub\RolePlayMaker\RolePlay Maker\obj\Debug\RolePlay_Maker.Forms.NPCGeneratorForm.resources
+C:\Users\stalk\Documents\GitHub\RolePlayMaker\RolePlay Maker\obj\Debug\RolePlay_Maker.Profile.resources
+C:\Users\stalk\Documents\GitHub\RolePlayMaker\RolePlay Maker\obj\Debug\RolePlay_Maker.Forms.QuestGeneratorForm.resources
+C:\Users\stalk\Documents\GitHub\RolePlayMaker\RolePlay Maker\obj\Debug\RolePlay_Maker.Logs.resources
+C:\Users\stalk\Documents\GitHub\RolePlayMaker\RolePlay Maker\obj\Debug\RolePlay_Maker.Properties.Resources.resources
+C:\Users\stalk\Documents\GitHub\RolePlayMaker\RolePlay Maker\obj\Debug\RolePlay_Maker.WeaponInfo.resources
+C:\Users\stalk\Documents\GitHub\RolePlayMaker\RolePlay Maker\obj\Debug\RolePlay Maker.csproj.GenerateResource.cache
+C:\Users\stalk\Documents\GitHub\RolePlayMaker\RolePlay Maker\obj\Debug\RolePlay Maker.csproj.CoreCompileInputs.cache
+C:\Users\stalk\Documents\GitHub\RolePlayMaker\RolePlay Maker\obj\Debug\RolePlay Maker.csproj.CopyComplete
+C:\Users\stalk\Documents\GitHub\RolePlayMaker\RolePlay Maker\obj\Debug\RolePlay Maker.exe
+C:\Users\stalk\Documents\GitHub\RolePlayMaker\RolePlay Maker\obj\Debug\RolePlay Maker.pdb

@@ -15,8 +15,7 @@ namespace RolePlay_Maker
         {
             InitializeComponent();
             Loader load = Loader.GetLoader();
-            load.RefreshAllDatabase();
-
+            load.LoadData();
         }
 
         private void Close_Click(object sender, EventArgs e)
@@ -145,6 +144,11 @@ namespace RolePlay_Maker
             AddWeapon f = new AddWeapon();
             f.Owner = this;
             f.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Loader.GetLoader().RefreshAllDatabase();
         }
     }
 }

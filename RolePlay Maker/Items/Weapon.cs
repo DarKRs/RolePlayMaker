@@ -1,19 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace RolePlay_Maker
 {
+    [DataContract]
     class Weapon : Item
     {
+        [DataMember]
         public string Class;
+        [DataMember]
         public string Subclass;
+        [DataMember]
         public int PermanentDamage;
+        [DataMember]
         public DRoll RandomDamage;
+        [DataMember]
         public string AmmoType;
+        [DataMember]
         public int Magazine;
+        [DataMember]
         public int Price;
 
         public Weapon()//Кулаки

@@ -1,15 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace RolePlay_Maker
 {
+    [DataContract]
     class DRoll
     {
+        [DataMember]
         public int D;
+        [DataMember]
         Random rnd = new Random();
         public DRoll(string D)
         {

@@ -1,17 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace RolePlay_Maker
 {
+    [DataContract]
     class Armor : Item
     {
+        [DataMember]
         public int AP;
+        [DataMember]
         public int Price;
+        [DataMember]
         public int KB;
+        [DataMember]
         public string Class;
+        [DataMember]
         public string Effects;
 
         public Armor()

@@ -13,6 +13,8 @@ using System.Threading;
 using System.Linq;
 using System.Collections;
 using System.Diagnostics;
+using System.Runtime.Serialization;
+using System.Xml;
 
 namespace RolePlay_Maker
 {
@@ -21,6 +23,7 @@ namespace RolePlay_Maker
         public static readonly string ARMOR_SPREADSHEET = "19CQvYbi6OwMoLpseI8AkQzL2jFbc9YP3b4Kpu61wsEw";
         public static readonly string WEAPON_SPREADSHEET = "1_6ND5dw_DG-qgE6nkbrH3BVgj-D8_9LgHEpNlT-NFMA";
         public static readonly string COLD_WEAPON_SPREADSHEET = "1ghGqXURQNqpabSYt9QRH-4ubfYcTdIZmhOQR_WW9C7A";
+        private static readonly string StoreFileName = "data.xml";
 
         static string[] Scopes = { SheetsService.Scope.Spreadsheets };
         static string ApplicationName = "My Project";
@@ -62,11 +65,70 @@ namespace RolePlay_Maker
                 loader = new Loader();
             return loader;
         }
+        public void LoadData()
+        {
+            //If file with table data exists then read data from it 
+            //otherwise download data and save it
+            if(File.Exists(StoreFileName))
+            {
+                var store = ReadAndDeserialize(StoreFileName);
+                Item.Entities = store.Entities;
+                Item.ArmorList = store.ArmorList;
+                Item.WeaponList = store.WeaponList;
+
+                Console.WriteLine("Finish reading data!");
+            }else
+            {
+                RefreshAllDatabase();
+            }
+        }
+        public void SaveTableData() 
+        {
+            Items.Store store = new Items.Store
+            {
+                Entities = Item.Entities,
+                ArmorList = Item.ArmorList,
+                WeaponList = Item.WeaponList
+            };
+
+            SerializeAndWrite(StoreFileName, store);
+            Console.WriteLine("Finish saving table data!");
+        }
+        private void SerializeAndWrite(string filename, Items.Store store)
+        {
+            DataContractSerializer serializer = new DataContractSerializer(typeof(Items.Store));
+            string xmlString;
+            using (var sw = new StringWriter())
+            {
+                using (var writer = new XmlTextWriter(sw))
+                {
+                    writer.Formatting = System.Xml.Formatting.Indented; // indent the Xml so it's human readable
+                    serializer.WriteObject(writer, store);
+                    writer.Flush();
+                    xmlString = sw.ToString();
+                }
+            }
+
+            using (var myWriter = new StreamWriter(filename))
+            {
+                myWriter.Write(xmlString);
+            }
+        }
+
+        private Items.Store ReadAndDeserialize(string filename)
+        {
+            using (var fileStream = new FileStream(filename, FileMode.Open))
+            {
+                DataContractSerializer serializer = new DataContractSerializer(typeof(Items.Store));
+                var store = (Items.Store)serializer.ReadObject(fileStream);
+                return store;
+            }
+        }
 
         public void RefreshAllDatabase()
         {
             String spreadsheetId;
-            //for storing the range and corresponding type
+            //for storing the range and the corresponding type
             Dictionary<string, string> ranges = new Dictionary<string, string>();
             Dictionary<string, Dictionary<string, string>> spreadsheetIdAndRanges = new Dictionary<string, Dictionary<string, string>>();
             /////Armor///////
@@ -234,8 +296,9 @@ namespace RolePlay_Maker
                 }
             }
             //for debug purposes
-            Console.WriteLine("Completed");
-            
+            Console.WriteLine();
+            Console.WriteLine("Downloading table data completed");
+            SaveTableData();
         }
         public async void AddToDatabase(List<string> data, String spreadsheetId, string type, string Class)
         {
@@ -257,6 +320,8 @@ namespace RolePlay_Maker
             AppendValuesResponse response = await request.ExecuteAsync();
             RefreshDatabase(type, Class);
         }
+
+        
 
     }
 }
