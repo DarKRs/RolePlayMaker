@@ -6,23 +6,21 @@ using System.Threading.Tasks;
 
 namespace RolePlay_Maker
 {
-    class Mob : Item
+    class Mob : Entity
     {
-        public int HP;
-        public int KB;
-        public int Damage;
-
-        public Mob(string Name,int HP,int KB, int Damage, string Description)
+        public int PermanentDamage;
+        public DRoll RandomDamage;
+        public Mob(IList<object> values)
         {
-            this.Type = "Mob";
-            this.Name = Name;
-            this.HP = HP;
-            this.KB = KB;
-            this.Damage = Damage;
-            this.Description = Description;
+            this.Name = values[0].ToString();
+            this.KB = Int32.Parse(values[1].ToString());
+            this.HP = Int32.Parse(values[2].ToString());
+            this.Description = values[3].ToString();
+            this.Damage = values[4].ToString();
+            string[] Dmg = values[4].ToString().Split('+');
+            this.PermanentDamage = Int32.Parse(Dmg[1]);
+            this.RandomDamage = new DRoll(Dmg[0]);
         }
-
-     
 
     }
 }
